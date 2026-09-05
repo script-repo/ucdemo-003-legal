@@ -22,20 +22,12 @@
 
   function chatCompletion(messages, opts) {
     opts = opts || {};
-    var body = {
-      model: opts.model || AI_CONFIG.chatModel,
-      messages: messages,
-      max_tokens: opts.maxTokens || AI_CONFIG.defaults.maxTokens,
-      stream: opts.stream !== undefined ? opts.stream : AI_CONFIG.defaults.stream,
-    };
-    return fetch(AI_CONFIG.proxyBase + '/chat/completions', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
-      body: JSON.stringify(body),
-    }).then(function (res) {
-      if (!res.ok) throw new Error('Chat completions failed: ' + res.status);
-      return res.json();
-    });
+    if (!opts.maxTokens) opts.maxTokens = AI_CONFIG.defaults.maxTokens;
+    if (opts.stream === undefined) opts.stream = AI_CONFIG.defaults.stream;
+    // Tries Nutanix Enterprise AI first (via the local proxy, or directly
+    // with a user-saved key from Settings), then falls back to OpenRouter
+    // if configured. See portal/shared/inference-client.js.
+    return window.LegalAIInference.chatCompletion(messages, opts, AI_CONFIG);
   }
 
   /* =====================================================================

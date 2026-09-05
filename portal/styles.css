@@ -120,6 +120,39 @@ body, button, input, select, textarea {
   letter-spacing: 0.02em;
 }
 
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+/* Endpoint settings icon button (shared visual language across every
+   page — home header is transparent, use-case page-headers are solid,
+   both use white icons/text, so this works unmodified everywhere). */
+.settings-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  padding: 0;
+  border-radius: 50%;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  background: rgba(255, 255, 255, 0.12);
+  color: var(--color-white);
+  text-decoration: none;
+  cursor: pointer;
+  flex-shrink: 0;
+  transition: background var(--transition-duration), border-color var(--transition-duration);
+}
+.settings-link:hover,
+.settings-link:focus-visible {
+  background: rgba(255, 255, 255, 0.25);
+  border-color: var(--color-white);
+  outline: 2px solid var(--color-white);
+  outline-offset: 2px;
+}
+
 .nav-toggle {
   display: flex;
   flex-direction: column;

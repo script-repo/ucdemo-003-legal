@@ -1129,3 +1129,28 @@ body, button, input, select, textarea {
   outline: 2px solid var(--color-primary-bright);
   outline-offset: 2px;
 }
+
+/* Endpoint settings icon button (top right of header, all pages) */
+.settings-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  padding: 0;
+  border-radius: 50%;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  background: rgba(255, 255, 255, 0.12);
+  color: var(--color-white);
+  text-decoration: none;
+  cursor: pointer;
+  flex-shrink: 0;
+  transition: background 0.2s, border-color 0.2s;
+}
+.settings-link:hover,
+.settings-link:focus-visible {
+  background: rgba(255, 255, 255, 0.25);
+  border-color: var(--color-white);
+  outline: 2px solid var(--color-white);
+  outline-offset: 2px;
+}
