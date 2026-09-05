@@ -12,8 +12,14 @@ server {
     }
 
     location ~* \.(css|js)$ {
-        expires 1h;
-        add_header Cache-Control "public, must-revalidate";
+        # This app deploys frequently via GitOps (every push rebuilds and
+        # rolls out a new image). "no-cache" still lets browsers store the
+        # response, but forces a conditional revalidation (If-None-Match /
+        # If-Modified-Since) on every load instead of blindly reusing a
+        # stale copy for a fixed TTL — new deploys are picked up on the
+        # very next page load instead of silently running old JS for up
+        # to an hour. nginx answers unchanged files with a cheap 304.
+        add_header Cache-Control "no-cache";
         try_files $uri =404;
     }
 
