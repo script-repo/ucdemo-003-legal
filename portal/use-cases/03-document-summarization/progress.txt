@@ -1,0 +1,34 @@
+# Document Summarization (UC-03) — Progress Tracking
+
+## Build Tasks
+
+### Completed
+- [x] Task 1: Create index.html with header, landing layout, loading, results sections
+- [x] Task 2: Create architecture SVG diagram with all Nutanix components (AHV, NKP, NAI, Unified Storage)
+- [x] Task 3: Create styles.css with all layout and component styles
+- [x] Task 4: Create app.js with AI call, file extraction, mock fallback, results rendering
+- [x] Task 5: Update portal app.js — set UC-03 live: true
+- [x] Task 6: Write detailed architecture description in index.html
+
+### In Progress
+
+### Remaining
+
+---
+
+## Summary
+All 6 tasks complete. UC-03 Document Summarization is fully built with:
+- Two-column landing layout (architecture diagram + input sidebar)
+- File upload (TXT/PDF/DOCX) and text paste
+- Summary length selector (Brief / Standard / Detailed)
+- AI proxy integration via /api/ai/chat/completions
+- Mock fallback when AI unavailable
+- Structured results: title, executive summary, key facts, section breakdown, word counts
+- "New Summary" returns to landing
+- Recent summaries history (in-memory mock)
+
+## Files Modified
+- `portal/use-cases/03-document-summarization/index.html` — Created (header, layout, SVG, description, loading, results)
+- `portal/use-cases/03-document-summarization/styles.css` — Created (all styles)
+- `portal/use-cases/03-document-summarization/app.js` — Created (IIFE, file extraction, AI call, mock, rendering)
+- `portal/app.js` — Updated (UC-03 live: true)

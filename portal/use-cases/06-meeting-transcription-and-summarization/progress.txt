@@ -1,0 +1,34 @@
+# UC-06 Meeting Transcription and Summarization — Progress
+
+## Tasks
+
+### Completed
+- [x] Create index.html with header, landing layout, SVG diagram, description
+- [x] Create styles.css with all styles (html 100%, body 16px, forms 15px)
+- [x] Create app.js with AI call, file extraction, mock fallback, results rendering
+- [x] Update portal app.js: UC-06 live: true
+- [x] Architecture SVG with Nutanix AHV, NKP, NAI, Unified Storage
+- [x] Meeting type selector (Client Call, Internal Strategy, Deposition, Board Meeting, Other)
+- [x] File upload (TXT/PDF/DOCX) and text paste
+- [x] Results: overview, executive summary, action items, decisions, key points, follow-ups
+- [x] "New Meeting" returns to landing
+- [x] History renders and updates
+
+### In Progress
+
+### Remaining
+
+---
+
+## Summary
+UC-06 Meeting Transcription and Summarization is complete. All 3 files created (index.html, styles.css, app.js). Portal app.js updated to set UC-06 live: true. Page follows UC-01 patterns with IIFE, llama3-1-8b, llama-3-2-embed, /api/ai proxy base.
+
+## Files Created/Modified
+
+### Created
+- portal/use-cases/06-meeting-transcription-and-summarization/index.html
+- portal/use-cases/06-meeting-transcription-and-summarization/styles.css
+- portal/use-cases/06-meeting-transcription-and-summarization/app.js
+
+### Modified
+- portal/app.js (UC-06 live: true)

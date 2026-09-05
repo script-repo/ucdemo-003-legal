@@ -1,0 +1,33 @@
+# Contract Risk Analysis (UC-04) — Progress Tracking
+
+## Build Tasks
+
+### Completed
+- [x] Task 1: Create index.html with header, landing layout, loading, results sections
+- [x] Task 2: Create architecture SVG diagram with all Nutanix components (AHV, NKP, NAI, Unified Storage)
+- [x] Task 3: Create styles.css with all layout and component styles (including risk dashboard)
+- [x] Task 4: Create app.js with AI call, file extraction, mock fallback, dashboard rendering
+- [x] Task 5: Update portal app.js — set UC-04 live: true
+- [x] Task 6: Write detailed architecture description in index.html
+
+### In Progress
+
+### Remaining
+
+---
+
+## Summary
+UC-04 Contract Risk Analysis build complete. All 6 tasks finished. Page includes:
+- Two-column landing with architecture diagram (left) and input panel (right)
+- File upload (TXT/PDF/DOCX) + text paste + risk taxonomy checkboxes
+- "Analyze Risk" button, loading state, full-width risk dashboard
+- Risk score display, heat map grid, clause risk cards, regulatory commitments table, recommended actions
+- "New Analysis" returns to landing
+- Mock data fallback when AI unavailable
+- Portal card shows "Launch" for UC-04
+
+## Files Modified
+- `portal/use-cases/04-contract-risk-analysis/index.html` — Created (header, layout, SVG, description, input, results)
+- `portal/use-cases/04-contract-risk-analysis/styles.css` — Created (all styles including risk dashboard)
+- `portal/use-cases/04-contract-risk-analysis/app.js` — Created (IIFE, file extraction, AI proxy, mock, dashboard)
+- `portal/app.js` — Updated UC-04 entry: live: true

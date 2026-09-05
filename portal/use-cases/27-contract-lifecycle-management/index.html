@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Contract Lifecycle Management — Track contracts through their lifecycle with key dates, obligations, and renewal alerts." />
+  <title>Contract Lifecycle Management — Legal AI Portal</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Roboto:wght@400;500;600&family=Roboto+Slab:wght@400&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mammoth/1.8.0/mammoth.browser.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/4.2.67/pdf.min.mjs" type="module"></script>
+</head>
+<body>
+  <a href="#main" class="skip-link">Skip to main content</a>
+
+  <header class="page-header" role="banner">
+    <div class="header-inner">
+      <div class="header-left">
+        <a class="back-link" href="../../index.html" aria-label="Return to portal">&larr; Portal</a>
+        <a class="logo" href="../../index.html" aria-label="Legal AI Portal home">
+          <span class="logo-mark">Legal AI</span>
+        </a>
+      </div>
+      <h1 class="page-title">Contract Lifecycle Management</h1>
+    </div>
+  </header>
+
+  <main id="main" class="content-wrapper">
+    <div id="error-banner" class="error-banner hidden" role="alert" aria-live="assertive"></div>
+
+    <!-- ============================================================= -->
+    <!-- Landing: overview (left) | input panel (right)                 -->
+    <!-- ============================================================= -->
+    <section id="landing-section" class="landing-layout">
+
+      <div class="landing-main">
+        <div class="use-case-overview">
+          <h2 class="section-heading">What This Does</h2>
+          <p>Contract Lifecycle Management uses AI to track and manage contracts through their full lifecycle. Upload or paste a contract and the AI extracts key dates, obligations, renewal terms, and generates a lifecycle summary with upcoming actions. Get a single view of renewals, deadlines, and compliance tasks so you never miss a critical date.</p>
+          <p>Extracts key dates and obligations from contracts; triggers renewals and compliance tasks; supports renegotiation and termination decisions. Ideal for legal ops, business owners, and general counsel who need portfolio visibility.</p>
+        </div>
+
+        <div class="user-journey">
+          <h2 class="section-heading">Example User Journey</h2>
+          <div class="journey-steps">
+            <div class="journey-step">
+              <span class="journey-step-number">1</span>
+              <div class="journey-step-content">
+                <strong>Upload or Paste</strong>
+                <p>Upload a contract (TXT, PDF, DOCX) or paste the text directly into the input area.</p>
+              </div>
+            </div>
+            <div class="journey-step">
+              <span class="journey-step-number">2</span>
+              <div class="journey-step-content">
+                <strong>AI Extracts Lifecycle Data</strong>
+                <p>The system extracts text, sends it to the Nutanix AI endpoint, and receives a structured lifecycle analysis.</p>
+              </div>
+            </div>
+            <div class="journey-step">
+              <span class="journey-step-number">3</span>
+              <div class="journey-step-content">
+                <strong>Review Lifecycle Summary</strong>
+                <p>See lifecycle status, key dates timeline, obligations tracker, renewal alerts, and action items in one view.</p>
+              </div>
+            </div>
+            <div class="journey-step">
+              <span class="journey-step-number">4</span>
+              <div class="journey-step-content">
+                <strong>Act on Alerts</strong>
+                <p>Use the action items and renewal alerts to plan renegotiations, send notices, or complete obligations on time.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- RIGHT: Input panel (upload + paste) -->
+      <aside class="landing-sidebar" id="input-panel">
+        <h2 class="section-heading">Analyze Contract Lifecycle</h2>
+
+        <div class="input-card">
+          <h3 class="input-card-title">Upload a Document</h3>
+          <input type="file" id="file-input" accept=".txt,.pdf,.docx" class="visually-hidden" aria-label="Select contract file" />
+          <div class="upload-zone" id="upload-zone" role="button" tabindex="0" aria-label="Upload contract file">
+            <div class="upload-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                <path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/>
+                <polyline points="14 2 14 8 20 8"/>
+                <polyline points="12 11 12 17"/>
+                <polyline points="9 14 12 11 15 14"/>
+              </svg>
+            </div>
+            <p class="upload-label">Drag &amp; drop, or <span class="upload-browse">browse files</span></p>
+            <p class="upload-hint">TXT, PDF, DOCX</p>
+          </div>
+        </div>
+
+        <div class="input-divider">
+          <span class="input-divider-text">OR</span>
+        </div>
+
+        <div class="input-card">
+          <h3 class="input-card-title">Paste Contract Text</h3>
+          <textarea id="paste-input" class="paste-textarea" rows="10" placeholder="Paste contract text here for lifecycle analysis..."></textarea>
+        </div>
+
+        <button type="button" id="btn-analyze" class="btn-analyze" disabled>Analyze Lifecycle</button>
+
+        <div class="input-card history-card">
+          <div class="history-header">
+            <h3 class="input-card-title">Recent Analyses</h3>
+            <button type="button" id="btn-clear-history" class="btn-clear-history hidden" aria-label="Clear all recent analyses">Clear All</button>
+          </div>
+          <div id="history-list" class="history-list" role="list" aria-labelledby="history-heading"></div>
+        </div>
+      </aside>
+    </section>
+
+    <!-- ============================================================= -->
+    <!-- Loading state                                                  -->
+    <!-- ============================================================= -->
+    <section id="loading-section" class="loading-overlay hidden" aria-live="polite" aria-label="Analysis in progress">
+      <div class="loading-card">
+        <div class="loading-spinner"></div>
+        <p class="loading-status" id="loading-status">Preparing document&hellip;</p>
+        <div class="loading-stages">
+          <div class="loading-stage" id="stage-extract"><span class="stage-icon">&#9679;</span> Extracting text</div>
+          <div class="loading-stage" id="stage-send"><span class="stage-icon">&#9679;</span> Sending to AI</div>
+          <div class="loading-stage" id="stage-analyze"><span class="stage-icon">&#9679;</span> Analyzing lifecycle</div>
+          <div class="loading-stage" id="stage-render"><span class="stage-icon">&#9679;</span> Rendering results</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================= -->
+    <!-- Results: lifecycle status, timeline, obligations, alerts        -->
+    <!-- ============================================================= -->
+    <section id="results-section" class="hidden" aria-labelledby="results-heading">
+      <div class="results-top-bar">
+        <h2 id="results-heading">Lifecycle Results</h2>
+        <button type="button" id="btn-new-analysis" class="btn-new-analysis">&larr; New Analysis</button>
+      </div>
+      <div class="results-layout">
+        <div class="results-main">
+          <div class="lifecycle-status-display" aria-live="polite">
+            <span class="lifecycle-status-badge" id="lifecycle-status" aria-label="Lifecycle status">--</span>
+          </div>
+          <div class="summary-card" id="summary-text" aria-label="Lifecycle summary"></div>
+
+          <h3 id="key-dates-heading">Key Dates Timeline</h3>
+          <div id="key-dates-timeline" class="lifecycle-timeline" role="list" aria-labelledby="key-dates-heading"></div>
+
+          <h3 id="obligations-heading">Obligations Tracker</h3>
+          <div id="obligations-tracker" class="obligation-tracker" role="list" aria-labelledby="obligations-heading"></div>
+
+          <h3 id="renewal-heading">Renewal Terms</h3>
+          <div id="renewal-alerts" class="renewal-alerts" role="region" aria-labelledby="renewal-heading"></div>
+
+          <h3 id="action-items-heading">Action Items</h3>
+          <div id="action-items-list" class="action-items-list" role="list" aria-labelledby="action-items-heading"></div>
+
+          <h3 id="financial-heading">Financial Summary</h3>
+          <div id="financial-summary" class="financial-summary" role="region" aria-labelledby="financial-heading"></div>
+        </div>
+        <aside class="results-sidebar">
+          <div class="input-card">
+            <div class="history-header">
+              <h3 class="input-card-title">Recent Analyses</h3>
+              <button type="button" id="btn-clear-results-history" class="btn-clear-history hidden" aria-label="Clear all recent analyses">Clear All</button>
+            </div>
+            <div id="results-history-list" class="history-list" role="list"></div>
+          </div>
+        </aside>
+      </div>
+    </section>
+  </main>
+
+  <script src="app.js" defer></script>
+</body>
+</html>

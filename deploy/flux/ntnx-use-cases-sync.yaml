@@ -1,0 +1,29 @@
+# Apply ONCE to bootstrap Flux for this app. After that, do not
+# `kubectl apply` the overlay by hand — change Git and let Flux reconcile.
+apiVersion: source.toolkit.fluxcd.io/v1
+kind: GitRepository
+metadata:
+  name: ucdemo-003-legal
+  namespace: ntnx-use-cases
+spec:
+  interval: 1m
+  url: https://github.com/script-repo/ucdemo-003-legal.git
+  ref:
+    branch: main
+---
+apiVersion: kustomize.toolkit.fluxcd.io/v1
+kind: Kustomization
+metadata:
+  name: ucdemo-003-legal
+  namespace: ntnx-use-cases
+spec:
+  interval: 1m
+  retryInterval: 30s
+  timeout: 3m
+  sourceRef:
+    kind: GitRepository
+    name: ucdemo-003-legal
+  path: ./deploy/gitops/ntnx-use-cases
+  prune: true
+  wait: true
+  targetNamespace: ntnx-use-cases

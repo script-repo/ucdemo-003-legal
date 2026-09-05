@@ -1,0 +1,32 @@
+# Legal Research (UC-02) — Progress Tracking
+
+## Build Tasks
+
+### Completed
+- [x] Task 1: Create index.html with header, landing layout, loading, results sections
+- [x] Task 2: Create architecture SVG diagram with all Nutanix components
+- [x] Task 3: Create styles.css with all layout and component styles
+- [x] Task 4: Create app.js with AI call, mock fallback, results rendering
+- [x] Task 5: Update portal app.js — set UC-02 live: true
+- [x] Task 6: Write detailed architecture description in index.html
+
+### In Progress
+
+### Remaining
+
+---
+
+## Summary
+UC-02 Legal Research build complete. All 6 tasks finished. Page includes:
+- Two-column landing (architecture diagram + description | research query + history)
+- Architecture SVG (~780x720) with AHV, NKP, NAI, Unified Storage, RAG pipeline
+- Research textarea, Research button (enabled at ≥10 chars), recent research history
+- Loading spinner, full-width results with authority cards, contrary authority, follow-up chips
+- IIFE-based app.js, proxy AI calls to /api/ai/chat/completions, mock fallback
+- "New Research" returns to landing; history updates after each query
+
+## Files Modified
+- `portal/use-cases/02-legal-research/index.html` — Created (header, layout, SVG, description, loading, results)
+- `portal/use-cases/02-legal-research/styles.css` — Created (UC-01 variables, layout, authority cards, feedback, follow-up chips)
+- `portal/use-cases/02-legal-research/app.js` — Created (IIFE, chat completions, mock data, rendering)
+- `portal/app.js` — Updated UC-02 entry: live: true

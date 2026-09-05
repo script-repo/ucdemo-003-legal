@@ -1,0 +1,22 @@
+# Dependencies and build
+node_modules/
+__pycache__/
+*.pyc
+.venv/
+venv/
+.env
+.env.local
+*.log
+
+# Local database
+local_summaries.db
+
+# IDE / OS
+.idea/
+.vscode/
+.DS_Store
+Thumbs.db
+
+# Cursor / agent
+.cursor/
+agent-tools/

@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Compliance Monitoring and Reporting — AI monitors organizational compliance status and generates assessment reports." />
+  <title>Compliance Monitoring — Legal AI Portal</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Roboto:wght@400;500;600&family=Roboto+Slab:wght@400&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <a href="#main" class="skip-link">Skip to main content</a>
+
+  <header class="page-header" role="banner">
+    <div class="header-inner">
+      <div class="header-left">
+        <a class="back-link" href="../../index.html" aria-label="Return to portal">&larr; Portal</a>
+        <a class="logo" href="../../index.html" aria-label="Legal AI Portal home">
+          <span class="logo-mark">Legal AI</span>
+        </a>
+      </div>
+      <h1 class="page-title">Compliance Monitoring</h1>
+    </div>
+  </header>
+
+  <main id="main" class="content-wrapper">
+    <div id="error-banner" class="error-banner hidden" role="alert" aria-live="assertive"></div>
+
+    <!-- ============================================================= -->
+    <!-- Landing: overview/journey/dataflow/arch (left) | form (right)  -->
+    <!-- ============================================================= -->
+    <section id="landing-section" class="landing-layout">
+
+      <!-- LEFT: Overview, user journey, data flow, architecture -->
+      <div class="landing-main">
+
+        <div class="use-case-overview">
+          <h2 class="section-heading">What This Does</h2>
+          <p>Compliance Monitoring uses AI to assess your organization's compliance status against regulatory frameworks such as GDPR, HIPAA, SOX, PCI-DSS, CCPA, and SEC requirements. You provide the organization or department, the framework to evaluate, the reporting period, and any known issues or recent changes. The AI generates a structured compliance assessment with a score, gap analysis, prioritized action items, and an overall risk summary.</p>
+          <p>Instead of manually tracking obligations and evidence across spreadsheets, the system delivers a clear, actionable report in seconds — identifying compliance gaps, their severity, and concrete recommendations to close them. Compliance officers, attorneys, and auditors can use the output to prepare for board reporting, prioritize remediation, and maintain audit readiness.</p>
+        </div>
+
+        <div class="user-journey">
+          <h2 class="section-heading">Example User Journey</h2>
+          <div class="journey-steps">
+            <div class="journey-step">
+              <span class="journey-step-number">1</span>
+              <div class="journey-step-content">
+                <strong>Complete the Form</strong>
+                <p>A compliance officer selects the organization or department, chooses the framework (e.g., GDPR), enters the reporting period, and describes any known issues or recent changes.</p>
+              </div>
+            </div>
+            <div class="journey-step">
+              <span class="journey-step-number">2</span>
+              <div class="journey-step-content">
+                <strong>AI Assesses</strong>
+                <p>The system sends the inputs to the Nutanix AI inference endpoint, which evaluates compliance against the selected framework and returns a structured assessment.</p>
+              </div>
+            </div>
+            <div class="journey-step">
+              <span class="journey-step-number">3</span>
+              <div class="journey-step-content">
+                <strong>Review Results</strong>
+                <p>A compliance score (1–100) and status (Compliant/Partial/Non-Compliant) appear. The gap analysis table shows each area, requirement, current state, severity, and recommendation. Action items list priorities, deadlines, and owners.</p>
+              </div>
+            </div>
+            <div class="journey-step">
+              <span class="journey-step-number">4</span>
+              <div class="journey-step-content">
+                <strong>Act on Recommendations</strong>
+                <p>The compliance team uses the action items and gap analysis to prioritize remediation, assign owners, and prepare evidence for the next audit or board report.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="data-flow-summary">
+          <h2 class="section-heading">Data Flow Summary</h2>
+          <ol>
+            <li>User completes the compliance form (organization, framework, period, known issues, recent changes) in the Portal UI.</li>
+            <li>The browser sends the form data to the API Proxy.</li>
+            <li>The API Proxy forwards the request (with authentication) to the NAI chat completions endpoint.</li>
+            <li>NAI assesses compliance and returns a structured JSON response with score, status, gaps, action items, and overall risk.</li>
+            <li>The Portal UI renders the results: compliance score badge, summary, gap analysis table, action item cards, and report summary.</li>
+            <li>Assessment metadata is saved to PostgreSQL for audit and history tracking.</li>
+          </ol>
+        </div>
+
+        <h2 class="section-heading">Architecture Overview</h2>
+
+        <div class="diagram-wrapper">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 780 720" class="arch-diagram" role="img" aria-label="Use case architecture diagram">
+            <defs>
+              <marker id="arrowBlue" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6" fill="#0184F7"/></marker>
+              <marker id="arrowGreen" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6" fill="#23A455"/></marker>
+              <marker id="arrowIndigo" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6" fill="#3949AB"/></marker>
+              <marker id="arrowOrange" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6" fill="#D84315"/></marker>
+              <marker id="arrowDkGreen" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6" fill="#2E7D32"/></marker>
+            </defs>
+
+            <rect x="10" y="10" width="760" height="700" rx="12" fill="#f0f4f8" stroke="#b0bec5" stroke-width="1.5" stroke-dasharray="6 3"/>
+            <text x="30" y="38" font-family="Roboto, sans-serif" font-size="13" font-weight="600" fill="#546e7a">Nutanix AHV Hypervisor</text>
+
+            <rect x="30" y="55" width="720" height="400" rx="10" fill="#e3f2fd" stroke="#1565c0" stroke-width="1.5"/>
+            <text x="50" y="80" font-family="Roboto, sans-serif" font-size="13" font-weight="700" fill="#1565c0">NKP — Nutanix Kubernetes Platform (ntnx-use-cases namespace)</text>
+
+            <rect x="55" y="100" width="200" height="80" rx="8" fill="#ffffff" stroke="#0184F7" stroke-width="2"/>
+            <text x="155" y="130" text-anchor="middle" font-family="Roboto, sans-serif" font-size="12" font-weight="600" fill="#015795">Portal UI</text>
+            <text x="155" y="148" text-anchor="middle" font-family="Montserrat, sans-serif" font-size="10" fill="#7a7a7a">Static HTML / CSS / JS</text>
+            <text x="155" y="165" text-anchor="middle" font-family="Montserrat, sans-serif" font-size="10" fill="#7a7a7a">Compliance Monitoring</text>
+
+            <rect x="290" y="100" width="200" height="80" rx="8" fill="#ffffff" stroke="#0184F7" stroke-width="2"/>
+            <text x="390" y="130" text-anchor="middle" font-family="Roboto, sans-serif" font-size="12" font-weight="600" fill="#015795">API Proxy</text>
+            <text x="390" y="148" text-anchor="middle" font-family="Montserrat, sans-serif" font-size="10" fill="#7a7a7a">CORS Proxy (server.py)</text>
+            <text x="390" y="165" text-anchor="middle" font-family="Montserrat, sans-serif" font-size="10" fill="#7a7a7a">Routes /api/ai/* → NAI</text>
+
+            <rect x="525" y="100" width="200" height="80" rx="8" fill="#ffffff" stroke="#0184F7" stroke-width="2"/>
+            <text x="625" y="130" text-anchor="middle" font-family="Roboto, sans-serif" font-size="12" font-weight="600" fill="#015795">Ingress / Service</text>
+            <text x="625" y="148" text-anchor="middle" font-family="Montserrat, sans-serif" font-size="10" fill="#7a7a7a">LoadBalancer / ClusterIP</text>
+            <text x="625" y="165" text-anchor="middle" font-family="Montserrat, sans-serif" font-size="10" fill="#7a7a7a">External Traffic Routing</text>
+
+            <rect x="55" y="220" width="200" height="100" rx="8" fill="#ffffff" stroke="#23A455" stroke-width="2"/>
+            <rect x="68" y="235" width="24" height="24" rx="4" fill="#23A455"/>
+            <text x="80" y="252" text-anchor="middle" font-family="Roboto, sans-serif" font-size="11" font-weight="700" fill="#fff">PG</text>
+            <text x="155" y="250" text-anchor="middle" font-family="Roboto, sans-serif" font-size="12" font-weight="600" fill="#015795">PostgreSQL 16 (pg-db)</text>
+            <text x="155" y="270" text-anchor="middle" font-family="Montserrat, sans-serif" font-size="10" fill="#7a7a7a">Assessment metadata, audit logs</text>
+            <text x="155" y="287" text-anchor="middle" font-family="Montserrat, sans-serif" font-size="10" fill="#7a7a7a">DB: legal_ai</text>
+            <rect x="75" y="298" width="160" height="16" rx="3" fill="#e8f5e9" stroke="#23A455" stroke-width="1"/>
+            <text x="155" y="310" text-anchor="middle" font-family="Montserrat, sans-serif" font-size="9" font-weight="600" fill="#23A455">PVC: Nutanix Volumes (20Gi)</text>
+
+            <rect x="525" y="220" width="200" height="100" rx="8" fill="#ffffff" stroke="#FF8F00" stroke-width="2"/>
+            <text x="625" y="250" text-anchor="middle" font-family="Roboto, sans-serif" font-size="12" font-weight="600" fill="#015795">Kubernetes Services</text>
+            <text x="625" y="270" text-anchor="middle" font-family="Montserrat, sans-serif" font-size="10" fill="#7a7a7a">pg-db:5432 (ClusterIP)</text>
+            <text x="625" y="287" text-anchor="middle" font-family="Montserrat, sans-serif" font-size="10" fill="#7a7a7a">portal:8080 (LoadBalancer)</text>
+
+            <line x1="255" y1="140" x2="290" y2="140" stroke="#0184F7" stroke-width="1.5" marker-end="url(#arrowBlue)"/>
+            <line x1="490" y1="140" x2="525" y2="140" stroke="#0184F7" stroke-width="1.5" marker-end="url(#arrowBlue)"/>
+            <line x1="155" y1="180" x2="155" y2="220" stroke="#23A455" stroke-width="1.5" marker-end="url(#arrowGreen)"/>
+
+            <rect x="525" y="355" width="200" height="36" rx="6" fill="#e8eaf6" stroke="#3949AB" stroke-width="1"/>
+            <text x="625" y="378" text-anchor="middle" font-family="Roboto, sans-serif" font-size="11" font-weight="600" fill="#1A237E">User / Browser (HTTPS)</text>
+
+            <line x1="625" y1="355" x2="625" y2="180" stroke="#3949AB" stroke-width="1.5" marker-end="url(#arrowIndigo)"/>
+            <line x1="390" y1="455" x2="390" y2="485" stroke="#D84315" stroke-width="2" marker-end="url(#arrowOrange)"/>
+            <text x="395" y="476" font-family="Montserrat, sans-serif" font-size="9" fill="#D84315">HTTPS API</text>
+
+            <rect x="30" y="490" width="470" height="200" rx="10" fill="#fbe9e7" stroke="#D84315" stroke-width="1.5"/>
+            <text x="50" y="515" font-family="Roboto, sans-serif" font-size="13" font-weight="700" fill="#BF360C">NAI — Nutanix AI Inference Service</text>
+
+            <rect x="55" y="530" width="200" height="65" rx="8" fill="#ffffff" stroke="#D84315" stroke-width="1.5"/>
+            <text x="155" y="555" text-anchor="middle" font-family="Roboto, sans-serif" font-size="12" font-weight="600" fill="#BF360C">Chat Completions</text>
+            <text x="155" y="573" text-anchor="middle" font-family="Montserrat, sans-serif" font-size="10" fill="#7a7a7a">Model: llama3-1-8b</text>
+            <text x="155" y="588" text-anchor="middle" font-family="Montserrat, sans-serif" font-size="9" fill="#7a7a7a">Compliance assessment</text>
+
+            <rect x="55" y="610" width="425" height="24" rx="4" fill="#ffccbc" stroke="#D84315" stroke-width="1"/>
+            <text x="268" y="626" text-anchor="middle" font-family="monospace" font-size="10" fill="#BF360C">https://nai.hpoc.nutanix.com:443/api/v1</text>
+
+            <rect x="530" y="490" width="220" height="200" rx="10" fill="#e8f5e9" stroke="#2E7D32" stroke-width="1.5"/>
+            <text x="640" y="515" text-anchor="middle" font-family="Roboto, sans-serif" font-size="13" font-weight="700" fill="#1B5E20">Nutanix Unified Storage</text>
+
+            <rect x="555" y="530" width="170" height="55" rx="8" fill="#ffffff" stroke="#2E7D32" stroke-width="1.5"/>
+            <text x="640" y="555" text-anchor="middle" font-family="Roboto, sans-serif" font-size="12" font-weight="600" fill="#1B5E20">LLM Model Repository</text>
+            <text x="640" y="572" text-anchor="middle" font-family="Montserrat, sans-serif" font-size="10" fill="#7a7a7a">Model weights &amp; configs</text>
+
+            <rect x="555" y="600" width="170" height="55" rx="8" fill="#ffffff" stroke="#2E7D32" stroke-width="1.5"/>
+            <text x="640" y="622" text-anchor="middle" font-family="Roboto, sans-serif" font-size="12" font-weight="600" fill="#1B5E20">Nutanix Volumes</text>
+            <text x="640" y="640" text-anchor="middle" font-family="Montserrat, sans-serif" font-size="10" fill="#7a7a7a">Persistent block storage</text>
+
+            <line x1="530" y1="557" x2="480" y2="557" stroke="#2E7D32" stroke-width="1.5" marker-end="url(#arrowDkGreen)"/>
+            <text x="505" y="550" font-family="Montserrat, sans-serif" font-size="8" fill="#2E7D32">serves</text>
+          </svg>
+        </div>
+
+        <div class="arch-description">
+          <h2 class="section-heading">How It Works</h2>
+          <p>The Portal UI collects compliance inputs via a form. The API Proxy forwards requests to the Nutanix AI chat completions endpoint. NAI assesses organizational compliance against the selected framework and returns a structured JSON with score, status, gaps, action items, and overall risk. Results are rendered in the UI and persisted to PostgreSQL for audit and history.</p>
+        </div>
+      </div>
+
+      <!-- RIGHT: Form + history -->
+      <aside class="landing-sidebar" id="input-panel">
+        <h2 class="section-heading">Run Compliance Assessment</h2>
+
+        <form id="compliance-form" class="compliance-form">
+          <div class="input-card">
+            <label for="org-input" class="form-label">Organization / Department</label>
+            <input type="text" id="org-input" class="form-input" placeholder="e.g., Legal, IT, Healthcare Division" aria-required="true" />
+          </div>
+
+          <div class="input-card">
+            <label for="framework-select" class="form-label">Compliance Framework</label>
+            <select id="framework-select" class="form-select" aria-required="true">
+              <option value="">Select framework</option>
+              <option value="GDPR">GDPR</option>
+              <option value="HIPAA">HIPAA</option>
+              <option value="SOX">SOX</option>
+              <option value="PCI-DSS">PCI-DSS</option>
+              <option value="CCPA">CCPA</option>
+              <option value="SEC">SEC</option>
+            </select>
+          </div>
+
+          <div class="input-card">
+            <label for="period-input" class="form-label">Reporting Period</label>
+            <input type="text" id="period-input" class="form-input" placeholder="e.g., Q1 2025, Jan–Mar 2025" aria-required="true" />
+          </div>
+
+          <div class="input-card">
+            <label for="known-issues" class="form-label">Known Issues</label>
+            <textarea id="known-issues" class="form-textarea" rows="4" placeholder="Describe any known compliance issues, audit findings, or open remediation items..."></textarea>
+          </div>
+
+          <div class="input-card">
+            <label for="recent-changes" class="form-label">Recent Changes</label>
+            <textarea id="recent-changes" class="form-textarea" rows="4" placeholder="Describe recent policy changes, system updates, or organizational changes that may affect compliance..."></textarea>
+          </div>
+
+          <button type="submit" id="btn-assess" class="btn-analyze">Run Assessment</button>
+        </form>
+
+        <div class="input-card history-card">
+          <div class="history-header">
+            <h3 class="input-card-title">Recent Assessments</h3>
+            <button type="button" id="btn-clear-history" class="btn-clear-history hidden" aria-label="Clear all recent assessments">Clear All</button>
+          </div>
+          <div id="history-list" class="history-list" role="list" aria-labelledby="history-heading"></div>
+        </div>
+      </aside>
+    </section>
+
+    <!-- ============================================================= -->
+    <!-- Loading state                                                  -->
+    <!-- ============================================================= -->
+    <section id="loading-section" class="loading-overlay hidden" aria-live="polite" aria-label="Assessment in progress">
+      <div class="loading-card">
+        <div class="loading-spinner"></div>
+        <p class="loading-status" id="loading-status">Preparing assessment&hellip;</p>
+        <div class="loading-stages">
+          <div class="loading-stage" id="stage-send"><span class="stage-icon">&#9679;</span> Sending to AI</div>
+          <div class="loading-stage" id="stage-analyze"><span class="stage-icon">&#9679;</span> Assessing compliance</div>
+          <div class="loading-stage" id="stage-render"><span class="stage-icon">&#9679;</span> Rendering results</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================= -->
+    <!-- Results (full width, replaces landing)                         -->
+    <!-- ============================================================= -->
+    <section id="results-section" class="hidden" aria-labelledby="results-heading">
+      <div class="results-top-bar">
+        <h2 id="results-heading">Compliance Assessment Results</h2>
+        <button type="button" id="btn-new-analysis" class="btn-new-analysis">&larr; New Assessment</button>
+      </div>
+      <div class="results-layout">
+        <div class="results-main">
+          <div class="compliance-score-display" aria-live="polite">
+            <span class="compliance-score-number" id="compliance-score" aria-label="Compliance score">--</span>
+            <span class="compliance-status-badge" id="compliance-status" aria-label="Compliance status">--</span>
+          </div>
+          <div class="summary-card" id="summary-text" aria-label="Assessment summary"></div>
+          <div class="summary-card" id="overall-risk-card" aria-label="Overall risk">
+            <h3 id="overall-risk-heading">Overall Risk</h3>
+            <p id="overall-risk-text"></p>
+          </div>
+          <h3 id="gap-heading">Gap Analysis</h3>
+          <div class="table-responsive">
+            <table class="gap-table" role="table" aria-labelledby="gap-heading">
+              <thead>
+                <tr>
+                  <th scope="col">Area</th>
+                  <th scope="col">Requirement</th>
+                  <th scope="col">Current State</th>
+                  <th scope="col">Severity</th>
+                  <th scope="col">Recommendation</th>
+                </tr>
+              </thead>
+              <tbody id="gap-tbody"></tbody>
+            </table>
+          </div>
+          <h3 id="action-items-heading">Action Items</h3>
+          <div id="action-items-list" class="action-items-list" role="list" aria-labelledby="action-items-heading"></div>
+        </div>
+        <aside class="results-sidebar">
+          <div class="input-card">
+            <div class="history-header">
+              <h3 class="input-card-title">Recent Assessments</h3>
+              <button type="button" id="btn-clear-results-history" class="btn-clear-history hidden" aria-label="Clear all recent assessments">Clear All</button>
+            </div>
+            <div id="results-history-list" class="history-list" role="list"></div>
+          </div>
+        </aside>
+      </div>
+    </section>
+  </main>
+
+  <script src="app.js" defer></script>
+</body>
+</html>

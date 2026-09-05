@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="E-Billing &amp; Compliance Review — Upload and review legal invoices for billing guideline compliance." />
+  <title>E-Billing &amp; Compliance Review — Legal AI Portal</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Roboto:wght@400;500;600&family=Roboto+Slab:wght@400&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mammoth/1.8.0/mammoth.browser.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/4.2.67/pdf.min.mjs" type="module"></script>
+</head>
+<body>
+  <a href="#main" class="skip-link">Skip to main content</a>
+
+  <header class="page-header" role="banner">
+    <div class="header-inner">
+      <div class="header-left">
+        <a class="back-link" href="../../index.html" aria-label="Return to portal">&larr; Portal</a>
+        <a class="logo" href="../../index.html" aria-label="Legal AI Portal home">
+          <span class="logo-mark">Legal AI</span>
+        </a>
+      </div>
+      <h1 class="page-title">E-Billing &amp; Compliance Review</h1>
+    </div>
+  </header>
+
+  <main id="main" class="content-wrapper">
+    <div id="error-banner" class="error-banner hidden" role="alert" aria-live="assertive"></div>
+
+    <!-- ============================================================= -->
+    <!-- Landing: diagram + description (left) | input panel (right)   -->
+    <!-- ============================================================= -->
+    <section id="landing-section" class="landing-layout">
+
+      <!-- LEFT: Overview, user journey, data flow, then architecture -->
+      <div class="landing-main">
+
+        <div class="use-case-overview">
+          <h2 class="section-heading">What This Does</h2>
+          <p>E-Billing &amp; Compliance Review uses AI to automatically review legal invoices and billing narratives for compliance with billing guidelines. Instead of manually checking every line item against firm policies, the system delivers a structured breakdown in seconds: an overall compliance score (1–100), a line-by-line analysis showing status and issues, and actionable recommendations for every flagged entry.</p>
+          <p>Upload an invoice (PDF, TXT, or DOCX) or paste invoice text directly. The AI flags non-compliant entries, block billing, vague descriptions, rate violations, and other guideline deviations — all presented in a clear, structured format that billing coordinators and legal ops can review and act on before submission.</p>
+        </div>
+
+        <div class="user-journey">
+          <h2 class="section-heading">Example User Journey</h2>
+          <div class="journey-steps">
+            <div class="journey-step">
+              <span class="journey-step-number">1</span>
+              <div class="journey-step-content">
+                <strong>Upload or Paste</strong>
+                <p>A billing coordinator receives an outside counsel invoice. She drags the PDF into the upload zone — or pastes the invoice text directly.</p>
+              </div>
+            </div>
+            <div class="journey-step">
+              <span class="journey-step-number">2</span>
+              <div class="journey-step-content">
+                <strong>AI Analyzes</strong>
+                <p>The system extracts the text, sends it to the Nutanix AI inference endpoint, and receives a structured compliance analysis in seconds.</p>
+              </div>
+            </div>
+            <div class="journey-step">
+              <span class="journey-step-number">3</span>
+              <div class="journey-step-content">
+                <strong>Review Results</strong>
+                <p>A compliance score of <strong>72 / Needs Review</strong> appears. The line-item table shows entries flagged for vague descriptions, block billing, or rate violations. Rejected items are clearly marked.</p>
+              </div>
+            </div>
+            <div class="journey-step">
+              <span class="journey-step-number">4</span>
+              <div class="journey-step-content">
+                <strong>Act on Recommendations</strong>
+                <p>For each flagged entry, the AI provides specific recommendations. The billing coordinator shares feedback with outside counsel — reducing rework and improving first-pass acceptance.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="data-flow-summary">
+          <h2 class="section-heading">Data Flow Summary</h2>
+          <ol>
+            <li>User uploads an invoice document (TXT, PDF, DOCX) or pastes invoice text via the Portal UI.</li>
+            <li>The browser extracts the text content and sends it to the API Proxy.</li>
+            <li>The API Proxy forwards the request (with authentication) to the NAI chat completions endpoint.</li>
+            <li>NAI analyzes the invoice and returns a structured JSON response with compliance scores, line items, and flags.</li>
+            <li>The Portal UI renders the results: compliance score badge, summary, line-item table, flagged items, and recommendations.</li>
+            <li>Invoice metadata is saved to PostgreSQL for audit and history tracking.</li>
+            <li>Invoice embeddings are stored in ChromaDB for future RAG-powered comparative analysis.</li>
+          </ol>
+        </div>
+
+        <h2 class="section-heading">Architecture Overview</h2>
+
+        <div class="diagram-wrapper">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 780 720" class="arch-diagram" role="img" aria-label="Use case architecture diagram">
+            <defs>
+              <marker id="arrowBlue" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6" fill="#0184F7"/></marker>
+              <marker id="arrowGreen" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6" fill="#23A455"/></marker>
+              <marker id="arrowPurple" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6" fill="#7B1FA2"/></marker>
+              <marker id="arrowIndigo" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6" fill="#3949AB"/></marker>
+              <marker id="arrowOrange" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6" fill="#D84315"/></marker>
+              <marker id="arrowDkGreen" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6" fill="#2E7D32"/></marker>
+            </defs>
+
+            <!-- AHV Hypervisor -->
+            <rect x="10" y="10" width="760" height="700" rx="12" fill="#f0f4f8" stroke="#b0bec5" stroke-width="1.5" stroke-dasharray="6 3"/>
+            <text x="30" y="38" font-family="Roboto, sans-serif" font-size="13" font-weight="600" fill="#546e7a">Nutanix AHV Hypervisor</text>
+
+            <!-- NKP region -->
+            <rect x="30" y="55" width="720" height="400" rx="10" fill="#e3f2fd" stroke="#1565c0" stroke-width="1.5"/>
+            <text x="50" y="80" font-family="Roboto, sans-serif" font-size="13" font-weight="700" fill="#1565c0">NKP — Nutanix Kubernetes Platform (ntnx-use-cases namespace)</text>
+
+            <!-- Frontend Pod -->
+            <rect x="55" y="100" width="200" height="80" rx="8" fill="#ffffff" stroke="#0184F7" stroke-width="2"/>
+            <text x="155" y="130" text-anchor="middle" font-family="Roboto, sans-serif" font-size="12" font-weight="600" fill="#015795">Portal UI</text>
+            <text x="155" y="148" text-anchor="middle" font-family="Montserrat, sans-serif" font-size="10" fill="#7a7a7a">Static HTML / CSS / JS</text>
+            <text x="155" y="165" text-anchor="middle" font-family="Montserrat, sans-serif" font-size="10" fill="#7a7a7a">E-Billing &amp; Compliance Review</text>
+
+            <!-- Backend Proxy Pod -->
+            <rect x="290" y="100" width="200" height="80" rx="8" fill="#ffffff" stroke="#0184F7" stroke-width="2"/>
+            <text x="390" y="130" text-anchor="middle" font-family="Roboto, sans-serif" font-size="12" font-weight="600" fill="#015795">API Proxy</text>
+            <text x="390" y="148" text-anchor="middle" font-family="Montserrat, sans-serif" font-size="10" fill="#7a7a7a">CORS Proxy (server.py)</text>
+            <text x="390" y="165" text-anchor="middle" font-family="Montserrat, sans-serif" font-size="10" fill="#7a7a7a">Routes /api/ai/* → NAI</text>
+
+            <!-- Ingress -->
+            <rect x="525" y="100" width="200" height="80" rx="8" fill="#ffffff" stroke="#0184F7" stroke-width="2"/>
+            <text x="625" y="130" text-anchor="middle" font-family="Roboto, sans-serif" font-size="12" font-weight="600" fill="#015795">Ingress / Service</text>
+            <text x="625" y="148" text-anchor="middle" font-family="Montserrat, sans-serif" font-size="10" fill="#7a7a7a">LoadBalancer / ClusterIP</text>
+            <text x="625" y="165" text-anchor="middle" font-family="Montserrat, sans-serif" font-size="10" fill="#7a7a7a">External Traffic Routing</text>
+
+            <!-- PostgreSQL Pod -->
+            <rect x="55" y="220" width="200" height="100" rx="8" fill="#ffffff" stroke="#23A455" stroke-width="2"/>
+            <rect x="68" y="235" width="24" height="24" rx="4" fill="#23A455"/>
+            <text x="80" y="252" text-anchor="middle" font-family="Roboto, sans-serif" font-size="11" font-weight="700" fill="#fff">PG</text>
+            <text x="155" y="250" text-anchor="middle" font-family="Roboto, sans-serif" font-size="12" font-weight="600" fill="#015795">PostgreSQL 16 (pg-db)</text>
+            <text x="155" y="270" text-anchor="middle" font-family="Montserrat, sans-serif" font-size="10" fill="#7a7a7a">Invoice metadata, audit logs</text>
+            <text x="155" y="287" text-anchor="middle" font-family="Montserrat, sans-serif" font-size="10" fill="#7a7a7a">DB: legal_ai</text>
+            <rect x="75" y="298" width="160" height="16" rx="3" fill="#e8f5e9" stroke="#23A455" stroke-width="1"/>
+            <text x="155" y="310" text-anchor="middle" font-family="Montserrat, sans-serif" font-size="9" font-weight="600" fill="#23A455">PVC: Nutanix Volumes (20Gi)</text>
+
+            <!-- ChromaDB Pod -->
+            <rect x="290" y="220" width="200" height="100" rx="8" fill="#ffffff" stroke="#7B1FA2" stroke-width="2"/>
+            <rect x="303" y="235" width="24" height="24" rx="4" fill="#7B1FA2"/>
+            <text x="315" y="252" text-anchor="middle" font-family="Roboto, sans-serif" font-size="10" font-weight="700" fill="#fff">VDB</text>
+            <text x="390" y="250" text-anchor="middle" font-family="Roboto, sans-serif" font-size="12" font-weight="600" fill="#015795">ChromaDB (ch-db)</text>
+            <text x="390" y="270" text-anchor="middle" font-family="Montserrat, sans-serif" font-size="10" fill="#7a7a7a">Invoice embeddings &amp;</text>
+            <text x="390" y="287" text-anchor="middle" font-family="Montserrat, sans-serif" font-size="10" fill="#7a7a7a">semantic search (RAG)</text>
+            <rect x="310" y="298" width="160" height="16" rx="3" fill="#f3e5f5" stroke="#7B1FA2" stroke-width="1"/>
+            <text x="390" y="310" text-anchor="middle" font-family="Montserrat, sans-serif" font-size="9" font-weight="600" fill="#7B1FA2">PVC: Nutanix Volumes (20Gi)</text>
+
+            <!-- K8s Services info -->
+            <rect x="525" y="220" width="200" height="100" rx="8" fill="#ffffff" stroke="#FF8F00" stroke-width="2"/>
+            <text x="625" y="250" text-anchor="middle" font-family="Roboto, sans-serif" font-size="12" font-weight="600" fill="#015795">Kubernetes Services</text>
+            <text x="625" y="270" text-anchor="middle" font-family="Montserrat, sans-serif" font-size="10" fill="#7a7a7a">pg-db:5432 (ClusterIP)</text>
+            <text x="625" y="287" text-anchor="middle" font-family="Montserrat, sans-serif" font-size="10" fill="#7a7a7a">ch-db:8000 (ClusterIP)</text>
+            <text x="625" y="304" text-anchor="middle" font-family="Montserrat, sans-serif" font-size="10" fill="#7a7a7a">portal:8080 (LoadBalancer)</text>
+
+            <!-- Data flow arrows inside NKP -->
+            <line x1="255" y1="140" x2="290" y2="140" stroke="#0184F7" stroke-width="1.5" marker-end="url(#arrowBlue)"/>
+            <line x1="490" y1="140" x2="525" y2="140" stroke="#0184F7" stroke-width="1.5" marker-end="url(#arrowBlue)"/>
+            <line x1="155" y1="180" x2="155" y2="220" stroke="#23A455" stroke-width="1.5" marker-end="url(#arrowGreen)"/>
+            <line x1="390" y1="180" x2="390" y2="220" stroke="#7B1FA2" stroke-width="1.5" marker-end="url(#arrowPurple)"/>
+
+            <!-- RAG pipeline label -->
+            <rect x="55" y="350" width="435" height="42" rx="6" fill="#fff3e0" stroke="#FF8F00" stroke-width="1"/>
+            <text x="272" y="368" text-anchor="middle" font-family="Roboto, sans-serif" font-size="10" font-weight="600" fill="#E65100">RAG Pipeline: Query → Embed (NAI) → Vector Search</text>
+            <text x="272" y="383" text-anchor="middle" font-family="Roboto, sans-serif" font-size="10" font-weight="600" fill="#E65100">(ChromaDB) → Context Assembly → LLM (NAI) → Analysis</text>
+
+            <!-- User box -->
+            <rect x="525" y="355" width="200" height="36" rx="6" fill="#e8eaf6" stroke="#3949AB" stroke-width="1"/>
+            <text x="625" y="378" text-anchor="middle" font-family="Roboto, sans-serif" font-size="11" font-weight="600" fill="#1A237E">User / Browser (HTTPS)</text>
+
+            <line x1="625" y1="355" x2="625" y2="180" stroke="#3949AB" stroke-width="1.5" marker-end="url(#arrowIndigo)"/>
+            <line x1="390" y1="455" x2="390" y2="485" stroke="#D84315" stroke-width="2" marker-end="url(#arrowOrange)"/>
+            <text x="395" y="476" font-family="Montserrat, sans-serif" font-size="9" fill="#D84315">HTTPS API</text>
+
+            <!-- NAI Region -->
+            <rect x="30" y="490" width="470" height="200" rx="10" fill="#fbe9e7" stroke="#D84315" stroke-width="1.5"/>
+            <text x="50" y="515" font-family="Roboto, sans-serif" font-size="13" font-weight="700" fill="#BF360C">NAI — Nutanix AI Inference Service</text>
+
+            <rect x="55" y="530" width="200" height="65" rx="8" fill="#ffffff" stroke="#D84315" stroke-width="1.5"/>
+            <text x="155" y="555" text-anchor="middle" font-family="Roboto, sans-serif" font-size="12" font-weight="600" fill="#BF360C">Chat Completions</text>
+            <text x="155" y="573" text-anchor="middle" font-family="Montserrat, sans-serif" font-size="10" fill="#7a7a7a">Model: llama3-1-8b</text>
+            <text x="155" y="588" text-anchor="middle" font-family="Montserrat, sans-serif" font-size="9" fill="#7a7a7a">Invoice compliance analysis</text>
+
+            <rect x="280" y="530" width="200" height="65" rx="8" fill="#ffffff" stroke="#D84315" stroke-width="1.5"/>
+            <text x="380" y="555" text-anchor="middle" font-family="Roboto, sans-serif" font-size="12" font-weight="600" fill="#BF360C">Embeddings</text>
+            <text x="380" y="573" text-anchor="middle" font-family="Montserrat, sans-serif" font-size="10" fill="#7a7a7a">Model: llama-3-2-embed</text>
+            <text x="380" y="588" text-anchor="middle" font-family="Montserrat, sans-serif" font-size="9" fill="#7a7a7a">Invoice vectorization for RAG</text>
+
+            <rect x="55" y="610" width="425" height="24" rx="4" fill="#ffccbc" stroke="#D84315" stroke-width="1"/>
+            <text x="268" y="626" text-anchor="middle" font-family="monospace" font-size="10" fill="#BF360C">https://nai.hpoc.nutanix.com:443/api/v1</text>
+
+            <line x1="255" y1="562" x2="280" y2="562" stroke="#D84315" stroke-width="1" stroke-dasharray="4 2"/>
+
+            <!-- Nutanix Unified Storage -->
+            <rect x="530" y="490" width="220" height="200" rx="10" fill="#e8f5e9" stroke="#2E7D32" stroke-width="1.5"/>
+            <text x="640" y="515" text-anchor="middle" font-family="Roboto, sans-serif" font-size="13" font-weight="700" fill="#1B5E20">Nutanix Unified Storage</text>
+
+            <rect x="555" y="530" width="170" height="55" rx="8" fill="#ffffff" stroke="#2E7D32" stroke-width="1.5"/>
+            <text x="640" y="555" text-anchor="middle" font-family="Roboto, sans-serif" font-size="12" font-weight="600" fill="#1B5E20">LLM Model Repository</text>
+            <text x="640" y="572" text-anchor="middle" font-family="Montserrat, sans-serif" font-size="10" fill="#7a7a7a">Model weights &amp; configs</text>
+
+            <rect x="555" y="600" width="170" height="55" rx="8" fill="#ffffff" stroke="#2E7D32" stroke-width="1.5"/>
+            <text x="640" y="622" text-anchor="middle" font-family="Roboto, sans-serif" font-size="12" font-weight="600" fill="#1B5E20">Nutanix Volumes</text>
+            <text x="640" y="640" text-anchor="middle" font-family="Montserrat, sans-serif" font-size="10" fill="#7a7a7a">Persistent block storage</text>
+
+            <line x1="530" y1="557" x2="480" y2="557" stroke="#2E7D32" stroke-width="1.5" marker-end="url(#arrowDkGreen)"/>
+            <text x="505" y="550" font-family="Montserrat, sans-serif" font-size="8" fill="#2E7D32">serves</text>
+            <line x1="640" y1="490" x2="640" y2="420" stroke="#2E7D32" stroke-width="1.5" stroke-dasharray="5 3" marker-end="url(#arrowDkGreen)"/>
+            <text x="660" y="460" font-family="Montserrat, sans-serif" font-size="8" fill="#2E7D32">PVCs</text>
+          </svg>
+        </div>
+
+        <div class="arch-description">
+          <h2 class="section-heading">How It Works</h2>
+
+          <h3>Platform Infrastructure</h3>
+          <p>The entire solution runs on <strong>Nutanix AHV</strong>, a secure enterprise-grade hypervisor that provides the virtualization layer for all compute, storage, and networking. On top of AHV, <strong>NKP (Nutanix Kubernetes Platform)</strong> provisions and manages the Kubernetes environment, providing container orchestration, auto-scaling, service discovery, and lifecycle management for all application workloads.</p>
+
+          <h3>Kubernetes Workloads (ntnx-use-cases namespace)</h3>
+          <p>All use-case components are deployed as pods within the <code>ntnx-use-cases</code> Kubernetes namespace:</p>
+          <ul>
+            <li><strong>Portal UI</strong> — A lightweight static front-end (HTML, CSS, JavaScript) that provides the invoice upload interface, architecture visualization, and compliance results display. Served by a Python-based development server that also acts as the API proxy.</li>
+            <li><strong>API Proxy (server.py)</strong> — A server-side CORS proxy that routes browser requests to the Nutanix AI endpoints. Because the NAI inference service does not return browser CORS headers, all <code>/api/ai/*</code> requests are forwarded server-side with the bearer token injected, eliminating cross-origin restrictions.</li>
+            <li><strong>PostgreSQL 16 (pg-db)</strong> — A relational database that stores invoice metadata, compliance results, audit logs, and user activity. Exposed internally via ClusterIP on port 5432. Data is persisted on a <strong>Nutanix Volumes</strong> PVC (20 GiB) to ensure durability across pod restarts and rescheduling.</li>
+            <li><strong>ChromaDB (ch-db)</strong> — An open-source vector database used as the RAG (Retrieval-Augmented Generation) store for invoice embeddings. Invoice line items are vectorized using the NAI embedding model and stored in ChromaDB for fast similarity search. Exposed internally via ClusterIP on port 8000 with its own <strong>Nutanix Volumes</strong> PVC (20 GiB).</li>
+            <li><strong>Ingress / LoadBalancer Service</strong> — External traffic is routed into the cluster via a Kubernetes LoadBalancer service, providing a stable IP address for browser access without requiring DNS configuration.</li>
+          </ul>
+
+          <h3>AI &amp; Inference (Nutanix AI — NAI)</h3>
+          <p><strong>Nutanix AI (NAI)</strong> provides the enterprise inference endpoints that power the invoice compliance analysis:</p>
+          <ul>
+            <li><strong>Chat Completions (llama3-1-8b)</strong> — The primary LLM endpoint. When an invoice is uploaded, the full text is sent along with a structured system prompt that instructs the model to return a JSON object containing the compliance score, compliance level, line-by-line analysis, flagged items, and recommendations. The model performs legal billing reasoning to identify non-compliant entries, block billing, vague descriptions, rate violations, and generate actionable recommendations.</li>
+            <li><strong>Embeddings (llama-3-2-embed)</strong> — The embedding model vectorizes invoice line items and user queries into high-dimensional vectors. These vectors are stored in ChromaDB and used for semantic search—enabling the RAG pipeline to retrieve relevant billing guideline examples when performing comparative analysis.</li>
+          </ul>
+
+          <h3>RAG Pipeline</h3>
+          <p>The Retrieval-Augmented Generation pipeline works as follows:</p>
+          <ol>
+            <li><strong>Query Embedding</strong> — The user's invoice text is sent to the NAI embedding endpoint (llama-3-2-embed), which returns a vector representation.</li>
+            <li><strong>Vector Search</strong> — The embedding vector is queried against ChromaDB to find the most semantically similar billing entries from the firm's guideline library.</li>
+            <li><strong>Context Assembly</strong> — Retrieved entries and their metadata are assembled as context for the LLM.</li>
+            <li><strong>LLM Analysis</strong> — The invoice text, retrieved context, and system prompt are sent to the NAI chat completions endpoint (llama3-1-8b), which produces the final compliance analysis with scoring, line-item classification, and flag recommendations.</li>
+          </ol>
+
+          <h3>Storage Layer</h3>
+          <ul>
+            <li><strong>Nutanix Unified Storage</strong> — Serves as the model repository for NAI, hosting the LLM weights, tokenizer configurations, and model artifacts for both the chat completions model (llama3-1-8b) and the embedding model (llama-3-2-embed). This ensures model data resides on-prem with enterprise-grade data protection, deduplication, and replication.</li>
+            <li><strong>Nutanix Volumes</strong> — Provides persistent block storage for the Kubernetes PVCs backing PostgreSQL and ChromaDB. Volumes ensures data durability, snapshots, and consistent performance for database workloads running as containerized pods on NKP.</li>
+          </ul>
+
+        </div>
+      </div>
+
+      <!-- RIGHT: Input panel (upload + paste) -->
+      <aside class="landing-sidebar" id="input-panel">
+        <h2 class="section-heading">Review an Invoice</h2>
+
+        <div class="input-card">
+          <h3 class="input-card-title">Upload a Document</h3>
+          <input type="file" id="file-input" accept=".txt,.pdf,.docx" class="visually-hidden" aria-label="Select invoice file" />
+          <div class="upload-zone" id="upload-zone" role="button" tabindex="0" aria-label="Upload invoice file">
+            <div class="upload-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                <path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/>
+                <polyline points="14 2 14 8 20 8"/>
+                <polyline points="12 11 12 17"/>
+                <polyline points="9 14 12 11 15 14"/>
+              </svg>
+            </div>
+            <p class="upload-label">Drag &amp; drop, or <span class="upload-browse">browse files</span></p>
+            <p class="upload-hint">TXT, PDF, DOCX</p>
+          </div>
+        </div>
+
+        <div class="input-divider">
+          <span class="input-divider-text">OR</span>
+        </div>
+
+        <div class="input-card">
+          <h3 class="input-card-title">Paste Invoice Text</h3>
+          <textarea id="paste-input" class="paste-textarea" rows="10" placeholder="Paste invoice text here for compliance review..."></textarea>
+        </div>
+
+        <button type="button" id="btn-analyze" class="btn-analyze" disabled>Review Invoice</button>
+
+        <div class="input-card history-card">
+          <div class="history-header">
+            <h3 class="input-card-title">Recent Reviews</h3>
+            <button type="button" id="btn-clear-history" class="btn-clear-history hidden" aria-label="Clear all recent reviews">Clear All</button>
+          </div>
+          <div id="history-list" class="history-list" role="list" aria-labelledby="history-heading"></div>
+        </div>
+      </aside>
+    </section>
+
+    <!-- ============================================================= -->
+    <!-- Loading state                                                  -->
+    <!-- ============================================================= -->
+    <section id="loading-section" class="loading-overlay hidden" aria-live="polite" aria-label="Review in progress">
+      <div class="loading-card">
+        <div class="loading-spinner"></div>
+        <p class="loading-status" id="loading-status">Preparing document&hellip;</p>
+        <div class="loading-stages">
+          <div class="loading-stage" id="stage-extract"><span class="stage-icon">&#9679;</span> Extracting</div>
+          <div class="loading-stage" id="stage-send"><span class="stage-icon">&#9679;</span> Analyzing entries</div>
+          <div class="loading-stage" id="stage-analyze"><span class="stage-icon">&#9679;</span> Checking compliance</div>
+          <div class="loading-stage" id="stage-render"><span class="stage-icon">&#9679;</span> Rendering</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================= -->
+    <!-- Results (full width, replaces landing)                         -->
+    <!-- ============================================================= -->
+    <section id="results-section" class="hidden" aria-labelledby="results-heading">
+      <div class="results-top-bar">
+        <h2 id="results-heading">Compliance Review Results</h2>
+        <button type="button" id="btn-new-analysis" class="btn-new-analysis">&larr; New Review</button>
+      </div>
+      <div class="results-layout">
+        <div class="results-main">
+          <div class="risk-score-display" aria-live="polite">
+            <span class="risk-score-number" id="risk-score" aria-label="Compliance score">--</span>
+            <span class="risk-badge" id="risk-level" aria-label="Compliance level">--</span>
+          </div>
+          <div class="summary-card" id="summary-text" aria-label="Invoice summary"></div>
+          <h3 id="line-items-heading">Line Items</h3>
+          <div class="table-responsive">
+            <table class="clause-table" role="table" aria-labelledby="line-items-heading">
+              <thead>
+                <tr>
+                  <th scope="col">Entry</th>
+                  <th scope="col">Hours</th>
+                  <th scope="col">Rate</th>
+                  <th scope="col">Amount</th>
+                  <th scope="col">Status</th>
+                  <th scope="col">Issue</th>
+                </tr>
+              </thead>
+              <tbody id="line-items-tbody"></tbody>
+            </table>
+          </div>
+          <h3 id="flags-heading">Flagged Items</h3>
+          <div id="flags-list" class="deviation-list" role="list" aria-labelledby="flags-heading"></div>
+        </div>
+        <aside class="results-sidebar">
+          <div class="input-card">
+            <div class="history-header">
+              <h3 class="input-card-title">Recent Reviews</h3>
+              <button type="button" id="btn-clear-results-history" class="btn-clear-history hidden" aria-label="Clear all recent reviews">Clear All</button>
+            </div>
+            <div id="results-history-list" class="history-list" role="list"></div>
+          </div>
+        </aside>
+      </div>
+    </section>
+  </main>
+
+  <script src="app.js" defer></script>
+</body>
+</html>

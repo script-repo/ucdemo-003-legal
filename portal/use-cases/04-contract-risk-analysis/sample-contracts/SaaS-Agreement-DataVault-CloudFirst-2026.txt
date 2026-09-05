@@ -1,0 +1,155 @@
+SAAS SUBSCRIPTION AGREEMENT
+
+This SaaS Subscription Agreement ("Agreement") is entered into as of February 1, 2026 ("Effective Date"), by and between:
+
+DATAVAULT TECHNOLOGIES, INC., a California corporation with its principal office at 500 Technology Drive, Suite 300, San Jose, CA 95110 ("Provider"),
+
+and
+
+CLOUDFIRST FINANCIAL SERVICES, LLC, a New York limited liability company with its principal office at 200 Park Avenue, 15th Floor, New York, NY 10166 ("Customer").
+
+Collectively referred to as the "Parties" and individually as a "Party."
+
+========================================================================
+
+ARTICLE 1 — DEFINITIONS
+
+1.1 "Authorized Users" means employees, contractors, and agents of Customer who are authorized to access and use the Service under this Agreement.
+
+1.2 "Customer Data" means all electronic data, information, and content uploaded, stored, or processed by Customer or its Authorized Users through the Service, including but not limited to personally identifiable information ("PII"), financial records, trade secrets, and confidential business information.
+
+1.3 "Documentation" means the user guides, technical manuals, and online help materials provided by Provider relating to the Service.
+
+1.4 "Service" means Provider's cloud-based data analytics and storage platform known as "DataVault Enterprise," including all updates, patches, and enhancements made generally available by Provider during the Term.
+
+1.5 "Service Level Agreement" or "SLA" means the service level commitments set forth in Exhibit A.
+
+1.6 "Subscription Term" means the period during which Customer has the right to access and use the Service, as specified in the applicable Order Form.
+
+ARTICLE 2 — SUBSCRIPTION AND ACCESS
+
+2.1 Grant of Access. Subject to the terms and conditions of this Agreement, Provider grants Customer a non-exclusive, non-transferable, non-sublicensable right to access and use the Service during the Subscription Term solely for Customer's internal business purposes.
+
+2.2 Authorized Users. Customer may permit up to the number of Authorized Users specified in the applicable Order Form to access the Service. Customer shall ensure that each Authorized User complies with the terms of this Agreement.
+
+2.3 Usage Restrictions. Customer shall not: (a) sublicense, sell, resell, or distribute the Service; (b) modify, reverse engineer, decompile, or disassemble the Service; (c) use the Service to develop a competing product; or (d) exceed the usage limits specified in the Order Form.
+
+ARTICLE 3 — FEES AND PAYMENT
+
+3.1 Subscription Fees. Customer shall pay the subscription fees set forth in the applicable Order Form ("Fees"). All Fees are non-refundable and non-cancellable once an Order Form is executed.
+
+3.2 Payment Terms. Invoices are due and payable within sixty (60) days of the invoice date. Provider reserves the right to charge interest on overdue amounts at the rate of 2.5% per month (30% per annum) or the maximum rate permitted by law, whichever is less.
+
+3.3 Price Increases. Provider may increase Fees upon renewal by providing written notice at least thirty (30) days prior to the renewal date. Fee increases shall not exceed 25% over the prior Subscription Term's Fees.
+
+3.4 Taxes. All Fees are exclusive of taxes. Customer is responsible for all applicable taxes, levies, and duties.
+
+3.5 Suspension for Non-Payment. If Customer fails to pay any undisputed amount within fifteen (15) days after written notice from Provider, Provider may suspend Customer's access to the Service without liability until payment is received. Provider shall have no obligation to preserve Customer Data during any suspension period.
+
+ARTICLE 4 — CUSTOMER DATA
+
+4.1 Ownership. As between the Parties, Customer retains all right, title, and interest in and to Customer Data. Provider acquires no rights in Customer Data except as expressly set forth in this Agreement.
+
+4.2 License to Customer Data. Customer grants Provider a worldwide, royalty-free, fully transferable license to use, reproduce, modify, display, distribute, and create derivative works from Customer Data for the purposes of (a) providing the Service, (b) improving and developing Provider's products and services, (c) generating aggregated, anonymized analytics and benchmarking data, and (d) training machine learning models. Provider may retain and use aggregated, de-identified data derived from Customer Data in perpetuity, even after termination of this Agreement.
+
+4.3 Data Location. Provider may store and process Customer Data in any geographic region where Provider or its subprocessors maintain facilities, including but not limited to the United States, European Union, India, and Singapore. Provider shall use commercially reasonable efforts to notify Customer of any material changes in data processing locations.
+
+4.4 Data Security. Provider shall implement and maintain commercially reasonable administrative, technical, and physical safeguards to protect Customer Data. Provider does not warrant that the Service will be entirely free from security vulnerabilities or that unauthorized access to Customer Data will not occur.
+
+4.5 Data Breach Notification. In the event of a confirmed data breach affecting Customer Data, Provider shall notify Customer within seventy-two (72) hours of confirming the breach. Provider's notification obligation is limited to breaches that Provider actually discovers; Provider shall have no obligation to actively monitor for breaches affecting Customer Data.
+
+4.6 Data Retention and Deletion. Upon termination or expiration of this Agreement, Provider shall make Customer Data available for export for a period of fifteen (15) calendar days. After this period, Provider may delete all Customer Data without further obligation. Provider makes no guarantee regarding the recoverability of Customer Data after the export period.
+
+ARTICLE 5 — INTELLECTUAL PROPERTY
+
+5.1 Provider IP. Provider retains all right, title, and interest in and to the Service, Documentation, and any improvements, modifications, or derivative works thereof, including any works derived from or incorporating Customer Data or Customer feedback.
+
+5.2 Feedback. Any suggestions, ideas, enhancement requests, feedback, or recommendations provided by Customer regarding the Service ("Feedback") shall be the exclusive property of Provider. Customer hereby irrevocably assigns to Provider all right, title, and interest in any Feedback.
+
+5.3 Non-Assert. Customer agrees not to assert any intellectual property rights against Provider or its licensees with respect to any aspect of the Service that incorporates or was derived from Customer Data or Feedback.
+
+ARTICLE 6 — WARRANTIES AND DISCLAIMERS
+
+6.1 Provider Warranty. Provider warrants that the Service will perform substantially in accordance with the Documentation during the Subscription Term.
+
+6.2 WARRANTY DISCLAIMER. EXCEPT AS EXPRESSLY SET FORTH IN SECTION 6.1, THE SERVICE IS PROVIDED "AS IS" AND "AS AVAILABLE." PROVIDER MAKES NO WARRANTIES OF ANY KIND, WHETHER EXPRESS, IMPLIED, STATUTORY, OR OTHERWISE, INCLUDING BUT NOT LIMITED TO WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, TITLE, NON-INFRINGEMENT, ACCURACY, RELIABILITY, OR UNINTERRUPTED ACCESS. PROVIDER DOES NOT WARRANT THAT THE SERVICE WILL MEET CUSTOMER'S REQUIREMENTS OR THAT THE OPERATION OF THE SERVICE WILL BE ERROR-FREE.
+
+ARTICLE 7 — LIMITATION OF LIABILITY
+
+7.1 Cap on Liability. TO THE MAXIMUM EXTENT PERMITTED BY APPLICABLE LAW, PROVIDER'S TOTAL AGGREGATE LIABILITY ARISING OUT OF OR RELATED TO THIS AGREEMENT, WHETHER IN CONTRACT, TORT, OR OTHERWISE, SHALL NOT EXCEED THE FEES PAID BY CUSTOMER DURING THE THREE (3) MONTH PERIOD IMMEDIATELY PRECEDING THE EVENT GIVING RISE TO THE CLAIM.
+
+7.2 Exclusion of Damages. IN NO EVENT SHALL PROVIDER BE LIABLE FOR ANY INDIRECT, INCIDENTAL, SPECIAL, CONSEQUENTIAL, OR PUNITIVE DAMAGES, INCLUDING BUT NOT LIMITED TO LOSS OF PROFITS, LOSS OF DATA, BUSINESS INTERRUPTION, LOSS OF GOODWILL, OR COST OF PROCUREMENT OF SUBSTITUTE SERVICES, REGARDLESS OF THE CAUSE OF ACTION OR THE THEORY OF LIABILITY, EVEN IF PROVIDER HAS BEEN ADVISED OF THE POSSIBILITY OF SUCH DAMAGES.
+
+7.3 No Carve-Outs. The limitations in Sections 7.1 and 7.2 apply to all claims, including claims arising from Provider's gross negligence, willful misconduct, confidentiality breaches, data breaches, and intellectual property infringement.
+
+7.4 Customer Liability. Customer's liability under this Agreement is unlimited and includes liability for any and all claims arising from Customer's use of the Service, Customer Data, Authorized User actions, and any third-party claims related to Customer's activities.
+
+ARTICLE 8 — INDEMNIFICATION
+
+8.1 Provider Indemnification. Provider shall defend Customer against third-party claims alleging that the Service infringes a valid United States patent or copyright. Provider's indemnification obligation is conditioned upon Customer providing prompt written notice within five (5) business days of the claim, granting Provider sole control of the defense, and not making any admission or settlement without Provider's prior written consent.
+
+8.2 Customer Indemnification. Customer shall defend, indemnify, and hold harmless Provider, its affiliates, officers, directors, employees, and agents from and against any and all claims, damages, losses, liabilities, costs, and expenses (including reasonable attorneys' fees and consequential damages) arising from or related to: (a) Customer Data; (b) Customer's use of the Service; (c) any breach of this Agreement by Customer; (d) any third-party claim related to Customer's business operations; and (e) any regulatory investigation or enforcement action related to Customer Data.
+
+ARTICLE 9 — TERM AND TERMINATION
+
+9.1 Initial Term. The initial Subscription Term shall be three (3) years from the Effective Date.
+
+9.2 Auto-Renewal. This Agreement shall automatically renew for successive one (1) year periods unless either Party provides written notice of non-renewal at least ninety (90) days prior to the end of the then-current term.
+
+9.3 Termination for Cause. Either Party may terminate this Agreement upon written notice if the other Party materially breaches this Agreement and fails to cure such breach within ten (10) business days after receipt of written notice.
+
+9.4 Provider Termination for Convenience. Provider may terminate this Agreement at any time upon sixty (60) days' written notice. In the event of termination for convenience by Provider, Provider shall refund a pro-rata portion of prepaid Fees.
+
+9.5 Customer Termination. Customer may not terminate this Agreement for convenience during the Initial Term. Early termination by Customer for any reason other than Provider's uncured material breach shall require payment of all remaining Fees due through the end of the then-current term as a termination fee.
+
+9.6 Effect of Termination. Upon termination, all rights granted to Customer shall immediately cease. Sections 3 (to the extent of unpaid Fees), 4.2, 5, 6.2, 7, 8.2, 10, and 11 shall survive termination.
+
+ARTICLE 10 — CONFIDENTIALITY
+
+10.1 Definition. "Confidential Information" means any information disclosed by one Party to the other that is designated as confidential or that a reasonable person would understand to be confidential.
+
+10.2 Exclusions. Provider's pricing, product roadmap, technology architecture, and customer lists shall be deemed Provider's Confidential Information regardless of marking. Customer Data shall not be deemed Confidential Information for purposes of this Article 10.
+
+10.3 Non-Disclosure. Each Party agrees not to disclose the other Party's Confidential Information to third parties, except that Provider may disclose Customer's Confidential Information to its subprocessors, affiliates, and service providers without Customer's consent.
+
+ARTICLE 11 — GOVERNING LAW AND DISPUTE RESOLUTION
+
+11.1 Governing Law. This Agreement shall be governed by and construed in accordance with the laws of the State of Delaware, without regard to its conflict of laws principles.
+
+11.2 Exclusive Jurisdiction. Any disputes arising under this Agreement shall be subject to the exclusive jurisdiction of the state and federal courts located in Wilmington, Delaware. Customer irrevocably waives any objection to such venue.
+
+11.3 Jury Waiver. EACH PARTY HEREBY IRREVOCABLY WAIVES THE RIGHT TO A TRIAL BY JURY IN ANY ACTION ARISING OUT OF OR RELATED TO THIS AGREEMENT.
+
+11.4 Attorneys' Fees. In any action to enforce this Agreement, the prevailing Party shall be entitled to recover its reasonable attorneys' fees and costs.
+
+ARTICLE 12 — GENERAL PROVISIONS
+
+12.1 Force Majeure. Provider shall not be liable for any delay or failure to perform due to causes beyond its reasonable control, including but not limited to natural disasters, pandemics, government actions, power outages, internet disruptions, cyberattacks, and labor disputes. Customer shall not be excused from payment obligations due to force majeure.
+
+12.2 Assignment. Customer may not assign this Agreement without Provider's prior written consent. Provider may freely assign this Agreement to any affiliate or in connection with a merger, acquisition, or sale of all or substantially all of its assets.
+
+12.3 Entire Agreement. This Agreement, together with all Order Forms and Exhibits, constitutes the entire agreement between the Parties and supersedes all prior agreements, whether written or oral.
+
+12.4 Amendments. This Agreement may only be amended by Provider through posting updated terms to its website. Continued use of the Service after posting constitutes acceptance of the amended terms.
+
+12.5 Severability. If any provision of this Agreement is held invalid, the remaining provisions shall remain in full force and effect.
+
+12.6 Notices. All notices to Provider shall be sent to legal@datavaulttech.com. Provider may deliver notices to Customer via email to Customer's registered account email address.
+
+========================================================================
+
+IN WITNESS WHEREOF, the Parties have executed this Agreement as of the Effective Date.
+
+DATAVAULT TECHNOLOGIES, INC.
+
+By: _______________________________
+Name: Richard K. Hayward
+Title: Vice President, Legal Affairs
+Date: February 1, 2026
+
+CLOUDFIRST FINANCIAL SERVICES, LLC
+
+By: _______________________________
+Name: Angela M. Torres
+Title: General Counsel
+Date: February 1, 2026

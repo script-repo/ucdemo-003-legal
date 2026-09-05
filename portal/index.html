@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Legal AI Portal — Generative and agentic AI tools for the law firm." />
+  <title>Legal AI Portal</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Roboto:wght@400;500;600&family=Roboto+Slab:wght@400&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <a href="#main" class="skip-link">Skip to main content</a>
+
+  <header class="header" role="banner">
+    <div class="header-inner">
+      <a href="/" class="logo" aria-label="Legal AI Portal home">
+        <span class="logo-mark">Legal AI</span>
+      </a>
+      <button type="button" class="nav-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="offcanvas-nav">
+        <span class="nav-toggle-bar" aria-hidden="true"></span>
+        <span class="nav-toggle-bar" aria-hidden="true"></span>
+        <span class="nav-toggle-bar" aria-hidden="true"></span>
+      </button>
+    </div>
+  </header>
+
+  <div id="offcanvas-nav" class="offcanvas-nav" role="navigation" aria-label="Main" hidden>
+    <div class="offcanvas-nav-header">
+      <button type="button" class="offcanvas-close" aria-label="Close menu">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M18 6L6 18M6 6l12 12"/></svg>
+      </button>
+    </div>
+    <div class="offcanvas-body">
+      <ul class="offcanvas-menu">
+        <li><a href="/">Home</a></li>
+      </ul>
+      <div class="toggle-section">
+        <div class="toggle-section-header">
+          <h3 class="toggle-section-title">Use Cases</h3>
+          <div class="toggle-bulk-actions">
+            <button type="button" id="btn-show-all" class="toggle-bulk-btn">Show All</button>
+            <button type="button" id="btn-show-default" class="toggle-bulk-btn">Default (1–4)</button>
+          </div>
+        </div>
+        <ul id="toggle-list" class="toggle-list" aria-label="Toggle use cases"></ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="offcanvas-backdrop" aria-hidden="true" hidden></div>
+
+  <main id="main" class="main">
+    <section class="hero" aria-labelledby="hero-heading">
+      <div class="hero-overlay"></div>
+      <div class="hero-content">
+        <h1 id="hero-heading" class="hero-title">
+          <span class="hero-title-main">Nutanix Enterprise AI</span>
+          <span class="hero-title-sub">- Use Case Demos for the Legal Industry</span>
+        </h1>
+        <div class="hero-divider" aria-hidden="true"></div>
+      </div>
+    </section>
+
+    <section class="cards-section" aria-labelledby="cards-heading">
+      <h2 id="cards-heading" class="visually-hidden">AI use cases</h2>
+      <div id="cards-grid" class="cards-grid"></div>
+    </section>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>

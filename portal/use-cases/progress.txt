@@ -1,0 +1,47 @@
+# Legal AI Portal — Use Case Build Progress (UC-09 through UC-30)
+# Ralph Wiggum Loop — Parallel Delegation Pattern
+# Reference implementation: UC-01 (portal/use-cases/01-contract-review-and-analysis/)
+
+## Batch 1: UC-09 through UC-12
+- [x] UC-09: Document Drafting — Form-based (type/parties/terms), generates draft documents
+- [x] UC-10: M&A Due Diligence — File upload, extracts key clauses, generates diligence reports
+- [x] UC-11: Client Communication — Form-based, generates professional client communications
+- [x] UC-12: Timekeeping — Form-based, generates structured time entries from activity descriptions
+
+## Batch 2: UC-13 through UC-16
+- [x] UC-13: E-Billing & Compliance Review — File upload, reviews invoices for compliance, flags violations
+- [x] UC-14: Matter Budgeting & Pricing — Form-based, generates budget estimates with phases/tasks
+- [x] UC-15: Conflicts Clearance — Form-based, identifies conflicts of interest, rates severity
+- [x] UC-16: Knowledge Management — Search-based (UC-02 style), precedent cards with relevance
+
+## Batch 3: UC-17 through UC-20
+- [x] UC-17: Regulatory Change Monitoring — Form-based, scans regulatory sources, impact cards
+- [x] UC-18: Litigation Strategy — Form-based, win probability, strategy cards, timeline
+- [x] UC-19: Deposition Analysis — File upload, testimony cards, contradictions, timeline
+- [x] UC-20: Patent Drafting — Form-based, novelty score, claims list, prior art cards
+
+## Batch 4: UC-21 through UC-24
+- [x] UC-21: Compliance Monitoring — Form-based, compliance score, gap analysis, action items
+- [x] UC-22: Lease Review — File upload, risk score, lease terms table, deviations
+- [x] UC-23: Employment Agreement Review — File upload, risk score, restrictive covenants, issues
+- [x] UC-24: Policy Drafting — Hybrid form+upload, coverage score, policy draft, gap analysis
+
+## Batch 5: UC-25 through UC-28
+- [x] UC-25: Subpoena Response — File upload, urgency score, obligations, deadlines, objections
+- [x] UC-26: Legal Hold Management — Form-based, hold notice, custodian table, preservation plan
+- [x] UC-27: Contract Lifecycle — File upload, lifecycle status, key dates, obligations, renewal
+- [x] UC-28: Immigration Docs — Form-based, petition outline, document checklist, evidence recs
+
+## Batch 6: UC-29 through UC-30
+- [x] UC-29: Board & Governance — Form-based, generates resolutions/minutes/charters
+- [x] UC-30: Legal Training & CLE — Form-based, generates training content, assessments, resources
+
+---
+
+## Summary
+Building 22 use cases (09-30) using UC-01 as the reference implementation.
+Each use case produces: index.html, styles.css, app.js
+Pattern: Landing page with overview/journey/data-flow/architecture + input panel + loading + results + DB history
+
+## Files Modified
+(Updated as sub-agents complete work)

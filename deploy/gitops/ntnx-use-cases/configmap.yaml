@@ -1,0 +1,18 @@
+# Non-secret configuration only. NAI_API_KEY and PG_PASSWORD live in a
+# Kubernetes Secret created out of band (see deploy/gitops/README.md) —
+# never put real credentials in this file.
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: legal-ai-config
+data:
+  NAI_BASE: "https://nai.hpoc.nutanix.com:443/api/v1"
+  NAI_CHAT_MODEL: "llama3-1-8b"
+  NAI_EMBED_MODEL: "llama-3-2-embed"
+  PG_HOST: "pg-db"
+  PG_PORT: "5432"
+  PG_DB: "legal_ai"
+  PG_USER: "legal_admin"
+  API_PORT: "8081"
+  CH_DB_HOST: "ch-db"
+  CH_DB_PORT: "8000"

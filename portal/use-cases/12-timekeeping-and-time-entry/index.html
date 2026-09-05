@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Timekeeping &amp; Time Entry — Generate structured time entries from activity descriptions using AI." />
+  <title>Timekeeping &amp; Time Entry — Legal AI Portal</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Roboto:wght@400;500;600&family=Roboto+Slab:wght@400&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <a href="#main" class="skip-link">Skip to main content</a>
+
+  <header class="page-header" role="banner">
+    <div class="header-inner">
+      <div class="header-left">
+        <a class="back-link" href="../../index.html" aria-label="Return to portal">&larr; Portal</a>
+        <a class="logo" href="../../index.html" aria-label="Legal AI Portal home">
+          <span class="logo-mark">Legal AI</span>
+        </a>
+      </div>
+      <h1 class="page-title">Timekeeping &amp; Time Entry</h1>
+    </div>
+  </header>
+
+  <main id="main" class="content-wrapper">
+    <div id="error-banner" class="error-banner hidden" role="alert" aria-live="assertive"></div>
+
+    <!-- ============================================================= -->
+    <!-- Landing: overview (left) | form panel (right)                  -->
+    <!-- ============================================================= -->
+    <section id="landing-section" class="landing-layout">
+
+      <!-- LEFT: Overview, user journey, data flow, architecture -->
+      <div class="landing-main">
+
+        <div class="use-case-overview">
+          <h2 class="section-heading">What This Does</h2>
+          <p>Timekeeping &amp; Time Entry uses AI to convert a free-form description of an attorney&rsquo;s daily activities into structured, billable time entries. Instead of manually reconstructing hours from notes or memory, attorneys describe what they did in plain language. The AI parses the description, assigns appropriate matter codes, phase/task codes, durations, and billable status, producing a ready-to-submit time entry table that complies with firm billing standards.</p>
+          <p>Enter the date, attorney name, matter/client, and a narrative of activities (e.g., &ldquo;Reviewed deposition transcript for 2 hours, drafted motion for summary judgment, 30-minute client call&rdquo;). The system returns a daily summary with total hours, a table of individual entries with matter, phase, task code, description, duration, and billable flag, plus any warnings (e.g., total hours exceeding 24, missing matter assignments).</p>
+        </div>
+
+        <div class="user-journey">
+          <h2 class="section-heading">Example User Journey</h2>
+          <div class="journey-steps">
+            <div class="journey-step">
+              <span class="journey-step-number">1</span>
+              <div class="journey-step-content">
+                <strong>Enter Date &amp; Activities</strong>
+                <p>An attorney selects the work date, enters their name and matter, then describes the day&rsquo;s activities in plain language (e.g., &ldquo;Drafted discovery responses, 1.5 hrs; client call re settlement, 45 min&rdquo;).</p>
+              </div>
+            </div>
+            <div class="journey-step">
+              <span class="journey-step-number">2</span>
+              <div class="journey-step-content">
+                <strong>AI Analyzes</strong>
+                <p>The system sends the description to the Nutanix AI inference endpoint, which parses activities and maps them to matter codes, phase/task codes, and durations.</p>
+              </div>
+            </div>
+            <div class="journey-step">
+              <span class="journey-step-number">3</span>
+              <div class="journey-step-content">
+                <strong>Review Generated Entries</strong>
+                <p>A daily summary shows total hours. The time entries table displays each activity with matter, phase/task, description, duration, and billable status. Warnings highlight potential issues.</p>
+              </div>
+            </div>
+            <div class="journey-step">
+              <span class="journey-step-number">4</span>
+              <div class="journey-step-content">
+                <strong>Submit or Edit</strong>
+                <p>The attorney reviews the entries, edits if needed, and submits to the firm&rsquo;s billing system. Results are saved for history and audit.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="data-flow-summary">
+          <h2 class="section-heading">Data Flow Summary</h2>
+          <ol>
+            <li>User enters date, attorney name, matter/client, and activity description in the Portal UI.</li>
+            <li>The form data is sent to the API Proxy, which forwards it to the NAI chat completions endpoint.</li>
+            <li>NAI parses the activities and returns structured JSON: totalHours, entries array (matter, phase, taskCode, description, duration, billable), summary, and warnings.</li>
+            <li>The Portal UI renders the daily summary, time entries table, and warnings.</li>
+            <li>Results are persisted to PostgreSQL for history and audit tracking.</li>
+          </ol>
+        </div>
+
+        <h2 class="section-heading">Architecture Overview</h2>
+
+        <div class="diagram-wrapper">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 420" class="arch-diagram" role="img" aria-label="Timekeeping use case architecture diagram">
+            <defs>
+              <marker id="arrowBlue12" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6" fill="#0184F7"/></marker>
+              <marker id="arrowGreen12" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6" fill="#23A455"/></marker>
+            </defs>
+            <rect x="10" y="10" width="580" height="400" rx="10" fill="#f0f4f8" stroke="#b0bec5" stroke-width="1.5" stroke-dasharray="6 3"/>
+            <text x="30" y="35" font-family="Roboto, sans-serif" font-size="12" font-weight="600" fill="#546e7a">Timekeeping &amp; Time Entry Flow</text>
+            <rect x="40" y="55" width="200" height="70" rx="8" fill="#ffffff" stroke="#0184F7" stroke-width="2"/>
+            <text x="140" y="85" text-anchor="middle" font-family="Roboto, sans-serif" font-size="11" font-weight="600" fill="#015795">Portal UI</text>
+            <text x="140" y="105" text-anchor="middle" font-family="Montserrat, sans-serif" font-size="10" fill="#7a7a7a">Form: date, attorney, activities, matter</text>
+            <rect x="280" y="55" width="180" height="70" rx="8" fill="#ffffff" stroke="#0184F7" stroke-width="2"/>
+            <text x="370" y="85" text-anchor="middle" font-family="Roboto, sans-serif" font-size="11" font-weight="600" fill="#015795">API Proxy</text>
+            <text x="370" y="105" text-anchor="middle" font-family="Montserrat, sans-serif" font-size="10" fill="#7a7a7a">/api/ai/chat/completions</text>
+            <rect x="500" y="55" width="80" height="70" rx="8" fill="#ffffff" stroke="#D84315" stroke-width="2"/>
+            <text x="540" y="95" text-anchor="middle" font-family="Roboto, sans-serif" font-size="10" font-weight="600" fill="#BF360C">NAI</text>
+            <rect x="40" y="160" width="200" height="60" rx="8" fill="#ffffff" stroke="#23A455" stroke-width="2"/>
+            <text x="140" y="195" text-anchor="middle" font-family="Roboto, sans-serif" font-size="11" font-weight="600" fill="#015795">PostgreSQL</text>
+            <text x="140" y="212" text-anchor="middle" font-family="Montserrat, sans-serif" font-size="9" fill="#7a7a7a">Time entry history</text>
+            <line x1="240" y1="90" x2="280" y2="90" stroke="#0184F7" stroke-width="1.5" marker-end="url(#arrowBlue12)"/>
+            <line x1="460" y1="90" x2="500" y2="90" stroke="#0184F7" stroke-width="1.5" marker-end="url(#arrowBlue12)"/>
+            <line x1="140" y1="125" x2="140" y2="160" stroke="#23A455" stroke-width="1.5" marker-end="url(#arrowGreen12)"/>
+          </svg>
+        </div>
+
+        <div class="arch-description">
+          <h2 class="section-heading">How It Works</h2>
+
+          <h3>Form-Based Input</h3>
+          <p>The Portal UI presents a simple form: date picker, attorney name, matter/client, and a textarea for activity descriptions. No document upload is required. The attorney describes work in natural language (e.g., &ldquo;Drafted motion for 2 hours, client call 45 min, research on case law 1.5 hrs&rdquo;).</p>
+
+          <h3>AI Parsing</h3>
+          <p>The Nutanix AI chat completions endpoint receives the structured prompt (date, attorney, matter, activities) and returns a JSON object with <code>totalHours</code>, an <code>entries</code> array (each with matter, phase, taskCode, description, duration, billable), a brief <code>summary</code>, and a <code>warnings</code> array for potential issues.</p>
+
+          <h3>Results &amp; Persistence</h3>
+          <p>The UI displays the daily total, a table of time entries, and any warnings. Results are saved to PostgreSQL via the <code>/api/db/summaries</code> endpoint for history and audit. Recent submissions appear in the sidebar for quick recall.</p>
+        </div>
+      </div>
+
+      <!-- RIGHT: Form panel -->
+      <aside class="landing-sidebar" id="input-panel">
+        <h2 class="section-heading">Generate Time Entries</h2>
+
+        <div class="input-card">
+          <form id="timekeeping-form" class="timekeeping-form">
+            <label for="input-date" class="form-label">Date</label>
+            <input type="date" id="input-date" class="form-input form-input-date" aria-label="Work date" />
+
+            <label for="input-attorney" class="form-label">Attorney Name</label>
+            <input type="text" id="input-attorney" class="form-input" placeholder="e.g., Jane Smith" aria-label="Attorney name" />
+
+            <label for="input-activities" class="form-label">Activity Description</label>
+            <textarea id="input-activities" class="form-textarea" rows="8" placeholder="Describe your activities for the day (e.g., Drafted motion for 2 hours, client call 45 min, research 1.5 hrs)..." aria-label="Activity description"></textarea>
+
+            <label for="input-matter" class="form-label">Matter / Client</label>
+            <input type="text" id="input-matter" class="form-input" placeholder="e.g., Acme Corp v. Widget Inc." aria-label="Matter or client" />
+
+            <button type="submit" id="btn-generate" class="btn-analyze">Generate Time Entries</button>
+          </form>
+        </div>
+
+        <div class="input-card history-card">
+          <div class="history-header">
+            <h3 id="history-heading" class="input-card-title">Recent Submissions</h3>
+            <button type="button" id="btn-clear-history" class="btn-clear-history hidden" aria-label="Clear all recent submissions">Clear All</button>
+          </div>
+          <div id="history-list" class="history-list" role="list" aria-labelledby="history-heading"></div>
+        </div>
+      </aside>
+    </section>
+
+    <!-- ============================================================= -->
+    <!-- Loading state                                                  -->
+    <!-- ============================================================= -->
+    <section id="loading-section" class="loading-overlay hidden" aria-live="polite" aria-label="Generating time entries">
+      <div class="loading-card">
+        <div class="loading-spinner"></div>
+        <p class="loading-status" id="loading-status">Analyzing activities&hellip;</p>
+        <div class="loading-stages">
+          <div class="loading-stage" id="stage-analyze"><span class="stage-icon">&#9679;</span> Analyzing activities</div>
+          <div class="loading-stage" id="stage-match"><span class="stage-icon">&#9679;</span> Matching to matter codes</div>
+          <div class="loading-stage" id="stage-generate"><span class="stage-icon">&#9679;</span> Generating entries</div>
+          <div class="loading-stage" id="stage-done"><span class="stage-icon">&#9679;</span> Done</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================= -->
+    <!-- Results (full width, replaces landing)                         -->
+    <!-- ============================================================= -->
+    <section id="results-section" class="hidden" aria-labelledby="results-heading">
+      <div class="results-top-bar">
+        <h2 id="results-heading">Time Entry Results</h2>
+        <div>
+          <button type="button" id="btn-add-entry" class="btn-add-entry">+ Add New Entry</button>
+          <button type="button" id="btn-new-entry" class="btn-new-analysis">&larr; New Entry</button>
+        </div>
+      </div>
+      <div class="results-layout">
+        <div class="results-main">
+          <div class="daily-summary-display" aria-live="polite">
+            <span class="daily-summary-label">Total Hours</span>
+            <span class="daily-summary-number" id="total-hours" aria-label="Total hours">--</span>
+          </div>
+          <div id="warnings-list" class="warnings-list hidden" role="alert" aria-live="polite"></div>
+          <div class="summary-card">
+            <h3 class="section-heading">Daily Summary</h3>
+            <p id="summary-text" aria-label="Daily summary"></p>
+          </div>
+          <h3 class="section-heading">Time Entries</h3>
+          <div class="table-responsive">
+            <table class="time-entry-table" role="table" aria-labelledby="entries-heading">
+              <thead>
+                <tr>
+                  <th scope="col">Matter</th>
+                  <th scope="col">Phase / Task</th>
+                  <th scope="col">Description</th>
+                  <th scope="col">Duration</th>
+                  <th scope="col">Status</th>
+                </tr>
+              </thead>
+              <tbody id="entries-tbody"></tbody>
+            </table>
+          </div>
+        </div>
+        <aside class="results-sidebar">
+          <div class="input-card">
+            <div class="history-header">
+              <h3 class="input-card-title">Recent Submissions</h3>
+              <button type="button" id="btn-clear-results-history" class="btn-clear-history hidden" aria-label="Clear all recent submissions">Clear All</button>
+            </div>
+            <div id="results-history-list" class="history-list" role="list"></div>
+          </div>
+        </aside>
+      </div>
+    </section>
+  </main>
+
+  <script src="app.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Legal Hold Management — AI helps create and manage legal hold notices, custodian lists, and preservation plans." />
+  <title>Legal Hold Management — Legal AI Portal</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Roboto:wght@400;500;600&family=Roboto+Slab:wght@400&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <a href="#main" class="skip-link">Skip to main content</a>
+
+  <header class="page-header" role="banner">
+    <div class="header-inner">
+      <div class="header-left">
+        <a class="back-link" href="../../index.html" aria-label="Return to portal">&larr; Portal</a>
+        <a class="logo" href="../../index.html" aria-label="Legal AI Portal home">
+          <span class="logo-mark">Legal AI</span>
+        </a>
+      </div>
+      <h1 class="page-title">Legal Hold Management</h1>
+    </div>
+  </header>
+
+  <main id="main" class="content-wrapper">
+    <div id="error-banner" class="error-banner hidden" role="alert" aria-live="assertive"></div>
+
+    <!-- ============================================================= -->
+    <!-- Landing: overview (left) | form panel (right)                 -->
+    <!-- ============================================================= -->
+    <section id="landing-section" class="landing-layout">
+
+      <div class="landing-main">
+
+        <div class="use-case-overview">
+          <h2 class="section-heading">What This Does</h2>
+          <p>Legal Hold Management uses AI to draft legal hold notices, generate custodian lists, and create preservation plans. Enter matter details, custodian names, data sources, hold reason, and scope. The system produces a professional hold notice, structured custodian table, preservation plan with methods and deadlines, and a reminder schedule for follow-up.</p>
+          <p>This tool reduces administrative burden on litigation teams, ensures consistent holds, and maintains a defensible audit trail for court and opposing counsel.</p>
+        </div>
+
+        <div class="user-journey">
+          <h2 class="section-heading">Example User Journey</h2>
+          <div class="journey-steps">
+            <div class="journey-step">
+              <span class="journey-step-number">1</span>
+              <div class="journey-step-content">
+                <strong>Enter Matter Details</strong>
+                <p>Litigation counsel enters the matter name, matter type, custodian names (one per line), data sources, hold reason, and scope description.</p>
+              </div>
+            </div>
+            <div class="journey-step">
+              <span class="journey-step-number">2</span>
+              <div class="journey-step-content">
+                <strong>AI Generates</strong>
+                <p>The system sends the form data to the Nutanix AI endpoint, which drafts a legal hold notice, structures the custodian list, and creates a preservation plan with deadlines.</p>
+              </div>
+            </div>
+            <div class="journey-step">
+              <span class="journey-step-number">3</span>
+              <div class="journey-step-content">
+                <strong>Review Results</strong>
+                <p>The hold notice appears as formatted text. A custodian table shows name, department, data sources, and status. The preservation plan lists data sources, locations, methods, responsible parties, and deadlines. A reminder schedule suggests follow-up dates and actions.</p>
+              </div>
+            </div>
+            <div class="journey-step">
+              <span class="journey-step-number">4</span>
+              <div class="journey-step-content">
+                <strong>Issue and Track</strong>
+                <p>Counsel reviews, edits if needed, issues the hold to custodians, and uses the reminder schedule for acknowledgments and follow-up.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="data-flow-summary">
+          <h2 class="section-heading">Data Flow Summary</h2>
+          <ol>
+            <li>User enters matter name, matter type, custodian names, data sources, hold reason, and scope via the form.</li>
+            <li>The browser sends the form data to the API Proxy.</li>
+            <li>The API Proxy forwards the request (with authentication) to the NAI chat completions endpoint.</li>
+            <li>NAI generates a structured JSON response with hold notice, custodians, preservation plan, reminder schedule, and risk assessment.</li>
+            <li>The Portal UI renders the results: hold notice, custodian table, preservation plan, reminder schedule.</li>
+            <li>Hold metadata is saved to PostgreSQL for audit and history tracking.</li>
+          </ol>
+        </div>
+      </div>
+
+      <!-- RIGHT: Form panel -->
+      <aside class="landing-sidebar" id="input-panel">
+        <h2 class="section-heading">Create Legal Hold</h2>
+
+        <form id="hold-form" class="hold-form">
+          <div class="input-card">
+            <label for="matter-name" class="form-label">Matter Name</label>
+            <input type="text" id="matter-name" name="matterName" class="form-input" placeholder="e.g., Smith v. Acme Corp" />
+          </div>
+
+          <div class="input-card">
+            <label for="matter-type" class="form-label">Matter Type</label>
+            <select id="matter-type" name="matterType" class="form-select">
+              <option value="Litigation">Litigation</option>
+              <option value="Regulatory">Regulatory</option>
+              <option value="Internal Investigation">Internal Investigation</option>
+              <option value="M&amp;A">M&amp;A</option>
+              <option value="Other">Other</option>
+            </select>
+          </div>
+
+          <div class="input-card">
+            <label for="custodian-names" class="form-label">Custodian Names (one per line)</label>
+            <textarea id="custodian-names" name="custodianNames" class="form-textarea" rows="4" placeholder="John Smith&#10;Jane Doe&#10;IT Department Contact"></textarea>
+          </div>
+
+          <div class="input-card">
+            <label for="data-sources" class="form-label">Data Sources (one per line)</label>
+            <textarea id="data-sources" name="dataSources" class="form-textarea" rows="4" placeholder="Email (Exchange)&#10;Shared drives&#10;Laptops and mobile devices"></textarea>
+          </div>
+
+          <div class="input-card">
+            <label for="hold-reason" class="form-label">Hold Reason</label>
+            <textarea id="hold-reason" name="holdReason" class="form-textarea" rows="3" placeholder="Anticipated litigation regarding contract dispute..."></textarea>
+          </div>
+
+          <div class="input-card">
+            <label for="scope-description" class="form-label">Scope Description</label>
+            <textarea id="scope-description" name="scopeDescription" class="form-textarea" rows="4" placeholder="Documents and ESI related to the Acme contract, negotiations, and communications from Jan 2023 to present..."></textarea>
+          </div>
+
+          <button type="submit" id="btn-generate" class="btn-analyze">Generate Legal Hold</button>
+        </form>
+
+        <div class="input-card history-card">
+          <div class="history-header">
+            <h3 class="input-card-title">Recent Holds</h3>
+            <button type="button" id="btn-clear-history" class="btn-clear-history hidden" aria-label="Clear all recent holds">Clear All</button>
+          </div>
+          <div id="history-list" class="history-list" role="list" aria-labelledby="history-heading"></div>
+        </div>
+      </aside>
+    </section>
+
+    <!-- ============================================================= -->
+    <!-- Loading state                                                  -->
+    <!-- ============================================================= -->
+    <section id="loading-section" class="loading-overlay hidden" aria-live="polite" aria-label="Generating legal hold">
+      <div class="loading-card">
+        <div class="loading-spinner"></div>
+        <p class="loading-status" id="loading-status">Generating hold notice&hellip;</p>
+        <div class="loading-stages">
+          <div class="loading-stage" id="stage-draft"><span class="stage-icon">&#9679;</span> Drafting notice</div>
+          <div class="loading-stage" id="stage-custodians"><span class="stage-icon">&#9679;</span> Building custodian list</div>
+          <div class="loading-stage" id="stage-plan"><span class="stage-icon">&#9679;</span> Creating preservation plan</div>
+          <div class="loading-stage" id="stage-render"><span class="stage-icon">&#9679;</span> Rendering results</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================= -->
+    <!-- Results (full width, replaces landing)                         -->
+    <!-- ============================================================= -->
+    <section id="results-section" class="hidden" aria-labelledby="results-heading">
+      <div class="results-top-bar">
+        <h2 id="results-heading">Legal Hold Results</h2>
+        <button type="button" id="btn-new-hold" class="btn-new-analysis">&larr; New Hold</button>
+      </div>
+      <div class="results-layout">
+        <div class="results-main">
+          <h3 id="hold-notice-heading">Legal Hold Notice</h3>
+          <div class="notice-display" id="hold-notice" aria-labelledby="hold-notice-heading"></div>
+
+          <h3 id="custodian-heading">Custodian List</h3>
+          <div class="table-responsive">
+            <table class="custodian-table" role="table" aria-labelledby="custodian-heading">
+              <thead>
+                <tr>
+                  <th scope="col">Name</th>
+                  <th scope="col">Department</th>
+                  <th scope="col">Data Sources</th>
+                  <th scope="col">Status</th>
+                </tr>
+              </thead>
+              <tbody id="custodian-tbody"></tbody>
+            </table>
+          </div>
+
+          <h3 id="preservation-heading">Preservation Plan</h3>
+          <div id="preservation-plan" class="preservation-plan" role="list" aria-labelledby="preservation-heading"></div>
+
+          <h3 id="reminder-heading">Reminder Schedule</h3>
+          <div id="reminder-schedule" class="reminder-schedule" role="list" aria-labelledby="reminder-heading"></div>
+
+          <div id="risk-assessment" class="risk-assessment hidden"></div>
+        </div>
+        <aside class="results-sidebar">
+          <div class="input-card">
+            <div class="history-header">
+              <h3 class="input-card-title">Recent Holds</h3>
+              <button type="button" id="btn-clear-results-history" class="btn-clear-history hidden" aria-label="Clear all recent holds">Clear All</button>
+            </div>
+            <div id="results-history-list" class="history-list" role="list"></div>
+          </div>
+        </aside>
+      </div>
+    </section>
+  </main>
+
+  <script src="app.js" defer></script>
+</body>
+</html>

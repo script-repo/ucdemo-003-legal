@@ -1,0 +1,26 @@
+# UC-07 Automated Contract Redlining and Clause Comparison — Progress
+
+## Tasks
+
+### Completed
+- [x] Create index.html with header, landing layout, SVG diagram, description
+- [x] Create styles.css with all styles (html 100%, body 16px, forms 15px)
+- [x] Create app.js with AI call, dual file extraction, mock fallback, results rendering
+- [x] Update portal app.js: UC-07 live: true
+
+### In Progress
+(none)
+
+### Remaining
+(none)
+
+---
+
+## Summary
+UC-07 build complete. All 3 files created in portal/use-cases/07-automated-contract-redlining-and-clause-comparison/. Page includes dual upload zones (counterparty draft + firm standard), contract type selector, architecture SVG with llama3-1-8b and llama-3-2-embed, clause-by-clause comparison with redline styling, deviation badges, suggested language, missing/added clauses, and overall risk assessment. Portal card shows "Launch".
+
+## Files Modified
+- portal/use-cases/07-automated-contract-redlining-and-clause-comparison/index.html (created)
+- portal/use-cases/07-automated-contract-redlining-and-clause-comparison/styles.css (created)
+- portal/use-cases/07-automated-contract-redlining-and-clause-comparison/app.js (created)
+- portal/app.js (UC-07 live: true)

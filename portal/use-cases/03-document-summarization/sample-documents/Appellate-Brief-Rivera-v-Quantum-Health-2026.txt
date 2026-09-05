@@ -1,0 +1,178 @@
+IN THE UNITED STATES COURT OF APPEALS
+FOR THE NINTH CIRCUIT
+
+Case No. 26-15432
+
+MARIA ELENA RIVERA, individually and on behalf of all others similarly situated,
+    Plaintiff-Appellant,
+
+v.
+
+QUANTUM HEALTH SYSTEMS, INC., a Delaware corporation; JOHN MORRISON,
+in his capacity as Chief Executive Officer,
+    Defendants-Appellees.
+
+BRIEF OF PLAINTIFF-APPELLANT
+
+APPEAL FROM THE UNITED STATES DISTRICT COURT
+FOR THE CENTRAL DISTRICT OF CALIFORNIA
+Case No. 2:24-cv-08901-ABC
+
+The Honorable Judge Patricia S. Chen, Presiding
+
+=======================================================================
+
+TABLE OF CONTENTS
+
+I.    JURISDICTIONAL STATEMENT ......................................... 2
+II.   STATEMENT OF THE ISSUES .......................................... 3
+III.  STATEMENT OF THE CASE ............................................ 4
+IV.   SUMMARY OF ARGUMENT .............................................. 8
+V.    ARGUMENT .......................................................... 10
+      A. The District Court Erred in Dismissing the ERISA Claims ...... 10
+      B. The Arbitration Clause Is Unconscionable ..................... 14
+      C. The Class Certification Denial Was an Abuse of Discretion ... 18
+VI.   CONCLUSION ....................................................... 22
+
+=======================================================================
+
+I. JURISDICTIONAL STATEMENT
+
+The District Court had jurisdiction under 28 U.S.C. Section 1331 (federal question), 29 U.S.C. Section 1132(e) (ERISA), and 28 U.S.C. Section 1367 (supplemental jurisdiction over state-law claims). This Court has jurisdiction under 28 U.S.C. Section 1291 as an appeal from a final judgment entered on September 15, 2025. Appellant timely filed her Notice of Appeal on October 12, 2025, within the 30-day period prescribed by Federal Rule of Appellate Procedure 4(a)(1)(A).
+
+II. STATEMENT OF THE ISSUES
+
+1. Whether the District Court erred in dismissing Appellant's claims under the Employee Retirement Income Security Act of 1974 ("ERISA"), 29 U.S.C. Section 1001 et seq., by concluding that Quantum Health's denial of coverage for specialized cardiac rehabilitation constituted a reasonable exercise of plan administrator discretion, where the plan document unambiguously covered "all medically necessary rehabilitative services" and Appellant's treating physicians unanimously certified the treatment as medically necessary.
+
+2. Whether the mandatory arbitration clause contained in the Quantum Health employee benefits enrollment portal — presented as a non-negotiable click-through on a mobile device during the annual open-enrollment period — is procedurally and substantively unconscionable under California law and therefore unenforceable.
+
+3. Whether the District Court abused its discretion in denying class certification under Federal Rule of Civil Procedure 23(b)(3) by finding that individual questions of medical necessity predominated over common questions, notwithstanding the undisputed evidence that Quantum Health applied a uniform internal policy denying all cardiac rehabilitation claims exceeding 12 sessions regardless of individual medical circumstances.
+
+III. STATEMENT OF THE CASE
+
+A. Factual Background
+
+Plaintiff-Appellant Maria Elena Rivera is a 54-year-old senior software engineer employed by Quantum Health Systems, Inc. ("Quantum Health") since March 2018. She enrolled in the Quantum Health Premier Plan (the "Plan"), a self-funded employee health benefit plan governed by ERISA.
+
+On January 8, 2024, Ms. Rivera suffered a severe myocardial infarction (heart attack) requiring emergency triple bypass surgery at Cedars-Sinai Medical Center in Los Angeles. Following surgery, her cardiologist, Dr. James Whitfield, prescribed a comprehensive 36-session cardiac rehabilitation program at the UCLA Cardiac Rehabilitation Center, certifying the full program as medically necessary based on Ms. Rivera's surgical history, age, and risk factors.
+
+The Plan document, specifically Section 4.2(b), provides coverage for "all medically necessary rehabilitative services, including but not limited to cardiac rehabilitation, physical therapy, and occupational therapy, as prescribed by a licensed treating physician and consistent with evidence-based medical guidelines."
+
+Despite this clear plan language, Quantum Health's third-party claims administrator, MedReview Corp., denied coverage for all sessions beyond the initial 12 sessions. The denial letter, dated March 22, 2024, cited an internal policy memorandum (Policy No. QH-2023-CR-004) that capped cardiac rehabilitation benefits at 12 sessions per calendar year, regardless of medical necessity determinations by treating physicians.
+
+Ms. Rivera exhausted the Plan's internal appeals process. Both her first-level appeal (April 18, 2024) and final appeal to the Quantum Health Benefits Committee (June 3, 2024) were denied. The denial letters repeated the 12-session cap rationale without addressing the medical necessity evidence submitted by Dr. Whitfield and two additional consulting cardiologists.
+
+B. The Arbitration Agreement
+
+During the October 2023 open enrollment period, Quantum Health migrated its benefits enrollment system to a new digital platform. Employees were required to complete enrollment via a mobile-responsive web portal within a 14-day window. On the final enrollment screen, after employees had already selected their plan options, a pop-up modal displayed a "Terms and Conditions" link in 8-point gray text against a light gray background. The terms included a mandatory binding arbitration clause requiring all disputes related to benefits coverage to be arbitrated under AAA Commercial Rules, with the arbitration to take place in Wilmington, Delaware — the state of Quantum Health's incorporation, approximately 2,700 miles from Ms. Rivera's residence in Los Angeles.
+
+The enrollment portal did not permit employees to proceed without checking "I agree to all Terms and Conditions." No option was provided to negotiate, modify, or reject the arbitration provision while still enrolling in the health plan. No separate notification or explanation of the arbitration clause was provided to employees.
+
+C. Procedural History
+
+Ms. Rivera filed this action on August 15, 2024, asserting claims under ERISA Section 502(a)(1)(B) for denial of benefits, ERISA Section 502(a)(3) for breach of fiduciary duty, and California state-law claims for violation of the Unfair Competition Law (Bus. & Prof. Code Section 17200) and breach of the implied covenant of good faith and fair dealing. She simultaneously moved for class certification on behalf of all Quantum Health Plan participants who had cardiac rehabilitation claims denied under Policy QH-2023-CR-004.
+
+On December 10, 2024, Defendants moved to compel arbitration and dismiss the action. On January 30, 2025, the District Court granted Defendants' motion, finding: (1) the arbitration clause was valid and enforceable; (2) even apart from arbitration, Quantum Health's benefits denial was a reasonable exercise of plan administrator discretion entitled to deference; and (3) class certification was inappropriate because individual medical necessity determinations predominated. Ms. Rivera timely appealed.
+
+IV. SUMMARY OF ARGUMENT
+
+The District Court committed reversible error on all three grounds.
+
+First, the court applied the wrong standard of review to the benefits denial. The Plan document does not contain a clear grant of discretionary authority to the plan administrator, as required by Firestone Tire & Rubber Co. v. Bruch, 489 U.S. 101 (1989). Under de novo review — the correct standard — Quantum Health's blanket 12-session cap directly contradicts the Plan's unambiguous promise to cover "all medically necessary rehabilitative services." The internal policy memorandum cannot override the Plan document.
+
+Second, the arbitration clause fails under California's unconscionability doctrine. It is procedurally unconscionable because it was buried in a click-through agreement during a time-pressured enrollment window, with no meaningful opportunity to negotiate or opt out. It is substantively unconscionable because it requires a California employee to arbitrate in Delaware, eliminates the right to class-wide proceedings, and shortens the statute of limitations from four years to one year. Under Armendariz v. Foundation Health Psychcare Services, Inc., 24 Cal. 4th 83 (2000), and its progeny, the clause is unenforceable.
+
+Third, the District Court's predominance analysis ignored the central common question: whether Quantum Health's uniform 12-session cap policy, applied across all cardiac rehabilitation claims without individualized medical review, violated the Plan's terms. This is precisely the type of common question that satisfies Rule 23(b)(3). Individual variations in medical history do not defeat predominance when the challenged conduct is a uniform policy applied to all class members.
+
+V. ARGUMENT
+
+A. The District Court Erred in Dismissing the ERISA Claims
+
+1. The Correct Standard of Review Is De Novo
+
+Under Firestone, 489 U.S. at 115, a denial of benefits challenged under ERISA Section 502(a)(1)(B) "is to be reviewed under a de novo standard unless the benefit plan gives the administrator or fiduciary discretionary authority to determine eligibility for benefits or to construe the terms of the plan." The Ninth Circuit has consistently held that discretionary authority must be "unambiguously retained" in the plan document. Abatie v. Alta Health & Life Ins. Co., 458 F.3d 955, 963 (9th Cir. 2006).
+
+The Plan document here contains no express grant of discretion. Section 7.1 states that the Plan Administrator "shall administer the Plan in accordance with its terms and applicable law." This language describes a ministerial function, not discretionary authority. The District Court erred in imputing discretion from the Administrator's general duties.
+
+2. Under De Novo Review, the Denial Cannot Stand
+
+The Plan's coverage provision is unambiguous. Section 4.2(b) covers "all medically necessary rehabilitative services... as prescribed by a licensed treating physician." Ms. Rivera's treating physician prescribed 36 sessions and certified them as medically necessary. Two additional cardiologists concurred.
+
+Quantum Health's 12-session cap derives not from the Plan document but from an internal policy memorandum (QH-2023-CR-004) that was never disclosed to plan participants and directly contradicts the Plan's terms. Under ERISA's written plan requirement, 29 U.S.C. Section 1102(a), the terms of the Plan document govern. An undisclosed internal policy cannot limit benefits that the Plan document provides.
+
+The American Heart Association and American College of Cardiology guidelines recommend 36 sessions for post-bypass patients with Ms. Rivera's risk profile. The denial of sessions 13 through 36 was not merely unreasonable — it was contrary to the Plan's plain language.
+
+B. The Arbitration Clause Is Unconscionable
+
+1. Procedural Unconscionability
+
+California courts assess procedural unconscionability by examining "oppression" and "surprise." Baltazar v. Forever 21, Inc., 62 Cal. 4th 1237, 1243 (2016). Both are present here.
+
+Oppression: The arbitration clause was presented on a take-it-or-leave-it basis. Employees could not enroll in health benefits — a critical employment benefit — without accepting the clause. No opt-out mechanism was provided. The enrollment window was limited to 14 days, creating time pressure.
+
+Surprise: The clause was buried in a lengthy Terms and Conditions document accessible only through a small hyperlink in 8-point gray text. No separate notice or explanation was provided. Research by the Department of Labor indicates that fewer than 3% of employees read click-through benefits enrollment terms in full.
+
+2. Substantive Unconscionability
+
+The clause contains multiple substantively unconscionable provisions:
+
+Forum Selection: Requiring a California-based employee to arbitrate in Delaware imposes unreasonable costs and burdens. See Nagrampa v. MailCoups, Inc., 469 F.3d 1257, 1287 (9th Cir. 2006).
+
+Class Action Waiver: The clause prohibits class-wide arbitration, effectively immunizing systemic benefits denials affecting hundreds of employees from collective challenge.
+
+Shortened Limitations Period: The one-year limitations period is half the two-year period under ERISA Section 413 and one-quarter of California's four-year UCL limitations period.
+
+Fee Allocation: The clause requires each party to bear its own arbitration fees, which can exceed $15,000 for a single ERISA benefits case — a prohibitive cost for most employees.
+
+Under the sliding scale approach of Armendariz, 24 Cal. 4th at 114, even a moderate degree of procedural unconscionability combined with significant substantive unconscionability renders the clause unenforceable. Both are present here in substantial measure.
+
+C. The Class Certification Denial Was an Abuse of Discretion
+
+The District Court's predominance analysis focused on the wrong question. The court emphasized that each class member's medical history was different, requiring individualized medical necessity determinations. But the central issue in this case is not whether any individual's treatment was medically necessary — it is whether Quantum Health's blanket 12-session cap policy violated the Plan's terms.
+
+This is a classic common question. Quantum Health applied Policy QH-2023-CR-004 uniformly to every cardiac rehabilitation claim. Every class member received the same denial letter citing the same policy. Whether that policy is consistent with the Plan document is a question common to all class members that is capable of class-wide resolution. See Wal-Mart Stores, Inc. v. Dukes, 564 U.S. 338, 350 (2011) (commonality requires that claims "depend upon a common contention" capable of "class-wide resolution").
+
+The fact that damages may vary among class members does not defeat predominance. Individual damages calculations are routinely managed through sub-classes, special masters, or claims administration processes. See Comcast Corp. v. Behrend, 569 U.S. 27, 35 (2013).
+
+The undisputed evidence showed that at least 347 Quantum Health Plan participants had cardiac rehabilitation claims denied under the same policy between January 2023 and August 2024. Requiring each of these individuals to litigate separately — especially given the arbitration clause's prohibition on class proceedings — would be both inefficient and unjust.
+
+VI. CONCLUSION
+
+For the foregoing reasons, Plaintiff-Appellant Maria Elena Rivera respectfully requests that this Court:
+
+1. Reverse the District Court's order granting Defendants' motion to compel arbitration and dismissing the action;
+
+2. Reverse the District Court's denial of class certification;
+
+3. Remand the case to the District Court for further proceedings consistent with this Court's opinion, including de novo review of the benefits denial; and
+
+4. Award Appellant her costs on appeal.
+
+Respectfully submitted,
+
+CALDWELL & ASSOCIATES LLP
+
+By: _______________________________
+    Sarah M. Caldwell (Cal. Bar No. 198765)
+    David R. Thornton (Cal. Bar No. 245891)
+    1800 Century Park East, Suite 2400
+    Los Angeles, California 90067
+    Telephone: (310) 555-4200
+    Facsimile: (310) 555-4201
+    scaldwell@caldwelllaw.com
+
+    Attorneys for Plaintiff-Appellant
+    Maria Elena Rivera
+
+Dated: January 15, 2026
+
+=======================================================================
+
+CERTIFICATE OF COMPLIANCE
+
+This brief complies with the type-volume limitation of Federal Rule of Appellate Procedure 32(a)(7)(B). According to the word-processing system used to prepare this brief, it contains 4,287 words, excluding the parts of the brief exempted by Rule 32(f).
+
+This brief complies with the typeface requirements of Rule 32(a)(5) and the type-style requirements of Rule 32(a)(6).
+
+_______________________________
+Sarah M. Caldwell

@@ -1,0 +1,29 @@
+# UC-05 Legal Intake and Triage — Progress
+
+## Tasks
+
+### Completed
+- [x] Create index.html with header, landing layout, SVG diagram, description, loading, results
+- [x] Create styles.css with all styles (html 100%, body 16px, forms 15px)
+- [x] Create app.js with AI call, form handling, mock fallback, results rendering
+- [x] Update portal app.js: UC-05 live: true
+
+### In Progress
+
+### Remaining
+
+---
+
+## Summary
+UC-05 Legal Intake and Triage is complete. All 3 files created and portal updated. Page includes:
+- Architecture SVG diagram (AHV, NKP, NAI, Nutanix Unified Storage)
+- Intake form: requestor name, email, department, matter description, urgency, practice area
+- Submit Request → loading → triage results (matter type, urgency, risk, routing, timeline, similar matters, next steps)
+- New Request returns to landing
+- In-memory intake history
+
+## Files Modified
+- portal/use-cases/05-legal-intake-and-triage/index.html (created)
+- portal/use-cases/05-legal-intake-and-triage/styles.css (created)
+- portal/use-cases/05-legal-intake-and-triage/app.js (created)
+- portal/app.js (UC-05 live: true)

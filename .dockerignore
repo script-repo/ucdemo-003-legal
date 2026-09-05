@@ -1,0 +1,17 @@
+.git/
+.gitignore
+.github/
+docs/
+scripts/
+deploy/
+*.md
+local_summaries.db
+.env
+.env.local
+node_modules/
+__pycache__/
+*.pyc
+.venv/
+venv/
+.idea/
+.vscode/

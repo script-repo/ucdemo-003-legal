@@ -1,0 +1,317 @@
+MASTER SERVICES AGREEMENT
+
+This Master Services Agreement ("Agreement") is entered into as of March 10, 2026 (the "Effective Date"), by and between:
+
+PARTY A:
+Meridian Technology Solutions, LLC, a Delaware limited liability company, with its principal place of business at 1200 Innovation Drive, Suite 400, San Jose, CA 95134 ("Client")
+
+AND
+
+PARTY B:
+Apex Digital Consulting Group, Inc., a corporation organized under the laws of the State of New York, with its principal place of business at 350 Fifth Avenue, 72nd Floor, New York, NY 10118 ("Provider")
+
+Each individually referred to as a "Party" and collectively as the "Parties."
+
+RECITALS
+
+WHEREAS, Client desires to engage Provider to deliver certain professional consulting, software development, and managed technology services as described herein and in one or more Statements of Work; and
+
+WHEREAS, Provider has the expertise, personnel, and resources necessary to perform such services and desires to provide them to Client on the terms and conditions set forth in this Agreement;
+
+NOW, THEREFORE, in consideration of the mutual covenants and promises herein contained, and for other good and valuable consideration, the receipt and sufficiency of which are hereby acknowledged, the Parties agree as follows:
+
+--------------------------------------------------------------------------------
+
+ARTICLE 1 — DEFINITIONS
+
+1.1 "Affiliate" means, with respect to either Party, any entity that directly or indirectly controls, is controlled by, or is under common control with such Party, where "control" means the ownership of more than fifty percent (50%) of the voting securities or equivalent ownership interest.
+
+1.2 "Change Order" means a written document executed by authorized representatives of both Parties that modifies the scope, timeline, fees, or deliverables of an existing Statement of Work.
+
+1.3 "Confidential Information" means any and all non-public, proprietary, or confidential information disclosed by one Party (the "Disclosing Party") to the other Party (the "Receiving Party"), whether orally, in writing, electronically, or by inspection, including but not limited to: trade secrets, know-how, inventions, techniques, processes, algorithms, software programs, source code, object code, designs, customer lists, financial information, business plans, marketing strategies, pricing information, personnel information, and any information designated as "Confidential" or that a reasonable person would understand to be confidential given the nature of the information and the circumstances of disclosure.
+
+1.4 "Deliverables" means all work product, reports, software, documentation, data, and other materials created, developed, or produced by Provider in the performance of Services under a Statement of Work.
+
+1.5 "Intellectual Property" or "IP" means all patents, copyrights, trademarks, trade secrets, and other intellectual property rights, whether registered or unregistered.
+
+1.6 "Personnel" means Provider's employees, contractors, subcontractors, and agents who perform Services under this Agreement.
+
+1.7 "Services" means the professional consulting, software development, managed technology, and related services to be performed by Provider as described in one or more Statements of Work.
+
+1.8 "Statement of Work" or "SOW" means a written document executed by both Parties that describes the specific Services to be performed, Deliverables to be provided, timelines, milestones, acceptance criteria, and associated fees.
+
+--------------------------------------------------------------------------------
+
+ARTICLE 2 — SERVICES AND STATEMENTS OF WORK
+
+2.1 Engagement. Provider shall perform the Services described in each Statement of Work in a professional and workmanlike manner, consistent with industry standards and best practices.
+
+2.2 Statements of Work. Each SOW shall be substantially in the form attached hereto as Exhibit A and shall include, at a minimum: (a) a description of the Services and Deliverables; (b) the project timeline and milestones; (c) acceptance criteria for Deliverables; (d) fees and payment terms; and (e) any special terms applicable to such SOW.
+
+2.3 Change Orders. Either Party may request changes to an SOW by submitting a written Change Order request. No change shall be effective unless memorialized in a Change Order signed by authorized representatives of both Parties. Provider shall, within ten (10) business days of receiving a Change Order request, provide Client with a written assessment of the impact on scope, timeline, and fees.
+
+2.4 Standard of Performance. Provider represents and warrants that: (a) all Services shall be performed by qualified Personnel with the requisite skills, training, and experience; (b) all Deliverables shall conform to the specifications and acceptance criteria set forth in the applicable SOW; and (c) all Services shall comply with applicable laws, regulations, and industry standards.
+
+2.5 Key Personnel. Provider shall designate key personnel for each SOW as agreed upon by the Parties. Provider shall not remove or replace key personnel without prior written consent of Client, except in cases of voluntary resignation, termination for cause, or disability, in which case Provider shall provide a suitable replacement of comparable qualifications within fifteen (15) business days.
+
+2.6 Subcontractors. Provider may engage subcontractors to perform portions of the Services, provided that: (a) Provider obtains prior written approval from Client for each subcontractor; (b) Provider remains fully responsible for the performance of all subcontractors; (c) all subcontractors are bound by confidentiality and IP assignment obligations no less protective than those contained in this Agreement; and (d) Provider shall be liable for any breach by a subcontractor as if Provider had committed such breach.
+
+--------------------------------------------------------------------------------
+
+ARTICLE 3 — FEES AND PAYMENT
+
+3.1 Fees. Client shall pay Provider the fees set forth in each SOW. Unless otherwise specified in an SOW, fees shall be calculated on a time-and-materials basis at the rates set forth in Exhibit B attached hereto.
+
+3.2 Invoicing. Provider shall submit detailed monthly invoices to Client that include: (a) a description of Services performed during the billing period; (b) the number of hours worked by each individual (if time-and-materials); (c) a breakdown of expenses by category; and (d) a summary of fees due. All invoices shall reference the applicable SOW number.
+
+3.3 Payment Terms. Client shall pay all undisputed amounts within forty-five (45) days of receipt of a proper invoice. Client may withhold payment of any amounts in good-faith dispute, provided that Client notifies Provider in writing of the disputed amounts and the basis for the dispute within fifteen (15) days of receipt of the invoice.
+
+3.4 Late Payments. Any undisputed amounts not paid when due shall accrue interest at the rate of one and one-half percent (1.5%) per month, or the maximum rate permitted by applicable law, whichever is less, calculated from the due date until paid in full.
+
+3.5 Expenses. Provider shall be entitled to reimbursement of reasonable, pre-approved out-of-pocket expenses incurred in the performance of Services, including travel, lodging, and meals. All expenses exceeding Five Hundred Dollars ($500) individually, or Two Thousand Dollars ($2,000) in the aggregate per month, require prior written approval from Client.
+
+3.6 Taxes. Fees are exclusive of all taxes, levies, and duties imposed by taxing authorities. Client shall be responsible for all sales, use, and value-added taxes associated with the Services, excluding taxes based on Provider's income.
+
+3.7 Audit Rights. Client shall have the right, at its own expense and upon thirty (30) days' prior written notice, to audit Provider's records related to fees, expenses, and time entries under this Agreement. Such audits shall be conducted no more than once per calendar year and shall cover the preceding twenty-four (24) months. If an audit reveals an overcharge of more than five percent (5%), Provider shall reimburse Client for the overcharge and the reasonable cost of the audit.
+
+--------------------------------------------------------------------------------
+
+ARTICLE 4 — INTELLECTUAL PROPERTY
+
+4.1 Work Product Ownership. All Deliverables and work product created by Provider specifically for Client under a Statement of Work ("Custom Work Product") shall be the exclusive property of Client. Provider hereby irrevocably assigns to Client all right, title, and interest in and to all Custom Work Product, including all Intellectual Property rights therein.
+
+4.2 Provider Pre-Existing IP. Provider retains all right, title, and interest in and to any pre-existing intellectual property, tools, frameworks, methodologies, and know-how owned or developed by Provider prior to or independently of this Agreement ("Provider IP"). To the extent any Provider IP is incorporated into Deliverables, Provider hereby grants to Client a non-exclusive, perpetual, irrevocable, worldwide, royalty-free license to use, modify, and create derivative works of such Provider IP solely in connection with Client's use of the Deliverables.
+
+4.3 Third-Party Materials. Provider shall not incorporate any third-party materials into Deliverables without prior written disclosure to and approval by Client. Provider represents and warrants that any approved third-party materials shall be properly licensed and that Client's use of such materials as contemplated by this Agreement shall not infringe any third-party rights.
+
+4.4 Moral Rights. To the extent permitted by applicable law, Provider waives, and shall cause its Personnel to waive, all moral rights in the Custom Work Product.
+
+4.5 Cooperation. Provider shall, at Client's request and expense, execute all documents and take all actions reasonably necessary to perfect, register, or enforce Client's ownership of the Custom Work Product.
+
+--------------------------------------------------------------------------------
+
+ARTICLE 5 — CONFIDENTIALITY
+
+5.1 Obligations. The Receiving Party shall: (a) hold all Confidential Information of the Disclosing Party in strict confidence; (b) not disclose Confidential Information to any third party without the prior written consent of the Disclosing Party; (c) use Confidential Information solely for the purposes of performing obligations or exercising rights under this Agreement; and (d) protect Confidential Information using at least the same degree of care it uses to protect its own confidential information, but in no event less than reasonable care.
+
+5.2 Permitted Disclosures. The Receiving Party may disclose Confidential Information to its employees, contractors, and advisors who have a need to know such information for the purposes of this Agreement and who are bound by confidentiality obligations no less restrictive than those herein.
+
+5.3 Exclusions. Confidential Information does not include information that: (a) is or becomes publicly available through no fault of the Receiving Party; (b) was known to the Receiving Party prior to disclosure, as evidenced by written records; (c) is independently developed by the Receiving Party without reference to the Confidential Information; or (d) is rightfully received from a third party without restriction on disclosure.
+
+5.4 Compelled Disclosure. If the Receiving Party is compelled by law, regulation, or court order to disclose Confidential Information, it shall: (a) provide prompt written notice to the Disclosing Party (to the extent legally permitted); (b) cooperate with the Disclosing Party in seeking a protective order or other appropriate remedy; and (c) disclose only that portion of the Confidential Information that is legally required.
+
+5.5 Duration. The obligations of confidentiality under this Article shall survive for a period of five (5) years following the expiration or termination of this Agreement, except with respect to trade secrets, which shall be protected for so long as they remain trade secrets under applicable law.
+
+5.6 Return or Destruction. Upon termination or expiration of this Agreement, or upon the Disclosing Party's written request, the Receiving Party shall promptly return or destroy all Confidential Information of the Disclosing Party and certify such return or destruction in writing, except that the Receiving Party may retain one archival copy solely for legal compliance and audit purposes.
+
+--------------------------------------------------------------------------------
+
+ARTICLE 6 — REPRESENTATIONS AND WARRANTIES
+
+6.1 Mutual Representations. Each Party represents and warrants that: (a) it is duly organized, validly existing, and in good standing under the laws of its jurisdiction; (b) it has full power and authority to enter into this Agreement and perform its obligations hereunder; (c) the execution and performance of this Agreement does not conflict with any other agreement to which it is a party; and (d) it shall comply with all applicable laws and regulations in performing its obligations.
+
+6.2 Provider Representations. Provider additionally represents and warrants that: (a) the Services shall be performed in a professional and workmanlike manner consistent with generally accepted industry standards; (b) the Deliverables shall conform to the specifications in the applicable SOW; (c) the Deliverables shall not infringe, misappropriate, or violate any third-party Intellectual Property rights; (d) Provider has obtained all necessary rights and licenses to perform the Services; and (e) no Deliverable will contain any virus, malware, disabling code, or similar harmful component.
+
+6.3 Warranty Period. Provider shall correct any non-conformity in Deliverables reported by Client within ninety (90) days of acceptance of such Deliverables ("Warranty Period") at no additional charge to Client.
+
+6.4 DISCLAIMER. EXCEPT AS EXPRESSLY SET FORTH IN THIS AGREEMENT, NEITHER PARTY MAKES ANY WARRANTIES, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE IMPLIED WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, AND NON-INFRINGEMENT.
+
+--------------------------------------------------------------------------------
+
+ARTICLE 7 — INDEMNIFICATION
+
+7.1 Provider Indemnification. Provider shall defend, indemnify, and hold harmless Client, its Affiliates, and their respective officers, directors, employees, agents, successors, and assigns (collectively, "Client Indemnitees") from and against any and all claims, actions, suits, proceedings, losses, damages, liabilities, costs, and expenses (including reasonable attorneys' fees and court costs) ("Losses") arising out of or relating to: (a) any breach of Provider's representations, warranties, or obligations under this Agreement; (b) any infringement or misappropriation of third-party Intellectual Property rights by the Deliverables or Services; (c) any negligent or wrongful act or omission of Provider or its Personnel; (d) any violation of applicable law by Provider; or (e) any bodily injury or property damage caused by Provider's Personnel.
+
+7.2 Client Indemnification. Client shall defend, indemnify, and hold harmless Provider, its Affiliates, and their respective officers, directors, employees, agents, successors, and assigns ("Provider Indemnitees") from and against any Losses arising out of or relating to: (a) any breach of Client's representations, warranties, or obligations under this Agreement; (b) Client's use of Deliverables in a manner not contemplated by this Agreement; or (c) any materials or data provided by Client that infringe third-party rights.
+
+7.3 Indemnification Procedure. The indemnified party shall: (a) provide prompt written notice of any claim; (b) grant the indemnifying party sole control of the defense and settlement; and (c) provide reasonable cooperation at the indemnifying party's expense. Failure to provide timely notice shall not relieve the indemnifying party of its obligations except to the extent prejudiced by such failure.
+
+7.4 Consequential Damages in Indemnification. Notwithstanding Article 8, indemnification obligations under this Article 7 shall include consequential, incidental, and special damages, including but not limited to lost profits, lost revenue, loss of data, and business interruption damages, to the extent arising from third-party claims covered by this Article.
+
+--------------------------------------------------------------------------------
+
+ARTICLE 8 — LIMITATION OF LIABILITY
+
+8.1 Consequential Damages Exclusion. EXCEPT FOR OBLIGATIONS UNDER ARTICLE 7 (INDEMNIFICATION), ARTICLE 5 (CONFIDENTIALITY), AND ARTICLE 4 (INTELLECTUAL PROPERTY), NEITHER PARTY SHALL BE LIABLE TO THE OTHER FOR ANY INDIRECT, INCIDENTAL, SPECIAL, CONSEQUENTIAL, OR PUNITIVE DAMAGES, INCLUDING LOSS OF PROFITS, REVENUE, DATA, OR BUSINESS INTERRUPTION, REGARDLESS OF THE CAUSE OF ACTION OR THE THEORY OF LIABILITY, EVEN IF SUCH PARTY HAS BEEN ADVISED OF THE POSSIBILITY OF SUCH DAMAGES.
+
+8.2 Liability Cap. EXCEPT FOR OBLIGATIONS UNDER ARTICLE 7 (INDEMNIFICATION), ARTICLE 5 (CONFIDENTIALITY), AND ARTICLE 4 (INTELLECTUAL PROPERTY), THE TOTAL AGGREGATE LIABILITY OF EITHER PARTY UNDER THIS AGREEMENT SHALL NOT EXCEED TWO TIMES (2X) THE TOTAL FEES PAID OR PAYABLE BY CLIENT TO PROVIDER UNDER THIS AGREEMENT DURING THE TWELVE (12) MONTH PERIOD IMMEDIATELY PRECEDING THE EVENT GIVING RISE TO THE CLAIM.
+
+8.3 Unlimited Liability. The limitations set forth in Sections 8.1 and 8.2 shall not apply to: (a) Provider's indemnification obligations under Section 7.1; (b) willful misconduct or fraud by either Party; (c) breach of confidentiality obligations under Article 5; (d) infringement of the other Party's Intellectual Property; or (e) Provider's obligations under applicable data protection laws.
+
+8.4 Essential Basis. The Parties acknowledge that the limitations of liability set forth in this Article reflect the allocation of risk between the Parties and form an essential basis of the bargain between them. This Agreement would not have been entered into by either Party without these limitations.
+
+--------------------------------------------------------------------------------
+
+ARTICLE 9 — DATA PROTECTION AND SECURITY
+
+9.1 Data Processing. To the extent Provider processes personal data on behalf of Client in the performance of Services, Provider shall comply with all applicable data protection laws and regulations, including but not limited to the California Consumer Privacy Act (CCPA), the General Data Protection Regulation (GDPR) where applicable, and any other relevant privacy legislation.
+
+9.2 Security Measures. Provider shall implement and maintain appropriate technical and organizational security measures to protect Client data against unauthorized access, disclosure, alteration, destruction, or loss. Such measures shall include, at a minimum: (a) encryption of data in transit and at rest using industry-standard algorithms; (b) access controls and authentication mechanisms; (c) regular security assessments and penetration testing; (d) incident detection and response procedures; and (e) business continuity and disaster recovery plans.
+
+9.3 Data Breach Notification. Provider shall notify Client of any actual or reasonably suspected data breach affecting Client data within forty-eight (48) hours of discovery. Such notification shall include: (a) the nature and scope of the breach; (b) the types of data affected; (c) the measures taken or proposed to mitigate the breach; and (d) a contact person for further inquiries.
+
+9.4 Data Location. Provider shall process and store Client data only within the continental United States unless otherwise agreed in writing by Client. Provider shall not transfer Client data to any jurisdiction outside the United States without Client's prior written consent and appropriate safeguards.
+
+9.5 Return of Data. Upon termination or expiration of this Agreement, Provider shall, at Client's election, return or securely destroy all Client data in Provider's possession or control within thirty (30) days and certify such return or destruction in writing.
+
+--------------------------------------------------------------------------------
+
+ARTICLE 10 — INSURANCE
+
+10.1 Required Coverage. Provider shall maintain, at its own expense, the following insurance coverages throughout the Term and for a period of two (2) years thereafter:
+
+(a) Commercial General Liability: not less than Two Million Dollars ($2,000,000) per occurrence and Four Million Dollars ($4,000,000) in the aggregate;
+
+(b) Professional Liability / Errors and Omissions: not less than Five Million Dollars ($5,000,000) per claim and in the aggregate;
+
+(c) Cyber Liability: not less than Five Million Dollars ($5,000,000) per claim and in the aggregate;
+
+(d) Workers' Compensation: as required by applicable law; and
+
+(e) Commercial Automobile Liability: not less than One Million Dollars ($1,000,000) combined single limit.
+
+10.2 Additional Insured. Provider shall name Client and its Affiliates as additional insureds under the Commercial General Liability and Cyber Liability policies.
+
+10.3 Certificates. Provider shall furnish certificates of insurance evidencing the required coverages upon request and shall provide thirty (30) days' prior written notice of any material change or cancellation of coverage.
+
+--------------------------------------------------------------------------------
+
+ARTICLE 11 — TERM AND TERMINATION
+
+11.1 Term. This Agreement shall commence on the Effective Date and shall continue for an initial term of three (3) years ("Initial Term"), unless earlier terminated as provided herein. Thereafter, this Agreement shall automatically renew for successive one (1) year renewal periods ("Renewal Terms") unless either Party provides written notice of non-renewal at least ninety (90) days prior to the expiration of the then-current term.
+
+11.2 Termination for Convenience. Either Party may terminate this Agreement or any SOW for convenience upon thirty (30) days' prior written notice to the other Party. In the event of termination for convenience by Client, Client shall pay Provider for all Services performed and expenses incurred through the effective date of termination, plus any non-cancellable commitments made by Provider in reliance on the SOW.
+
+11.3 Termination for Cause. Either Party may terminate this Agreement immediately upon written notice if the other Party: (a) materially breaches this Agreement and fails to cure such breach within thirty (30) days of receiving written notice thereof; (b) becomes insolvent, files for bankruptcy, or has a bankruptcy petition filed against it; (c) makes an assignment for the benefit of creditors; or (d) ceases to conduct business in the normal course.
+
+11.4 Effect of Termination. Upon termination or expiration of this Agreement: (a) all outstanding SOWs shall terminate unless otherwise agreed in writing; (b) Provider shall cease all Services and deliver all completed and in-progress Deliverables to Client; (c) Client shall pay all amounts due for Services performed through the termination date; (d) each Party shall return or destroy the other Party's Confidential Information in accordance with Article 5; and (e) all licenses granted to Client under this Agreement shall survive termination.
+
+11.5 Survival. The following provisions shall survive termination or expiration of this Agreement: Articles 1 (Definitions), 4 (Intellectual Property), 5 (Confidentiality), 6.4 (Disclaimer), 7 (Indemnification), 8 (Limitation of Liability), 9 (Data Protection), 12 (Dispute Resolution), and 13 (General Provisions), as well as any other provisions that by their nature should survive.
+
+--------------------------------------------------------------------------------
+
+ARTICLE 12 — DISPUTE RESOLUTION
+
+12.1 Governing Law. This Agreement shall be governed by and construed in accordance with the laws of the State of Delaware, without regard to its conflict of laws principles.
+
+12.2 Escalation. In the event of any dispute arising out of or relating to this Agreement, the Parties shall first attempt to resolve the dispute through good-faith negotiation between senior executives designated by each Party. Such negotiations shall commence within ten (10) business days of a Party's written request and shall continue for a period of not less than thirty (30) days.
+
+12.3 Mediation. If the dispute cannot be resolved through negotiation, the Parties agree to submit the dispute to non-binding mediation administered by the American Arbitration Association ("AAA") under its Commercial Mediation Procedures before pursuing arbitration or litigation.
+
+12.4 Arbitration. If mediation is unsuccessful, any unresolved dispute shall be submitted to binding arbitration administered by the AAA under its Commercial Arbitration Rules. The arbitration shall be conducted by a panel of three (3) arbitrators in Wilmington, Delaware. The arbitrators shall have expertise in technology services agreements. The decision of the arbitrators shall be final and binding, and judgment upon the award may be entered in any court of competent jurisdiction.
+
+12.5 Injunctive Relief. Notwithstanding the foregoing, either Party may seek injunctive or other equitable relief from any court of competent jurisdiction to prevent irreparable harm, including but not limited to breaches of confidentiality, intellectual property infringement, or unauthorized disclosure of trade secrets.
+
+12.6 Attorneys' Fees. The prevailing party in any dispute under this Agreement shall be entitled to recover its reasonable attorneys' fees and costs from the non-prevailing party.
+
+--------------------------------------------------------------------------------
+
+ARTICLE 13 — GENERAL PROVISIONS
+
+13.1 Entire Agreement. This Agreement, including all Exhibits and Statements of Work, constitutes the entire agreement between the Parties with respect to the subject matter hereof and supersedes all prior and contemporaneous agreements, representations, and understandings.
+
+13.2 Amendments. This Agreement may not be amended or modified except by a written instrument signed by authorized representatives of both Parties.
+
+13.3 Waiver. No waiver of any provision of this Agreement shall be effective unless in writing signed by the waiving Party. No failure or delay in exercising any right shall constitute a waiver of such right.
+
+13.4 Severability. If any provision of this Agreement is held to be invalid, illegal, or unenforceable, the remaining provisions shall continue in full force and effect. The invalid provision shall be reformed to the minimum extent necessary to make it valid and enforceable while preserving the Parties' original intent.
+
+13.5 Assignment. Neither Party may assign this Agreement or any rights or obligations hereunder without the prior written consent of the other Party, except that either Party may assign this Agreement to an Affiliate or in connection with a merger, acquisition, or sale of substantially all of its assets, provided that the assignee assumes all obligations under this Agreement. Any attempted assignment in violation of this Section shall be null and void.
+
+13.6 Notices. All notices under this Agreement shall be in writing and shall be deemed given when: (a) delivered personally; (b) sent by confirmed email to the addresses specified below; (c) three (3) business days after being sent by registered or certified mail, return receipt requested; or (d) one (1) business day after being sent by nationally recognized overnight courier.
+
+If to Client:
+Meridian Technology Solutions, LLC
+Attn: General Counsel
+1200 Innovation Drive, Suite 400
+San Jose, CA 95134
+Email: legal@meridiantech.example.com
+
+If to Provider:
+Apex Digital Consulting Group, Inc.
+Attn: Legal Department
+350 Fifth Avenue, 72nd Floor
+New York, NY 10118
+Email: contracts@apexdigital.example.com
+
+13.7 Force Majeure. Neither Party shall be liable for any failure or delay in performance due to causes beyond its reasonable control, including but not limited to acts of God, natural disasters, epidemics, pandemics, war, terrorism, government actions, labor disputes, power failures, or internet outages, provided that the affected Party gives prompt notice and uses commercially reasonable efforts to mitigate the impact.
+
+13.8 Independent Contractor. Provider is an independent contractor, and nothing in this Agreement shall be construed to create a partnership, joint venture, agency, or employment relationship between the Parties.
+
+13.9 No Third-Party Beneficiaries. This Agreement is for the sole benefit of the Parties and their permitted assigns and does not confer any rights or remedies upon any third party.
+
+13.10 Counterparts. This Agreement may be executed in counterparts, each of which shall be deemed an original and all of which together shall constitute one and the same instrument. Electronic signatures shall be deemed original signatures for all purposes.
+
+13.11 Headings. The headings in this Agreement are for convenience only and shall not affect the interpretation of any provision.
+
+13.12 Construction. This Agreement shall be construed without regard to any presumption or rule requiring construction against the drafting Party. The terms "include," "includes," and "including" shall be deemed to be followed by "without limitation."
+
+--------------------------------------------------------------------------------
+
+IN WITNESS WHEREOF, the Parties have executed this Agreement as of the Effective Date.
+
+MERIDIAN TECHNOLOGY SOLUTIONS, LLC
+
+By: _________________________________
+Name: Sarah J. Chen
+Title: Chief Legal Officer
+Date: March 10, 2026
+
+APEX DIGITAL CONSULTING GROUP, INC.
+
+By: _________________________________
+Name: Michael R. Torres
+Title: Managing Director
+Date: March 10, 2026
+
+--------------------------------------------------------------------------------
+
+EXHIBIT A — STATEMENT OF WORK TEMPLATE
+
+[To be completed for each engagement]
+
+SOW Number: ________
+SOW Title: ________
+Effective Date: ________
+
+1. Description of Services: ________
+2. Deliverables: ________
+3. Timeline and Milestones: ________
+4. Acceptance Criteria: ________
+5. Fees: ________
+6. Payment Terms: ________
+7. Key Personnel: ________
+8. Special Terms: ________
+
+Authorized Signatures:
+
+Client: _________________ Date: _________
+Provider: _________________ Date: _________
+
+--------------------------------------------------------------------------------
+
+EXHIBIT B — RATE CARD
+
+Effective for the Initial Term:
+
+| Role                           | Hourly Rate (USD) |
+|--------------------------------|-------------------|
+| Managing Director              | $450              |
+| Senior Principal Consultant    | $375              |
+| Principal Consultant           | $325              |
+| Senior Consultant              | $275              |
+| Consultant                     | $225              |
+| Analyst                        | $175              |
+| Project Manager                | $250              |
+| Technical Architect            | $400              |
+| Senior Developer               | $300              |
+| Developer                      | $225              |
+| QA Engineer                    | $200              |
+
+Rates shall be subject to an annual increase of not more than three percent (3%) upon each anniversary of the Effective Date, with sixty (60) days' prior written notice.
+
+Travel and expenses shall be reimbursed at cost, subject to the expense policy set forth in Section 3.5.
+
+--------------------------------------------------------------------------------
+
+END OF AGREEMENT

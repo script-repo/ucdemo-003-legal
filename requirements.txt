@@ -1,0 +1,2 @@
+# For report generation (generate_legal_ai_report.py)
+python-docx>=1.0.0

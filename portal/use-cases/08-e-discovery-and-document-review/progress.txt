@@ -1,0 +1,24 @@
+# UC-08 E-Discovery and Document Review — Progress
+
+## Tasks
+
+### Completed
+- [x] Create index.html with header, landing layout, SVG diagram, description
+- [x] Create styles.css with all styles (html 100%, body 16px, forms 15px)
+- [x] Create app.js with AI call, file extraction, mock fallback, results rendering
+- [x] Update portal app.js: UC-08 live: true
+
+### In Progress
+
+### Remaining
+
+---
+
+## Summary
+UC-08 E-Discovery and Document Review is complete. All 3 files created (index.html, styles.css, app.js). Portal app.js updated to set UC-08 live: true. Page supports file upload (TXT/PDF/DOCX) and text paste, matter context, review scope checkboxes, AI analysis via llama3-1-8b, mock fallback with 4 sample documents, dashboard stats, document classification cards, thematic analysis, and review metrics.
+
+## Files Modified
+- portal/use-cases/08-e-discovery-and-document-review/index.html (created)
+- portal/use-cases/08-e-discovery-and-document-review/styles.css (created)
+- portal/use-cases/08-e-discovery-and-document-review/app.js (created)
+- portal/app.js (UC-08 live: true)

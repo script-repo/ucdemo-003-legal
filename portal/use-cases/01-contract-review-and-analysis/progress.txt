@@ -1,0 +1,74 @@
+# Contract Review and Analysis (UC-01) — Progress Tracking
+
+## Task 1: Placeholder API Modules
+
+### Completed
+- [x] Created api/rag-pipeline.js with searchClauses mock (1.5s delay, 5 clause matches)
+- [x] Created api/database.js with saveContract, getContracts, getContractById mocks (5 contracts)
+- [x] Created api/inference.js with analyzeContract mock (risk score, clauses, deviations)
+
+## Task 2: Use Case HTML Page
+
+### Completed
+- [x] Created index.html with page-header (logo, back-link, page title)
+- [x] Upload section with drag-and-drop zone, file input, icon
+- [x] Loading section with spinner and status text
+- [x] Results section with risk score, summary card, clause table, deviations list
+- [x] Sidebar with recent contracts history list
+- [x] All accessible: aria-labels, roles, semantic HTML, skip-link
+
+## Task 3: Use Case CSS
+
+### Completed
+- [x] Created styles.css with portal :root variables (same as portal/styles.css)
+- [x] Base styles: box-sizing, html 62.5%, body, skip-link, header, logo
+- [x] Page-header (solid blue bg), back-link, page-title, content-wrapper
+- [x] Upload zone (dashed border, dragover state, hover)
+- [x] Risk badges (high=red, medium=orange, low=green), risk score display
+- [x] Summary card, clause table (striped, blue header), deviation list (left border by severity)
+- [x] History list, loading spinner, hidden utility
+- [x] Responsive: single column at 768px, scrollable table
+
+## Task 4: Use Case JavaScript
+
+### Completed
+- [x] Created app.js with ES module imports from placeholder APIs
+- [x] Drag-and-drop + click-to-browse file upload handling
+- [x] Upload triggers loading → analyzeContract → renders risk, summary, clauses, deviations
+- [x] Contract saved to mock DB after analysis
+- [x] History loaded on page init and after each analysis
+- [x] Fixed class name alignment: deviation-item/severity-*, history-item-name/history-item-date
+
+## Task 5: Portal Integration
+
+### Completed
+- [x] Portal card 1 title → "Contract Review & Analysis"
+- [x] Portal card 1 description → real use-case copy from PRD
+- [x] Portal card 1 link → ../use-cases/01-contract-review-and-analysis/index.html
+- [x] Portal card 1 icon → document with checkmark SVG
+- [x] Off-canvas nav "Use Case 1" → "Contract Review & Analysis" with correct link
+
+## Task 6: Verify and Polish
+
+### Completed
+- [x] All 6 files created and non-empty
+- [x] Portal links to use case
+- [x] CSS uses Style Guide variables throughout (no hardcoded colors outside :root)
+- [x] Responsive layout verified in CSS (two-column desktop, stacked mobile)
+- [x] Accessibility: aria-labels, roles, semantic HTML, skip-link, focus-visible
+
+---
+
+## Summary
+All 6 tasks complete. UC-01 Contract Review & Analysis is built with placeholder APIs, Style Guide-compliant UI, and integrated into the portal.
+
+## Files Created
+- `use-cases/01-contract-review-and-analysis/index.html` - Main page
+- `use-cases/01-contract-review-and-analysis/styles.css` - Styles (portal vars + UC-specific)
+- `use-cases/01-contract-review-and-analysis/app.js` - Upload flow and rendering
+- `use-cases/01-contract-review-and-analysis/api/rag-pipeline.js` - Placeholder RAG API
+- `use-cases/01-contract-review-and-analysis/api/database.js` - Placeholder PostgreSQL API
+- `use-cases/01-contract-review-and-analysis/api/inference.js` - Placeholder inferencing API
+
+## Files Modified
+- `portal/index.html` - Card 1 and nav link updated

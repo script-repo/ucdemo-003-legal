@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Immigration Document Preparation — AI-assisted visa petition preparation with document checklists and evidence recommendations." />
+  <title>Immigration Document Preparation — Legal AI Portal</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Roboto:wght@400;500;600&family=Roboto+Slab:wght@400&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <a href="#main" class="skip-link">Skip to main content</a>
+
+  <header class="page-header" role="banner">
+    <div class="header-inner">
+      <div class="header-left">
+        <a class="back-link" href="../../index.html" aria-label="Return to portal">&larr; Portal</a>
+        <a class="logo" href="../../index.html" aria-label="Legal AI Portal home">
+          <span class="logo-mark">Legal AI</span>
+        </a>
+      </div>
+      <h1 class="page-title">Immigration Document Preparation</h1>
+    </div>
+  </header>
+
+  <main id="main" class="content-wrapper">
+    <div id="error-banner" class="error-banner hidden" role="alert" aria-live="assertive"></div>
+
+    <!-- ============================================================= -->
+    <!-- Landing: overview (left) | form input (right)                  -->
+    <!-- ============================================================= -->
+    <section id="landing-section" class="landing-layout">
+
+      <div class="landing-main">
+        <div class="use-case-overview">
+          <h2 class="section-heading">What This Does</h2>
+          <p>Immigration Document Preparation uses AI to assist with visa petition preparation. Enter the visa type, beneficiary and petitioner information, job details, and special qualifications. The AI generates a petition outline, a required documents checklist, supporting evidence recommendations, processing timeline, and important warnings to help you assemble a complete, well-structured petition package.</p>
+        </div>
+
+        <div class="user-journey">
+          <h2 class="section-heading">Example User Journey</h2>
+          <div class="journey-steps">
+            <div class="journey-step">
+              <span class="journey-step-number">1</span>
+              <div class="journey-step-content">
+                <strong>Complete the Form</strong>
+                <p>Select the visa type (H-1B, L-1, O-1, EB-1, EB-2 NIW, PERM, TN, or E-2), enter beneficiary and petitioner details, job description, and special qualifications.</p>
+              </div>
+            </div>
+            <div class="journey-step">
+              <span class="journey-step-number">2</span>
+              <div class="journey-step-content">
+                <strong>AI Generates Outline</strong>
+                <p>The system sends your input to the Nutanix AI inference endpoint and receives a structured petition outline, document checklist, and evidence recommendations.</p>
+              </div>
+            </div>
+            <div class="journey-step">
+              <span class="journey-step-number">3</span>
+              <div class="journey-step-content">
+                <strong>Review Results</strong>
+                <p>Review the petition outline, required documents table, evidence recommendations with strength levels, processing timeline, and any warnings before assembling your package.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- RIGHT: Form input panel -->
+      <aside class="landing-sidebar" id="input-panel">
+        <h2 class="section-heading">Prepare Petition</h2>
+
+        <form id="petition-form" class="petition-form">
+          <div class="input-card">
+            <h3 class="input-card-title">Visa Type</h3>
+            <select id="visa-type" name="visaType" required aria-label="Select visa type">
+              <option value="">— Select —</option>
+              <option value="H-1B">H-1B</option>
+              <option value="L-1">L-1</option>
+              <option value="O-1">O-1</option>
+              <option value="EB-1">EB-1</option>
+              <option value="EB-2 NIW">EB-2 NIW</option>
+              <option value="PERM">PERM</option>
+              <option value="TN">TN</option>
+              <option value="E-2">E-2</option>
+            </select>
+          </div>
+
+          <div class="input-card">
+            <h3 class="input-card-title">Beneficiary Information</h3>
+            <label for="beneficiary-name">Name</label>
+            <input type="text" id="beneficiary-name" name="beneficiaryName" placeholder="Full legal name" />
+            <label for="beneficiary-nationality">Nationality</label>
+            <input type="text" id="beneficiary-nationality" name="beneficiaryNationality" placeholder="Country of citizenship" />
+            <label for="beneficiary-education">Education</label>
+            <input type="text" id="beneficiary-education" name="beneficiaryEducation" placeholder="Degrees, institutions, years" />
+            <label for="beneficiary-experience">Experience</label>
+            <input type="text" id="beneficiary-experience" name="beneficiaryExperience" placeholder="Relevant work experience" />
+          </div>
+
+          <div class="input-card">
+            <h3 class="input-card-title">Petitioner / Employer Information</h3>
+            <label for="petitioner-name">Petitioner Name</label>
+            <input type="text" id="petitioner-name" name="petitionerName" placeholder="Company or individual name" />
+            <label for="petitioner-info">Additional Info</label>
+            <input type="text" id="petitioner-info" name="petitionerInfo" placeholder="Industry, size, location, etc." />
+          </div>
+
+          <div class="input-card">
+            <h3 class="input-card-title">Job Title / Description</h3>
+            <textarea id="job-description" name="jobDescription" rows="5" placeholder="Describe the position, duties, and requirements..."></textarea>
+          </div>
+
+          <div class="input-card">
+            <h3 class="input-card-title">Special Qualifications</h3>
+            <textarea id="special-qualifications" name="specialQualifications" rows="4" placeholder="Awards, publications, unique skills, extraordinary ability indicators..."></textarea>
+          </div>
+
+          <button type="submit" id="btn-prepare" class="btn-analyze">Prepare Petition</button>
+        </form>
+
+        <div class="input-card history-card">
+          <div class="history-header">
+            <h3 id="history-heading" class="input-card-title">Recent Petitions</h3>
+            <button type="button" id="btn-clear-history" class="btn-clear-history hidden" aria-label="Clear all recent petitions">Clear All</button>
+          </div>
+          <div id="history-list" class="history-list" role="list" aria-labelledby="history-heading"></div>
+        </div>
+      </aside>
+    </section>
+
+    <!-- ============================================================= -->
+    <!-- Loading state                                                  -->
+    <!-- ============================================================= -->
+    <section id="loading-section" class="loading-overlay hidden" aria-live="polite" aria-label="Petition preparation in progress">
+      <div class="loading-card">
+        <div class="loading-spinner"></div>
+        <p class="loading-status" id="loading-status">Preparing petition&hellip;</p>
+        <div class="loading-stages">
+          <div class="loading-stage" id="stage-send"><span class="stage-icon">&#9679;</span> Sending to AI</div>
+          <div class="loading-stage" id="stage-analyze"><span class="stage-icon">&#9679;</span> Generating outline</div>
+          <div class="loading-stage" id="stage-render"><span class="stage-icon">&#9679;</span> Rendering results</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================= -->
+    <!-- Results                                                        -->
+    <!-- ============================================================= -->
+    <section id="results-section" class="hidden" aria-labelledby="results-heading">
+      <div class="results-top-bar">
+        <h2 id="results-heading">Petition Results</h2>
+        <button type="button" id="btn-new-analysis" class="btn-new-analysis">&larr; New Petition</button>
+      </div>
+      <div class="results-layout">
+        <div class="results-main">
+          <div class="petition-header" aria-live="polite">
+            <h3 id="petition-title" class="petition-title"></h3>
+            <p id="petition-summary" class="petition-summary"></p>
+          </div>
+
+          <h3 id="outline-heading">Petition Outline</h3>
+          <div id="petition-outline" class="petition-outline" role="list" aria-labelledby="outline-heading"></div>
+
+          <h3 id="checklist-heading">Required Documents</h3>
+          <div class="table-responsive">
+            <table class="checklist-table" role="table" aria-labelledby="checklist-heading">
+              <thead>
+                <tr>
+                  <th scope="col">Document</th>
+                  <th scope="col">Source</th>
+                  <th scope="col">Status</th>
+                  <th scope="col">Notes</th>
+                </tr>
+              </thead>
+              <tbody id="checklist-tbody"></tbody>
+            </table>
+          </div>
+
+          <h3 id="evidence-heading">Evidence Recommendations</h3>
+          <div id="evidence-recommendations" class="evidence-cards" role="list" aria-labelledby="evidence-heading"></div>
+
+          <h3 id="timeline-heading">Processing Timeline</h3>
+          <div id="processing-timeline" class="timeline-list" role="list" aria-labelledby="timeline-heading"></div>
+
+          <h3 id="warnings-heading">Warnings</h3>
+          <div id="warnings-list" class="warnings-list" role="list" aria-labelledby="warnings-heading"></div>
+        </div>
+        <aside class="results-sidebar">
+          <div class="input-card">
+            <div class="history-header">
+              <h3 class="input-card-title">Recent Petitions</h3>
+              <button type="button" id="btn-clear-results-history" class="btn-clear-history hidden" aria-label="Clear all recent petitions">Clear All</button>
+            </div>
+            <div id="results-history-list" class="history-list" role="list"></div>
+          </div>
+        </aside>
+      </div>
+    </section>
+  </main>
+
+  <script src="app.js" defer></script>
+</body>
+</html>

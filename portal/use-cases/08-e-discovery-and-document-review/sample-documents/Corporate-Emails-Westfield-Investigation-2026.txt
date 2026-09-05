@@ -1,0 +1,183 @@
+E-DISCOVERY DOCUMENT COLLECTION
+Matter: Westfield Properties, Inc. — Internal Investigation
+Custodian Collection — Mixed Documents
+Date Range: June 2025 – January 2026
+Collection ID: WF-2026-001
+
+========================================================================
+
+DOCUMENT 1 OF 8
+Type: Email
+From: Thomas Garrett <tgarrett@westfieldprop.com>
+To: Sandra Liu <sliu@westfieldprop.com>
+CC: Mark Ellison <mellison@westfieldprop.com>
+Date: June 14, 2025, 9:47 AM
+Subject: RE: Q2 Revenue Adjustments — CONFIDENTIAL
+
+Sandra,
+
+I've reviewed the Q2 numbers you sent over. We have a problem. The Riverside and Oakdale developments are both running about $4.2M behind projected revenue for the quarter. If we report these as-is, we'll miss the Street estimates and the stock is going to take a hit.
+
+Here's what I'm thinking: we can accelerate the recognition on the Harbor Point Phase III pre-sales. We've got signed LOIs on 43 units, but the purchase agreements aren't fully executed yet. Technically the revenue shouldn't be recognized until closing, but if we book the LOIs as "substantially complete transactions" under our internal accounting methodology, we can pull about $6.8M into Q2.
+
+I know this is aggressive, but it's not the first time we've done it. Remember Q4 2024? Same approach, nobody blinked.
+
+Let's discuss before the Friday close. Don't loop anyone else in on this yet.
+
+— Tom
+
+========================================================================
+
+DOCUMENT 2 OF 8
+Type: Email
+From: Sandra Liu <sliu@westfieldprop.com>
+To: Thomas Garrett <tgarrett@westfieldprop.com>
+Date: June 14, 2025, 2:15 PM
+Subject: RE: Q2 Revenue Adjustments — CONFIDENTIAL
+
+Tom,
+
+I hear you on the pressure, but I'm uncomfortable with this. The LOIs on Harbor Point Phase III have significant contingencies — financing approvals, inspection periods, and HOA formation. Recognizing revenue on these before the contingencies are resolved goes beyond "aggressive." It could be a problem under ASC 606.
+
+I spoke with our external auditors last quarter about a similar issue, and they flagged the risk. I didn't put that in writing at the time, but I'm worried about where this leads.
+
+Can we find another way to bridge the gap? What about deferring some of the Riverside construction costs to Q3?
+
+— Sandra
+
+========================================================================
+
+DOCUMENT 3 OF 8
+Type: Email
+From: Thomas Garrett <tgarrett@westfieldprop.com>
+To: Sandra Liu <sliu@westfieldprop.com>
+Date: June 15, 2025, 8:03 AM
+Subject: RE: Q2 Revenue Adjustments — CONFIDENTIAL
+
+Sandra,
+
+The cost deferral won't work — the amounts aren't big enough to move the needle, and the auditors have a better line of sight into expenses.
+
+Look, the LOI approach has worked before. I'll take responsibility. We'll book the revenue, hit the number, and by Q3 the actual closings will catch up. Nobody gets hurt.
+
+I need the adjusted entries by Thursday. I'll sign off on them.
+
+Also — and I need to be clear on this — please don't discuss this with anyone outside our team. Not the auditors, not legal, not HR. This is a senior management decision and we need to manage the messaging carefully.
+
+— Tom
+
+========================================================================
+
+DOCUMENT 4 OF 8
+Type: Internal Memorandum
+From: Sandra Liu, VP of Finance
+To: File
+Date: June 17, 2025
+Subject: Personal Memorandum — Q2 Revenue Recognition Concerns
+
+I am writing this memorandum for my personal records.
+
+On June 14-15, 2025, SVP Thomas Garrett directed me to accelerate revenue recognition on Harbor Point Phase III pre-sales to bridge a $4.2M revenue gap in Q2 2025. Specifically, Mr. Garrett instructed me to reclassify signed Letters of Intent as "substantially complete transactions" and recognize approximately $6.8M in revenue, despite the fact that these LOIs contain material contingencies (financing, inspection, and HOA formation) that have not been satisfied.
+
+I expressed my concerns that this treatment may not comply with ASC 606 revenue recognition standards. Mr. Garrett acknowledged the aggressive nature of the approach but stated it had been done before (referencing Q4 2024) and instructed me to proceed.
+
+Mr. Garrett explicitly directed me not to discuss this matter with the external auditors, legal counsel, or HR.
+
+I am documenting this because I believe this directive may constitute a violation of company accounting policies and potentially securities regulations. I intend to comply with Mr. Garrett's instruction for now while I consider my options, but I am preserving this record in the event that this matter is later investigated.
+
+— Sandra Liu
+
+========================================================================
+
+DOCUMENT 5 OF 8
+Type: Email
+From: Rachel Donovan <rdonovan@westfieldprop.com>
+To: Thomas Garrett <tgarrett@westfieldprop.com>
+Date: August 8, 2025, 11:30 AM
+Subject: Harbor Point Phase III — Closing Delays
+
+Tom,
+
+Wanted to flag that we're seeing significant delays on Harbor Point Phase III closings. Of the 43 original LOI signers, 12 have withdrawn entirely (financing fell through for 8 of them, and 4 exercised their inspection contingency exit). Another 15 are still in the financing approval process with no clear timeline.
+
+This means we currently have only 16 units with fully executed purchase agreements — about $2.5M in actual closeable revenue versus the $6.8M we recognized in Q2.
+
+I know this is sensitive given what was booked last quarter. How do you want to handle this for Q3?
+
+— Rachel
+
+========================================================================
+
+DOCUMENT 6 OF 8
+Type: Email
+From: Thomas Garrett <tgarrett@westfieldprop.com>
+To: Rachel Donovan <rdonovan@westfieldprop.com>
+CC: Sandra Liu <sliu@westfieldprop.com>
+Date: August 8, 2025, 4:55 PM
+Subject: RE: Harbor Point Phase III — Closing Delays
+
+Rachel,
+
+Thanks for the update. This is disappointing but not unexpected — the market has been soft.
+
+Here's how we'll handle it: we do NOT reverse the Q2 revenue. Instead, we treat the withdrawn LOIs as "timing adjustments" and shift the expected closings to Q4 2025 and Q1 2026 in our internal projections. For Q3 reporting, we'll show the remaining 16 closings as "on track" and note the others as "in progress" without specifying the withdrawals.
+
+Sandra — can you prepare the Q3 entries consistent with this approach? We'll catch up when the replacement buyers come in.
+
+And Rachel — please limit distribution on this email. I don't want this getting to the board or the auditors prematurely.
+
+— Tom
+
+========================================================================
+
+DOCUMENT 7 OF 8
+Type: Email (Attorney-Client Privileged)
+From: Sandra Liu <sliu@westfieldprop.com>
+To: James Patterson <jpatterson@outsidecounsel.com>
+Date: October 2, 2025, 7:18 PM
+Subject: PRIVILEGED AND CONFIDENTIAL — Legal Advice Requested
+
+Dear Jim,
+
+I'm reaching out in strict confidence. I need legal advice regarding a situation at Westfield Properties.
+
+Over the past several months, I have been directed by senior management to recognize revenue in a manner that I believe may not comply with ASC 606 and could potentially constitute a misstatement of financial results. Specifically, approximately $6.8M in revenue was recognized in Q2 2025 based on Letters of Intent that contained material unsatisfied contingencies. Since then, approximately $4.3M of that revenue has effectively evaporated due to buyer withdrawals, but management has directed that no reversal or restatement be made.
+
+I have documented the relevant communications and my concerns in a personal memorandum dated June 17, 2025.
+
+I would like to understand: (1) what my obligations are under securities law and SOX, (2) whether I have whistleblower protections if I report this to the audit committee or the SEC, and (3) what the potential personal liability exposure is for me as VP of Finance if I continue to follow these directives.
+
+I want to do the right thing, but I also need to protect myself and my family.
+
+Please treat this as a request for personal legal advice, not on behalf of Westfield.
+
+Regards,
+Sandra Liu
+
+========================================================================
+
+DOCUMENT 8 OF 8
+Type: Board Meeting Minutes (Draft)
+Westfield Properties, Inc.
+Board of Directors Meeting
+Date: November 18, 2025
+Location: Corporate Headquarters, Conference Room A
+
+ATTENDEES: [Board members listed]
+ABSENT: Margaret Chen (recused due to conflict)
+
+AGENDA ITEM 4: Q3 Financial Results
+
+CFO Thomas Garrett presented Q3 2025 financial results. Highlights included:
+- Revenue of $142M (vs. $138M projected)
+- Net income of $18.2M
+- Harbor Point development described as "on track with strong pre-sales activity"
+
+Board member David Park asked about the status of Harbor Point Phase III unit sales. Mr. Garrett stated that "43 units are committed with closings expected through Q1 2026." Mr. Garrett did not disclose the 12 buyer withdrawals or the financing delays affecting an additional 15 units.
+
+The Board approved the Q3 financial statements as presented, with a unanimous vote.
+
+[Note: These minutes are in DRAFT form and have not been formally approved by the Board.]
+
+========================================================================
+END OF COLLECTION

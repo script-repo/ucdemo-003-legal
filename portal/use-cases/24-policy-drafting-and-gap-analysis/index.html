@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Policy Drafting &amp; Gap Analysis — AI drafts organizational policies and identifies gaps in existing policies." />
+  <title>Policy Drafting &amp; Gap Analysis — Legal AI Portal</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Roboto:wght@400;500;600&family=Roboto+Slab:wght@400&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mammoth/1.8.0/mammoth.browser.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/4.2.67/pdf.min.mjs" type="module"></script>
+</head>
+<body>
+  <a href="#main" class="skip-link">Skip to main content</a>
+
+  <header class="page-header" role="banner">
+    <div class="header-inner">
+      <div class="header-left">
+        <a class="back-link" href="../../index.html" aria-label="Return to portal">&larr; Portal</a>
+        <a class="logo" href="../../index.html" aria-label="Legal AI Portal home">
+          <span class="logo-mark">Legal AI</span>
+        </a>
+      </div>
+      <h1 class="page-title">Policy Drafting &amp; Gap Analysis</h1>
+    </div>
+  </header>
+
+  <main id="main" class="content-wrapper">
+    <div id="error-banner" class="error-banner hidden" role="alert" aria-live="assertive"></div>
+
+    <!-- ============================================================= -->
+    <!-- Landing: overview/journey/dataflow/arch (left) | form (right)  -->
+    <!-- ============================================================= -->
+    <section id="landing-section" class="landing-layout">
+
+      <!-- LEFT: Overview, user journey, data flow, architecture -->
+      <div class="landing-main">
+
+        <div class="use-case-overview">
+          <h2 class="section-heading">What This Does</h2>
+          <p>Policy Drafting &amp; Gap Analysis uses AI to draft new or revised organizational policies from templates and regulatory requirements. When you provide an existing policy, the system compares it against standards and frameworks to produce a gap analysis with prioritized remediation recommendations.</p>
+          <p>Select a policy type (Data Privacy, Information Security, Acceptable Use, BYOD, Incident Response, or Vendor Management), specify your regulatory framework (e.g., GDPR, SOC 2, ISO 27001), and describe your organization. The AI generates a compliant policy draft and, if you upload or paste an existing policy, identifies gaps with severity ratings and actionable recommendations.</p>
+        </div>
+
+        <div class="user-journey">
+          <h2 class="section-heading">Example User Journey</h2>
+          <div class="journey-steps">
+            <div class="journey-step">
+              <span class="journey-step-number">1</span>
+              <div class="journey-step-content">
+                <strong>Select Policy Type &amp; Framework</strong>
+                <p>Compliance selects &quot;Data Privacy&quot; and enters &quot;GDPR&quot; as the regulatory framework. She describes the organization and any specific requirements.</p>
+              </div>
+            </div>
+            <div class="journey-step">
+              <span class="journey-step-number">2</span>
+              <div class="journey-step-content">
+                <strong>Provide Existing Policy (Optional)</strong>
+                <p>She uploads the current data privacy policy (PDF or DOCX) or pastes its text. This enables gap analysis against the chosen framework.</p>
+              </div>
+            </div>
+            <div class="journey-step">
+              <span class="journey-step-number">3</span>
+              <div class="journey-step-content">
+                <strong>AI Generates Draft &amp; Gap Report</strong>
+                <p>The system produces a coverage score (1–100), a full policy draft with sections, and a gap analysis table with severity and recommendations.</p>
+              </div>
+            </div>
+            <div class="journey-step">
+              <span class="journey-step-number">4</span>
+              <div class="journey-step-content">
+                <strong>Review and Remediate</strong>
+                <p>General counsel reviews the draft and gap report. Critical and high-severity gaps are prioritized for updates before approval and publication.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="data-flow-summary">
+          <h2 class="section-heading">Data Flow Summary</h2>
+          <ol>
+            <li>User completes the form (policy type, framework, org description, requirements) and optionally uploads or pastes existing policy text.</li>
+            <li>The browser extracts text from uploaded files (TXT, PDF, DOCX) and sends form data plus policy text to the API Proxy.</li>
+            <li>The API Proxy forwards the request to the NAI chat completions endpoint.</li>
+            <li>NAI drafts the policy and performs gap analysis, returning structured JSON (coverageScore, policyDraft, gaps, complianceNotes).</li>
+            <li>The Portal UI renders the coverage score, policy draft, gap analysis table, and recommendations.</li>
+            <li>Policy metadata is saved for audit and history tracking.</li>
+          </ol>
+        </div>
+
+        <h2 class="section-heading">Architecture Overview</h2>
+
+        <div class="diagram-wrapper">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 780 720" class="arch-diagram" role="img" aria-label="Use case architecture diagram">
+            <defs>
+              <marker id="arrowBlue24" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6" fill="#0184F7"/></marker>
+              <marker id="arrowGreen24" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6" fill="#23A455"/></marker>
+              <marker id="arrowPurple24" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6" fill="#7B1FA2"/></marker>
+              <marker id="arrowIndigo24" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6" fill="#3949AB"/></marker>
+              <marker id="arrowOrange24" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6" fill="#D84315"/></marker>
+              <marker id="arrowDkGreen24" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6" fill="#2E7D32"/></marker>
+            </defs>
+            <rect x="10" y="10" width="760" height="700" rx="12" fill="#f0f4f8" stroke="#b0bec5" stroke-width="1.5" stroke-dasharray="6 3"/>
+            <text x="30" y="38" font-family="Roboto, sans-serif" font-size="13" font-weight="600" fill="#546e7a">Nutanix AHV Hypervisor</text>
+            <rect x="30" y="55" width="720" height="400" rx="10" fill="#e3f2fd" stroke="#1565c0" stroke-width="1.5"/>
+            <text x="50" y="80" font-family="Roboto, sans-serif" font-size="13" font-weight="700" fill="#1565c0">NKP — Nutanix Kubernetes Platform (ntnx-use-cases namespace)</text>
+            <rect x="55" y="100" width="200" height="80" rx="8" fill="#ffffff" stroke="#0184F7" stroke-width="2"/>
+            <text x="155" y="130" text-anchor="middle" font-family="Roboto, sans-serif" font-size="12" font-weight="600" fill="#015795">Portal UI</text>
+            <text x="155" y="148" text-anchor="middle" font-family="Montserrat, sans-serif" font-size="10" fill="#7a7a7a">Policy Drafting &amp; Gap Analysis</text>
+            <rect x="290" y="100" width="200" height="80" rx="8" fill="#ffffff" stroke="#0184F7" stroke-width="2"/>
+            <text x="390" y="130" text-anchor="middle" font-family="Roboto, sans-serif" font-size="12" font-weight="600" fill="#015795">API Proxy</text>
+            <text x="390" y="148" text-anchor="middle" font-family="Montserrat, sans-serif" font-size="10" fill="#7a7a7a">Routes /api/ai/* → NAI</text>
+            <rect x="525" y="100" width="200" height="80" rx="8" fill="#ffffff" stroke="#0184F7" stroke-width="2"/>
+            <text x="625" y="130" text-anchor="middle" font-family="Roboto, sans-serif" font-size="12" font-weight="600" fill="#015795">Ingress / Service</text>
+            <rect x="55" y="220" width="200" height="100" rx="8" fill="#ffffff" stroke="#23A455" stroke-width="2"/>
+            <text x="155" y="250" text-anchor="middle" font-family="Roboto, sans-serif" font-size="12" font-weight="600" fill="#015795">PostgreSQL 16</text>
+            <text x="155" y="270" text-anchor="middle" font-family="Montserrat, sans-serif" font-size="10" fill="#7a7a7a">Policy metadata, audit logs</text>
+            <rect x="290" y="220" width="200" height="100" rx="8" fill="#ffffff" stroke="#7B1FA2" stroke-width="2"/>
+            <text x="390" y="250" text-anchor="middle" font-family="Roboto, sans-serif" font-size="12" font-weight="600" fill="#015795">ChromaDB</text>
+            <text x="390" y="270" text-anchor="middle" font-family="Montserrat, sans-serif" font-size="10" fill="#7a7a7a">Policy embeddings (RAG)</text>
+            <line x1="255" y1="140" x2="290" y2="140" stroke="#0184F7" stroke-width="1.5" marker-end="url(#arrowBlue24)"/>
+            <line x1="490" y1="140" x2="525" y2="140" stroke="#0184F7" stroke-width="1.5" marker-end="url(#arrowBlue24)"/>
+            <line x1="155" y1="180" x2="155" y2="220" stroke="#23A455" stroke-width="1.5" marker-end="url(#arrowGreen24)"/>
+            <line x1="390" y1="180" x2="390" y2="220" stroke="#7B1FA2" stroke-width="1.5" marker-end="url(#arrowPurple24)"/>
+            <rect x="525" y="355" width="200" height="36" rx="6" fill="#e8eaf6" stroke="#3949AB" stroke-width="1"/>
+            <text x="625" y="378" text-anchor="middle" font-family="Roboto, sans-serif" font-size="11" font-weight="600" fill="#1A237E">User / Browser (HTTPS)</text>
+            <line x1="625" y1="355" x2="625" y2="180" stroke="#3949AB" stroke-width="1.5" marker-end="url(#arrowIndigo24)"/>
+            <rect x="30" y="490" width="470" height="200" rx="10" fill="#fbe9e7" stroke="#D84315" stroke-width="1.5"/>
+            <text x="50" y="515" font-family="Roboto, sans-serif" font-size="13" font-weight="700" fill="#BF360C">NAI — Nutanix AI Inference Service</text>
+            <rect x="55" y="530" width="200" height="65" rx="8" fill="#ffffff" stroke="#D84315" stroke-width="1.5"/>
+            <text x="155" y="555" text-anchor="middle" font-family="Roboto, sans-serif" font-size="12" font-weight="600" fill="#BF360C">Chat Completions</text>
+            <text x="155" y="573" text-anchor="middle" font-family="Montserrat, sans-serif" font-size="10" fill="#7a7a7a">Policy drafting &amp; gap analysis</text>
+            <rect x="530" y="490" width="220" height="200" rx="10" fill="#e8f5e9" stroke="#2E7D32" stroke-width="1.5"/>
+            <text x="640" y="515" text-anchor="middle" font-family="Roboto, sans-serif" font-size="13" font-weight="700" fill="#1B5E20">Nutanix Unified Storage</text>
+          </svg>
+        </div>
+
+        <div class="arch-description">
+          <h2 class="section-heading">How It Works</h2>
+          <p>The Portal UI collects policy type, regulatory framework, organization description, and optional existing policy text (via file upload or paste). The API Proxy forwards requests to the Nutanix AI chat completions endpoint. The LLM drafts the policy and performs gap analysis, returning structured JSON. Results are rendered as a coverage score, formatted policy draft, gap analysis table, and compliance notes.</p>
+        </div>
+      </div>
+
+      <!-- RIGHT: Form (policy type, framework, org description, optional upload + paste, requirements) -->
+      <aside class="landing-sidebar" id="input-panel">
+        <h2 class="section-heading">Generate Policy</h2>
+
+        <form id="policy-form" class="policy-form">
+          <div class="input-card">
+            <label for="policy-type" class="form-label">Policy Type</label>
+            <select id="policy-type" class="form-select" required aria-required="true">
+              <option value="">Select policy type</option>
+              <option value="Data Privacy">Data Privacy</option>
+              <option value="Information Security">Information Security</option>
+              <option value="Acceptable Use">Acceptable Use</option>
+              <option value="BYOD">BYOD</option>
+              <option value="Incident Response">Incident Response</option>
+              <option value="Vendor Management">Vendor Management</option>
+            </select>
+          </div>
+
+          <div class="input-card">
+            <label for="framework" class="form-label">Regulatory Framework</label>
+            <input type="text" id="framework" class="form-input" placeholder="e.g., GDPR, SOC 2, ISO 27001" required aria-required="true" />
+          </div>
+
+          <div class="input-card">
+            <label for="org-description" class="form-label">Organization Description</label>
+            <textarea id="org-description" class="form-textarea" rows="4" placeholder="Describe your organization (industry, size, data handling practices)..." required aria-required="true"></textarea>
+          </div>
+
+          <div class="input-card">
+            <h3 class="input-card-title">Existing Policy (Optional)</h3>
+            <p class="form-hint">Upload or paste to enable gap analysis.</p>
+            <input type="file" id="file-input" accept=".txt,.pdf,.docx" class="visually-hidden" aria-label="Select existing policy file" />
+            <div class="upload-zone" id="upload-zone" role="button" tabindex="0" aria-label="Upload existing policy file">
+              <div class="upload-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                  <path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/>
+                  <polyline points="14 2 14 8 20 8"/>
+                  <polyline points="12 11 12 17"/>
+                  <polyline points="9 14 12 11 15 14"/>
+                </svg>
+              </div>
+              <p class="upload-label">Drag &amp; drop, or <span class="upload-browse">browse files</span></p>
+              <p class="upload-hint">TXT, PDF, DOCX</p>
+            </div>
+            <div class="input-divider">
+              <span class="input-divider-text">OR</span>
+            </div>
+            <textarea id="paste-existing" class="paste-textarea" rows="6" placeholder="Paste existing policy text here for gap analysis..."></textarea>
+          </div>
+
+          <div class="input-card">
+            <label for="requirements" class="form-label">Specific Requirements</label>
+            <textarea id="requirements" class="form-textarea" rows="3" placeholder="Any additional requirements or constraints..."></textarea>
+          </div>
+
+          <button type="submit" id="btn-generate" class="btn-analyze">Generate Policy</button>
+        </form>
+
+        <div class="input-card history-card">
+          <div class="history-header">
+            <h3 class="input-card-title">Recent Policies</h3>
+            <button type="button" id="btn-clear-history" class="btn-clear-history hidden" aria-label="Clear all recent policies">Clear All</button>
+          </div>
+          <div id="history-list" class="history-list" role="list" aria-labelledby="history-heading"></div>
+        </div>
+      </aside>
+    </section>
+
+    <!-- Loading state -->
+    <section id="loading-section" class="loading-overlay hidden" aria-live="polite" aria-label="Policy generation in progress">
+      <div class="loading-card">
+        <div class="loading-spinner"></div>
+        <p class="loading-status" id="loading-status">Preparing request&hellip;</p>
+        <div class="loading-stages">
+          <div class="loading-stage" id="stage-extract"><span class="stage-icon">&#9679;</span> Extracting text</div>
+          <div class="loading-stage" id="stage-send"><span class="stage-icon">&#9679;</span> Sending to AI</div>
+          <div class="loading-stage" id="stage-analyze"><span class="stage-icon">&#9679;</span> Drafting policy</div>
+          <div class="loading-stage" id="stage-render"><span class="stage-icon">&#9679;</span> Rendering results</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Results -->
+    <section id="results-section" class="hidden" aria-labelledby="results-heading">
+      <div class="results-top-bar">
+        <h2 id="results-heading">Policy Results</h2>
+        <button type="button" id="btn-new-analysis" class="btn-new-analysis">&larr; New Policy</button>
+      </div>
+      <div class="results-layout">
+        <div class="results-main">
+          <div class="risk-score-display" aria-live="polite">
+            <span class="risk-score-number" id="coverage-score" aria-label="Coverage score">--</span>
+            <span class="risk-badge" id="coverage-label" aria-label="Coverage label">Coverage</span>
+          </div>
+          <div class="summary-card" id="summary-text" aria-label="Policy summary"></div>
+          <h3 id="draft-heading">Policy Draft</h3>
+          <div class="policy-draft-box" id="policy-draft" aria-labelledby="draft-heading"></div>
+          <h3 id="gaps-heading">Gap Analysis</h3>
+          <div class="table-responsive">
+            <table class="clause-table gap-table" role="table" aria-labelledby="gaps-heading">
+              <thead>
+                <tr>
+                  <th scope="col">Area</th>
+                  <th scope="col">Requirement</th>
+                  <th scope="col">Current State</th>
+                  <th scope="col">Severity</th>
+                  <th scope="col">Recommendation</th>
+                </tr>
+              </thead>
+              <tbody id="gaps-tbody"></tbody>
+            </table>
+          </div>
+          <h3 id="compliance-heading">Compliance Notes</h3>
+          <div id="compliance-notes" class="deviation-list" role="list" aria-labelledby="compliance-heading"></div>
+        </div>
+        <aside class="results-sidebar">
+          <div class="input-card">
+            <div class="history-header">
+              <h3 class="input-card-title">Recent Policies</h3>
+              <button type="button" id="btn-clear-results-history" class="btn-clear-history hidden" aria-label="Clear all recent policies">Clear All</button>
+            </div>
+            <div id="results-history-list" class="history-list" role="list"></div>
+          </div>
+        </aside>
+      </div>
+    </section>
+  </main>
+
+  <script src="app.js" defer></script>
+</body>
+</html>

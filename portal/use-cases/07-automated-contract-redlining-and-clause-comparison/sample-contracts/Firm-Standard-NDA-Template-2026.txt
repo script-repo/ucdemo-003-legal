@@ -1,0 +1,102 @@
+MUTUAL NON-DISCLOSURE AGREEMENT
+STERLING & ASSOCIATES LLP — STANDARD TEMPLATE (v3.2, January 2026)
+
+This Mutual Non-Disclosure Agreement ("Agreement") is entered into as of [DATE], by and between:
+
+[COUNTERPARTY NAME], a [STATE] [ENTITY TYPE] ("Counterparty"),
+
+and
+
+STERLING & ASSOCIATES LLP ("Sterling," and together with Counterparty, the "Parties").
+
+RECITALS
+
+The Parties wish to explore a potential business relationship related to [DESCRIPTION OF PURPOSE] (the "Purpose"). In connection with the Purpose, each Party may disclose certain confidential information to the other Party.
+
+NOW, THEREFORE, in consideration of the mutual covenants herein, the Parties agree as follows:
+
+1. DEFINITION OF CONFIDENTIAL INFORMATION
+
+"Confidential Information" means any and all non-public information disclosed by one Party (the "Discloser") to the other Party (the "Recipient"), in any form or medium, whether or not marked as confidential, that a reasonable person would understand to be confidential given the nature of the information and circumstances of disclosure. This includes, without limitation, trade secrets, business plans, financial information, client lists, technology, source code, algorithms, and legal strategies.
+
+Information disclosed orally or visually shall be considered Confidential Information if it would reasonably be understood as confidential, regardless of whether it is subsequently reduced to writing.
+
+Confidential Information does not include information that: (a) is or becomes publicly available through no breach of this Agreement; (b) was in the Recipient's possession prior to disclosure, as demonstrated by competent evidence; (c) is independently developed by the Recipient without reference to or use of Confidential Information, as demonstrated by competent evidence; or (d) is rightfully received from a third party without restriction on disclosure.
+
+2. OBLIGATIONS OF RECIPIENT
+
+2.1 The Recipient shall: (a) use the Confidential Information solely for the Purpose; (b) protect the Confidential Information using at least the same degree of care it uses for its own most sensitive confidential information, but in no event less than a reasonable standard of care; and (c) not disclose the Confidential Information to any third party without the Discloser's prior written consent.
+
+2.2 The Recipient may disclose Confidential Information only to its employees and legal advisors who have a need to know and are bound by written obligations of confidentiality at least as restrictive as those in this Agreement. The Recipient shall be responsible for any breach by such individuals.
+
+2.3 The Recipient shall maintain a log of all individuals who receive access to the Discloser's Confidential Information and make such log available to the Discloser upon request.
+
+3. COMPELLED DISCLOSURE
+
+If the Recipient is compelled by law, regulation, or legal process to disclose Confidential Information, the Recipient shall: (a) provide the Discloser with prompt written notice (to the extent legally permitted) prior to disclosure; (b) cooperate with the Discloser's efforts to obtain a protective order or other appropriate remedy; and (c) disclose only the minimum amount of Confidential Information required by law.
+
+4. INTELLECTUAL PROPERTY
+
+4.1 All Confidential Information remains the exclusive property of the Discloser. This Agreement does not grant the Recipient any license, right, title, or interest in the Discloser's Confidential Information or intellectual property.
+
+4.2 Neither Party acquires any rights in the other Party's intellectual property, inventions, or developments by virtue of this Agreement or any discussions under the Purpose, regardless of whether such inventions incorporate the other Party's Confidential Information. Each Party retains sole ownership of its pre-existing intellectual property and any new intellectual property it develops independently.
+
+5. TERM AND TERMINATION
+
+5.1 This Agreement shall be effective from the date first written above and shall continue for a period of two (2) years ("Term"), unless earlier terminated by either Party upon thirty (30) days' written notice.
+
+5.2 The confidentiality obligations under this Agreement shall survive termination and continue for a period of five (5) years from the date of each disclosure. Obligations with respect to trade secrets shall survive for so long as the information qualifies as a trade secret under applicable law.
+
+5.3 Upon termination or expiration of this Agreement, the Recipient shall promptly return or certify destruction of all Confidential Information, including all copies, notes, and derivatives, within fifteen (15) days. The Recipient shall provide written certification of such return or destruction, signed by an authorized officer.
+
+6. NO WARRANTY
+
+ALL CONFIDENTIAL INFORMATION IS PROVIDED "AS IS." NEITHER PARTY MAKES ANY WARRANTIES, EXPRESS OR IMPLIED, REGARDING THE ACCURACY, COMPLETENESS, OR FITNESS FOR A PARTICULAR PURPOSE OF ANY CONFIDENTIAL INFORMATION. Neither Party shall be liable for any decisions made by the other Party based on Confidential Information.
+
+7. REMEDIES
+
+7.1 Each Party acknowledges that a breach of this Agreement may cause irreparable harm for which monetary damages would be an insufficient remedy. The non-breaching Party shall be entitled to seek equitable relief, including injunctive relief and specific performance, without the need to post bond, in addition to all other remedies available at law or in equity.
+
+7.2 The breaching Party shall be liable for all direct damages, costs, and expenses (including reasonable attorneys' fees) arising from a breach of this Agreement. Nothing in this Agreement shall limit either Party's liability for breach of its confidentiality obligations.
+
+8. NON-SOLICITATION
+
+[Reserved — to be negotiated if applicable]
+
+9. NO RESIDUAL RIGHTS
+
+For the avoidance of doubt, the Recipient shall not use or exploit any Confidential Information retained in the memory of its personnel. The obligations of confidentiality and non-use apply regardless of the form in which Confidential Information is retained, including intangible form.
+
+10. GOVERNING LAW AND JURISDICTION
+
+This Agreement shall be governed by and construed in accordance with the laws of the State of New York, without regard to its conflict of laws provisions. Each Party irrevocably consents to the exclusive jurisdiction of the state and federal courts located in New York County, New York, for any action arising out of or related to this Agreement.
+
+11. GENERAL
+
+11.1 This Agreement constitutes the entire agreement between the Parties with respect to its subject matter and supersedes all prior discussions, negotiations, and agreements.
+
+11.2 This Agreement may only be amended by a written instrument executed by authorized representatives of both Parties.
+
+11.3 Neither Party may assign this Agreement without the other Party's prior written consent, which shall not be unreasonably withheld.
+
+11.4 Any provision held invalid or unenforceable shall be modified to the minimum extent necessary to make it enforceable, or if modification is not possible, severed without affecting the remaining provisions.
+
+11.5 No waiver of any provision shall constitute a waiver of any other provision or a continuing waiver.
+
+11.6 This Agreement may be executed in counterparts, each of which shall constitute an original.
+
+IN WITNESS WHEREOF, the Parties have executed this Agreement as of the date first written above.
+
+[COUNTERPARTY NAME]
+
+By: ___________________________
+Name:
+Title:
+Date:
+
+STERLING & ASSOCIATES LLP
+
+By: ___________________________
+Name:
+Title: Managing Partner
+Date:

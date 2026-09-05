@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="E-Discovery & Document Review — Upload documents for AI-powered classification, relevance scoring, privilege detection, and thematic analysis." />
+  <title>E-Discovery &amp; Document Review — Legal AI Portal</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Roboto:wght@400;500;600&family=Roboto+Slab:wght@400&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mammoth/1.8.0/mammoth.browser.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/4.2.67/pdf.min.mjs" type="module"></script>
+</head>
+<body>
+  <a href="#main" class="skip-link">Skip to main content</a>
+
+  <header class="page-header" role="banner">
+    <div class="header-inner">
+      <div class="header-left">
+        <a class="back-link" href="../../index.html" aria-label="Return to portal">&larr; Portal</a>
+        <a class="logo" href="../../index.html" aria-label="Legal AI Portal home">
+          <span class="logo-mark">Legal AI</span>
+        </a>
+      </div>
+      <h1 class="page-title">E-Discovery &amp; Document Review</h1>
+    </div>
+  </header>
+
+  <main id="main" class="content-wrapper">
+    <div id="error-banner" class="error-banner hidden" role="alert" aria-live="assertive"></div>
+
+    <!-- ============================================================= -->
+    <!-- Landing: diagram + description (left) | input panel (right)   -->
+    <!-- ============================================================= -->
+    <section id="landing-section" class="landing-layout">
+
+      <!-- LEFT: Architecture diagram + description -->
+      <div class="landing-main">
+        <h2 class="section-heading">Architecture Overview</h2>
+
+        <div class="diagram-wrapper">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 780 720" class="arch-diagram" role="img" aria-label="E-Discovery architecture diagram">
+            <!-- Background regions -->
+            <!-- AHV Hypervisor -->
+            <rect x="10" y="10" width="760" height="700" rx="12" fill="#f0f4f8" stroke="#b0bec5" stroke-width="1.5" stroke-dasharray="6 3"/>
+            <text x="30" y="38" font-family="Roboto, sans-serif" font-size="13" font-weight="600" fill="#546e7a">Nutanix AHV Hypervisor</text>
+
+            <!-- NKP region -->
+            <rect x="30" y="55" width="720" height="400" rx="10" fill="#e3f2fd" stroke="#1565c0" stroke-width="1.5"/>
+            <text x="50" y="80" font-family="Roboto, sans-serif" font-size="13" font-weight="700" fill="#1565c0">NKP — Nutanix Kubernetes Platform (ntnx-use-cases namespace)</text>
+
+            <!-- Portal UI Pod -->
+            <rect x="55" y="100" width="200" height="80" rx="8" fill="#ffffff" stroke="#0184F7" stroke-width="2"/>
+            <text x="155" y="130" text-anchor="middle" font-family="Roboto, sans-serif" font-size="12" font-weight="600" fill="#015795">Portal UI</text>
+            <text x="155" y="148" text-anchor="middle" font-family="Montserrat, sans-serif" font-size="10" fill="#7a7a7a">Static HTML / CSS / JS</text>
+            <text x="155" y="165" text-anchor="middle" font-family="Montserrat, sans-serif" font-size="10" fill="#7a7a7a">E-Discovery &amp; Doc Review</text>
+
+            <!-- API Proxy Pod -->
+            <rect x="290" y="100" width="200" height="80" rx="8" fill="#ffffff" stroke="#0184F7" stroke-width="2"/>
+            <text x="390" y="130" text-anchor="middle" font-family="Roboto, sans-serif" font-size="12" font-weight="600" fill="#015795">API Proxy</text>
+            <text x="390" y="148" text-anchor="middle" font-family="Montserrat, sans-serif" font-size="10" fill="#7a7a7a">CORS Proxy (server.py)</text>
+            <text x="390" y="165" text-anchor="middle" font-family="Montserrat, sans-serif" font-size="10" fill="#7a7a7a">Routes /api/ai/* → NAI</text>
+
+            <!-- Ingress -->
+            <rect x="525" y="100" width="200" height="80" rx="8" fill="#ffffff" stroke="#0184F7" stroke-width="2"/>
+            <text x="625" y="130" text-anchor="middle" font-family="Roboto, sans-serif" font-size="12" font-weight="600" fill="#015795">Ingress / Service</text>
+            <text x="625" y="148" text-anchor="middle" font-family="Montserrat, sans-serif" font-size="10" fill="#7a7a7a">LoadBalancer / ClusterIP</text>
+            <text x="625" y="165" text-anchor="middle" font-family="Montserrat, sans-serif" font-size="10" fill="#7a7a7a">External Traffic Routing</text>
+
+            <!-- PostgreSQL Pod -->
+            <rect x="55" y="220" width="200" height="100" rx="8" fill="#ffffff" stroke="#23A455" stroke-width="2"/>
+            <rect x="68" y="235" width="24" height="24" rx="4" fill="#23A455"/>
+            <text x="80" y="252" text-anchor="middle" font-family="Roboto, sans-serif" font-size="11" font-weight="700" fill="#fff">PG</text>
+            <text x="155" y="250" text-anchor="middle" font-family="Roboto, sans-serif" font-size="12" font-weight="600" fill="#015795">PostgreSQL 16 (pg-db)</text>
+            <text x="155" y="270" text-anchor="middle" font-family="Montserrat, sans-serif" font-size="10" fill="#7a7a7a">Review metadata, audit logs</text>
+            <text x="155" y="287" text-anchor="middle" font-family="Montserrat, sans-serif" font-size="10" fill="#7a7a7a">DB: legal_ai</text>
+            <rect x="75" y="298" width="160" height="16" rx="3" fill="#e8f5e9" stroke="#23A455" stroke-width="1"/>
+            <text x="155" y="310" text-anchor="middle" font-family="Montserrat, sans-serif" font-size="9" font-weight="600" fill="#23A455">PVC: Nutanix Volumes (20Gi)</text>
+
+            <!-- ChromaDB Pod -->
+            <rect x="290" y="220" width="200" height="100" rx="8" fill="#ffffff" stroke="#7B1FA2" stroke-width="2"/>
+            <rect x="303" y="235" width="24" height="24" rx="4" fill="#7B1FA2"/>
+            <text x="315" y="252" text-anchor="middle" font-family="Roboto, sans-serif" font-size="10" font-weight="700" fill="#fff">VDB</text>
+            <text x="390" y="250" text-anchor="middle" font-family="Roboto, sans-serif" font-size="12" font-weight="600" fill="#015795">ChromaDB (ch-db)</text>
+            <text x="390" y="270" text-anchor="middle" font-family="Montserrat, sans-serif" font-size="10" fill="#7a7a7a">Doc embeddings &amp;</text>
+            <text x="390" y="287" text-anchor="middle" font-family="Montserrat, sans-serif" font-size="10" fill="#7a7a7a">conceptual search (RAG)</text>
+            <rect x="310" y="298" width="160" height="16" rx="3" fill="#f3e5f5" stroke="#7B1FA2" stroke-width="1"/>
+            <text x="390" y="310" text-anchor="middle" font-family="Montserrat, sans-serif" font-size="9" font-weight="600" fill="#7B1FA2">PVC: Nutanix Volumes (20Gi)</text>
+
+            <!-- K8s Services info -->
+            <rect x="525" y="220" width="200" height="100" rx="8" fill="#ffffff" stroke="#FF8F00" stroke-width="2"/>
+            <text x="625" y="250" text-anchor="middle" font-family="Roboto, sans-serif" font-size="12" font-weight="600" fill="#015795">Kubernetes Services</text>
+            <text x="625" y="270" text-anchor="middle" font-family="Montserrat, sans-serif" font-size="10" fill="#7a7a7a">pg-db:5432 (ClusterIP)</text>
+            <text x="625" y="287" text-anchor="middle" font-family="Montserrat, sans-serif" font-size="10" fill="#7a7a7a">ch-db:8000 (ClusterIP)</text>
+            <text x="625" y="304" text-anchor="middle" font-family="Montserrat, sans-serif" font-size="10" fill="#7a7a7a">portal:8080 (LoadBalancer)</text>
+
+            <!-- RAG pipeline label (2 lines to fit box) -->
+            <rect x="55" y="350" width="435" height="42" rx="6" fill="#fff3e0" stroke="#FF8F00" stroke-width="1"/>
+            <text x="272" y="368" text-anchor="middle" font-family="Roboto, sans-serif" font-size="10" font-weight="600" fill="#E65100">TAR/RAG Pipeline: Doc → Embed (NAI) → Vector Search</text>
+            <text x="272" y="383" text-anchor="middle" font-family="Roboto, sans-serif" font-size="10" font-weight="600" fill="#E65100">(ChromaDB) → Classification &amp; Summarization (NAI LLM)</text>
+
+            <!-- User box -->
+            <rect x="525" y="355" width="200" height="36" rx="6" fill="#e8eaf6" stroke="#3949AB" stroke-width="1"/>
+            <text x="625" y="378" text-anchor="middle" font-family="Roboto, sans-serif" font-size="11" font-weight="600" fill="#1A237E">User / Browser (HTTPS)</text>
+
+            <!-- Data flow arrows -->
+            <line x1="255" y1="140" x2="290" y2="140" stroke="#0184F7" stroke-width="1.5" marker-end="url(#arrowBlue)"/>
+            <line x1="490" y1="140" x2="525" y2="140" stroke="#0184F7" stroke-width="1.5" marker-end="url(#arrowBlue)"/>
+            <line x1="155" y1="180" x2="155" y2="220" stroke="#23A455" stroke-width="1.5" marker-end="url(#arrowGreen)"/>
+            <line x1="390" y1="180" x2="390" y2="220" stroke="#7B1FA2" stroke-width="1.5" marker-end="url(#arrowPurple)"/>
+            <line x1="625" y1="355" x2="625" y2="180" stroke="#3949AB" stroke-width="1.5" marker-end="url(#arrowIndigo)"/>
+
+            <!-- Arrow from NKP to NAI region -->
+            <line x1="390" y1="455" x2="390" y2="485" stroke="#D84315" stroke-width="2" marker-end="url(#arrowOrange)"/>
+            <text x="395" y="476" font-family="Montserrat, sans-serif" font-size="9" fill="#D84315">HTTPS API</text>
+
+            <!-- NAI Region -->
+            <rect x="30" y="490" width="470" height="200" rx="10" fill="#fbe9e7" stroke="#D84315" stroke-width="1.5"/>
+            <text x="50" y="515" font-family="Roboto, sans-serif" font-size="13" font-weight="700" fill="#BF360C">NAI — Nutanix AI Inference Service</text>
+
+            <!-- Chat completions -->
+            <rect x="55" y="530" width="200" height="65" rx="8" fill="#ffffff" stroke="#D84315" stroke-width="1.5"/>
+            <text x="155" y="555" text-anchor="middle" font-family="Roboto, sans-serif" font-size="12" font-weight="600" fill="#BF360C">Chat Completions</text>
+            <text x="155" y="573" text-anchor="middle" font-family="Montserrat, sans-serif" font-size="10" fill="#7a7a7a">Model: llama3-1-8b</text>
+            <text x="155" y="588" text-anchor="middle" font-family="Montserrat, sans-serif" font-size="9" fill="#7a7a7a">Classification &amp; summarization</text>
+
+            <!-- Embeddings -->
+            <rect x="280" y="530" width="200" height="65" rx="8" fill="#ffffff" stroke="#D84315" stroke-width="1.5"/>
+            <text x="380" y="555" text-anchor="middle" font-family="Roboto, sans-serif" font-size="12" font-weight="600" fill="#BF360C">Embeddings</text>
+            <text x="380" y="573" text-anchor="middle" font-family="Montserrat, sans-serif" font-size="10" fill="#7a7a7a">Model: llama-3-2-embed</text>
+            <text x="380" y="588" text-anchor="middle" font-family="Montserrat, sans-serif" font-size="9" fill="#7a7a7a">Conceptual search &amp; clustering</text>
+
+            <!-- NAI endpoint URL -->
+            <rect x="55" y="610" width="425" height="24" rx="4" fill="#ffccbc" stroke="#D84315" stroke-width="1"/>
+            <text x="268" y="626" text-anchor="middle" font-family="monospace" font-size="10" fill="#BF360C">https://nai.hpoc.nutanix.com:443/api/v1</text>
+
+            <line x1="255" y1="562" x2="280" y2="562" stroke="#D84315" stroke-width="1" stroke-dasharray="4 2"/>
+
+            <!-- Nutanix Unified Storage -->
+            <rect x="530" y="490" width="220" height="200" rx="10" fill="#e8f5e9" stroke="#2E7D32" stroke-width="1.5"/>
+            <text x="640" y="515" text-anchor="middle" font-family="Roboto, sans-serif" font-size="13" font-weight="700" fill="#1B5E20">Nutanix Unified Storage</text>
+
+            <rect x="555" y="530" width="170" height="55" rx="8" fill="#ffffff" stroke="#2E7D32" stroke-width="1.5"/>
+            <text x="640" y="555" text-anchor="middle" font-family="Roboto, sans-serif" font-size="12" font-weight="600" fill="#1B5E20">LLM Model Repository</text>
+            <text x="640" y="572" text-anchor="middle" font-family="Montserrat, sans-serif" font-size="10" fill="#7a7a7a">Model weights &amp; configs</text>
+
+            <rect x="555" y="600" width="170" height="55" rx="8" fill="#ffffff" stroke="#2E7D32" stroke-width="1.5"/>
+            <text x="640" y="622" text-anchor="middle" font-family="Roboto, sans-serif" font-size="12" font-weight="600" fill="#1B5E20">Nutanix Volumes</text>
+            <text x="640" y="640" text-anchor="middle" font-family="Montserrat, sans-serif" font-size="10" fill="#7a7a7a">Persistent block storage</text>
+
+            <line x1="530" y1="557" x2="480" y2="557" stroke="#2E7D32" stroke-width="1.5" marker-end="url(#arrowDkGreen)"/>
+            <text x="505" y="550" font-family="Montserrat, sans-serif" font-size="8" fill="#2E7D32">serves</text>
+
+            <line x1="640" y1="490" x2="640" y2="420" stroke="#2E7D32" stroke-width="1.5" stroke-dasharray="5 3" marker-end="url(#arrowDkGreen)"/>
+            <text x="660" y="460" font-family="Montserrat, sans-serif" font-size="8" fill="#2E7D32">PVCs</text>
+
+            <!-- Arrow markers -->
+            <defs>
+              <marker id="arrowBlue" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6" fill="#0184F7"/></marker>
+              <marker id="arrowGreen" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6" fill="#23A455"/></marker>
+              <marker id="arrowPurple" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6" fill="#7B1FA2"/></marker>
+              <marker id="arrowIndigo" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6" fill="#3949AB"/></marker>
+              <marker id="arrowOrange" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6" fill="#D84315"/></marker>
+              <marker id="arrowDkGreen" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6" fill="#2E7D32"/></marker>
+            </defs>
+          </svg>
+        </div>
+
+        <div class="arch-description">
+          <h2 class="section-heading">How It Works</h2>
+
+          <h3>Platform Infrastructure</h3>
+          <p>The entire solution runs on <strong>Nutanix AHV</strong>, a secure enterprise-grade hypervisor that provides the virtualization layer for all compute, storage, and networking. On top of AHV, <strong>NKP (Nutanix Kubernetes Platform)</strong> provisions and manages the Kubernetes environment, providing container orchestration, auto-scaling, service discovery, and lifecycle management for all application workloads.</p>
+
+          <h3>Kubernetes Workloads (ntnx-use-cases namespace)</h3>
+          <p>All use-case components are deployed as pods within the <code>ntnx-use-cases</code> Kubernetes namespace:</p>
+          <ul>
+            <li><strong>Portal UI</strong> — A lightweight static front-end (HTML, CSS, JavaScript) that provides the document upload interface, matter context input, review scope selection, architecture visualization, and e-discovery results display. Served by a Python-based development server that also acts as the API proxy.</li>
+            <li><strong>API Proxy (server.py)</strong> — A server-side CORS proxy that routes browser requests to the Nutanix AI endpoints. Because the NAI inference service does not return browser CORS headers, all <code>/api/ai/*</code> requests are forwarded server-side with the bearer token injected, eliminating cross-origin restrictions.</li>
+            <li><strong>PostgreSQL 16 (pg-db)</strong> — A relational database that stores review metadata, document classifications, audit logs, and user activity. Exposed internally via ClusterIP on port 5432. Data is persisted on a <strong>Nutanix Volumes</strong> PVC (20 GiB) to ensure durability across pod restarts and rescheduling.</li>
+            <li><strong>ChromaDB (ch-db)</strong> — An open-source vector database used as the RAG store for document embeddings. Document chunks are vectorized using the NAI embedding model (llama-3-2-embed) and stored in ChromaDB for conceptual search and clustering. Exposed internally via ClusterIP on port 8000 with its own <strong>Nutanix Volumes</strong> PVC (20 GiB).</li>
+            <li><strong>Ingress / LoadBalancer Service</strong> — External traffic is routed into the cluster via a Kubernetes LoadBalancer service, providing a stable IP address for browser access without requiring DNS configuration.</li>
+          </ul>
+
+          <h3>AI &amp; Inference (Nutanix AI — NAI)</h3>
+          <p><strong>Nutanix AI (NAI)</strong> provides the enterprise inference endpoints that power the e-discovery document review:</p>
+          <ul>
+            <li><strong>Chat Completions (llama3-1-8b)</strong> — The primary LLM endpoint. When documents are uploaded, the text is sent along with matter context and review scope. The model returns structured JSON containing document classification (responsive/non-responsive/privileged), relevance scoring, privilege analysis, key themes, entity extraction, summaries, and recommended actions (Produce/Withhold/Further Review) for deposition and trial prep.</li>
+            <li><strong>Embeddings (llama-3-2-embed)</strong> — The embedding model vectorizes document chunks and queries into high-dimensional vectors. These vectors are stored in ChromaDB and used for conceptual search and clustering—enabling the TAR (Technology-Assisted Review) pipeline to find semantically similar documents and support prioritization workflows.</li>
+          </ul>
+
+          <h3>TAR/RAG Pipeline</h3>
+          <p>The Technology-Assisted Review and Retrieval-Augmented Generation pipeline works as follows:</p>
+          <ol>
+            <li><strong>Document Embedding</strong> — Document text is chunked and sent to the NAI embedding endpoint (llama-3-2-embed), which returns vector representations for conceptual search and clustering.</li>
+            <li><strong>Vector Search</strong> — The embedding vectors are stored in ChromaDB and queried for similarity matching, enabling prioritization of likely-responsive documents and thematic clustering.</li>
+            <li><strong>Context Assembly</strong> — Retrieved document chunks and metadata are assembled as context for the LLM.</li>
+            <li><strong>LLM Classification &amp; Summarization</strong> — The document text, matter context, and system prompt are sent to the NAI chat completions endpoint (llama3-1-8b), which produces the classification, relevance score, privilege analysis, themes, summaries, and recommended actions.</li>
+          </ol>
+
+          <h3>Storage Layer</h3>
+          <ul>
+            <li><strong>Nutanix Unified Storage</strong> — Serves as the model repository for NAI, hosting the LLM weights, tokenizer configurations, and model artifacts for both the chat completions model (llama3-1-8b) and the embedding model (llama-3-2-embed). This ensures model data resides on-prem with enterprise-grade data protection, deduplication, and replication.</li>
+            <li><strong>Nutanix Volumes</strong> — Provides persistent block storage for the Kubernetes PVCs backing PostgreSQL and ChromaDB. Volumes ensures data durability, snapshots, and consistent performance for database workloads running as containerized pods on NKP.</li>
+          </ul>
+
+          <h3>Data Flow Summary</h3>
+          <ol>
+            <li>User uploads documents (TXT, PDF, DOCX) or pastes text via the Portal UI, enters matter context, and selects review scope (Responsiveness, Privilege, Key Documents, Hot Documents).</li>
+            <li>The browser extracts text content and sends it to the API Proxy.</li>
+            <li>The API Proxy forwards the request (with authentication) to the NAI chat completions endpoint.</li>
+            <li>NAI analyzes documents and returns structured JSON with classification, relevance scores, privilege flags, themes, summaries, and recommendations.</li>
+            <li>The Portal UI renders the results: dashboard stats, document classification cards, thematic analysis, and review metrics.</li>
+            <li>Review metadata is saved to PostgreSQL for audit and history tracking.</li>
+            <li>Document embeddings are stored in ChromaDB for future conceptual search and TAR workflows.</li>
+          </ol>
+        </div>
+      </div>
+
+      <!-- RIGHT: Input panel -->
+      <aside class="landing-sidebar" id="input-panel">
+        <h2 class="section-heading">Review Documents</h2>
+
+        <div class="input-card">
+          <h3 class="input-card-title">Upload Documents</h3>
+          <div class="upload-zone" id="upload-zone" role="button" tabindex="0" aria-label="Upload document files">
+            <div class="upload-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                <path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/>
+                <polyline points="14 2 14 8 20 8"/>
+                <polyline points="12 11 12 17"/>
+                <polyline points="9 14 12 11 15 14"/>
+              </svg>
+            </div>
+            <p class="upload-label">Drag &amp; drop, or <span class="upload-browse">browse files</span></p>
+            <p class="upload-hint">TXT, PDF, DOCX</p>
+            <input type="file" id="file-input" accept=".txt,.pdf,.docx" class="visually-hidden" aria-label="Select document files" />
+          </div>
+        </div>
+
+        <div class="input-divider">
+          <span class="input-divider-text">OR</span>
+        </div>
+
+        <div class="input-card">
+          <h3 class="input-card-title">Paste Document Text</h3>
+          <textarea id="paste-input" class="paste-textarea" rows="8" placeholder="Paste document text here for review..."></textarea>
+        </div>
+
+        <div class="input-card">
+          <h3 class="input-card-title">Matter Context</h3>
+          <textarea id="matter-context" class="matter-textarea" rows="4" placeholder="Brief description of the case/matter for relevance scoring (e.g., breach of contract dispute, patent infringement, employment discrimination)..."></textarea>
+        </div>
+
+        <div class="input-card">
+          <h3 class="input-card-title">Review Scope</h3>
+          <div class="scope-checkboxes">
+            <label class="scope-label"><input type="checkbox" id="scope-responsiveness" class="scope-checkbox" checked /> Responsiveness</label>
+            <label class="scope-label"><input type="checkbox" id="scope-privilege" class="scope-checkbox" checked /> Privilege</label>
+            <label class="scope-label"><input type="checkbox" id="scope-key-docs" class="scope-checkbox" checked /> Key Documents</label>
+            <label class="scope-label"><input type="checkbox" id="scope-hot-docs" class="scope-checkbox" checked /> Hot Documents</label>
+          </div>
+        </div>
+
+        <button type="button" id="btn-analyze" class="btn-analyze" disabled>Analyze Documents</button>
+
+        <div class="input-card history-card">
+          <h3 class="input-card-title">Recent Reviews</h3>
+          <div id="history-list" class="history-list" role="list" aria-labelledby="history-heading"></div>
+        </div>
+      </aside>
+    </section>
+
+    <!-- ============================================================= -->
+    <!-- Loading state                                                  -->
+    <!-- ============================================================= -->
+    <section id="loading-section" class="hidden" aria-live="polite" aria-label="Analysis in progress">
+      <div class="loading-spinner">
+        <span class="visually-hidden">Loading</span>
+      </div>
+      <p style="text-align: center; margin-top: 1rem;">Analyzing documents for review...</p>
+    </section>
+
+    <!-- ============================================================= -->
+    <!-- Results (full width)                                           -->
+    <!-- ============================================================= -->
+    <section id="results-section" class="hidden" aria-labelledby="results-heading">
+      <div class="results-top-bar">
+        <h2 id="results-heading">Review Results</h2>
+        <button type="button" id="btn-new-review" class="btn-new-analysis">&larr; New Review</button>
+      </div>
+      <div class="results-panel">
+        <div class="results-main">
+          <div class="review-dashboard" id="review-dashboard" aria-live="polite"></div>
+          <h3 id="documents-heading">Document Classification</h3>
+          <div id="document-cards" class="document-cards"></div>
+          <h3 id="themes-heading">Thematic Analysis</h3>
+          <div id="thematic-analysis" class="thematic-analysis"></div>
+          <h3 id="metrics-heading">Review Metrics</h3>
+          <div id="review-metrics" class="review-metrics"></div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script src="app.js" defer></script>
+</body>
+</html>

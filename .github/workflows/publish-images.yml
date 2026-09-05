@@ -1,0 +1,130 @@
+name: Publish portal & db-api images
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "portal/**"
+      - "nginx/**"
+      - "db-api/**"
+      - "Dockerfile"
+      - ".dockerignore"
+      - ".github/workflows/publish-images.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  packages: write
+  attestations: write
+  id-token: write
+
+concurrency:
+  group: publish-images-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        include:
+          - image: portal
+            context: .
+            dockerfile: Dockerfile
+            title: Legal AI Portal (nginx + static UI + AI proxy)
+          - image: db-api
+            context: db-api
+            dockerfile: db-api/Dockerfile
+            title: Legal AI Portal db-api sidecar (Postgres summaries API)
+    env:
+      IMAGE_NAME: ghcr.io/${{ github.repository }}/${{ matrix.image }}
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v5
+
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v3
+
+      - name: Log in to GHCR
+        uses: docker/login-action@v3
+        with:
+          registry: ghcr.io
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Generate image metadata
+        id: meta
+        uses: docker/metadata-action@v5
+        with:
+          images: ${{ env.IMAGE_NAME }}
+          tags: |
+            type=raw,value=main,enable={{is_default_branch}}
+            type=sha,format=long,prefix=sha-
+          labels: |
+            org.opencontainers.image.title=${{ matrix.title }}
+
+      - name: Build and push image
+        id: push
+        uses: docker/build-push-action@v6
+        with:
+          context: ${{ matrix.context }}
+          file: ${{ matrix.dockerfile }}
+          platforms: linux/amd64
+          push: true
+          tags: ${{ steps.meta.outputs.tags }}
+          labels: ${{ steps.meta.outputs.labels }}
+          cache-from: type=gha,scope=${{ matrix.image }}
+          cache-to: type=gha,mode=max,scope=${{ matrix.image }}
+
+      - name: Attest image provenance
+        uses: actions/attest-build-provenance@v3
+        with:
+          subject-name: ${{ env.IMAGE_NAME }}
+          subject-digest: ${{ steps.push.outputs.digest }}
+          push-to-registry: true
+
+  update-gitops:
+    needs: build
+    if: github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v5
+
+      - name: Update image tags in GitOps overlay
+        env:
+          IMAGE_TAG: sha-${{ github.sha }}
+        run: |
+          python - <<'PY'
+          import os
+          from pathlib import Path
+
+          path = Path("deploy/gitops/ntnx-use-cases/kustomization.yaml")
+          text = path.read_text()
+          lines = text.splitlines()
+          tag = os.environ["IMAGE_TAG"]
+          rewritten = 0
+          for index, line in enumerate(lines):
+              if line.strip().startswith("newTag:"):
+                  # Preserve any trailing comment after the value.
+                  comment = ""
+                  if "#" in line:
+                      comment = " " + line[line.index("#"):]
+                  lines[index] = f"    newTag: {tag}{comment}"
+                  rewritten += 1
+          if rewritten == 0:
+              raise SystemExit("no newTag lines found in GitOps kustomization")
+          path.write_text("\n".join(lines) + "\n")
+          print(f"Rewrote {rewritten} newTag line(s) to {tag}")
+          PY
+
+          if git diff --quiet; then
+            exit 0
+          fi
+
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add deploy/gitops/ntnx-use-cases/kustomization.yaml
+          git commit -m "Deploy portal+db-api ${IMAGE_TAG}"
+          git push

@@ -1,0 +1,135 @@
+MEETING TRANSCRIPT
+Client Strategy Session — Ortega v. Pinnacle Industries
+Date: February 24, 2026
+Time: 2:00 PM – 3:15 PM EST
+Location: Conference Room 4B / Zoom (Hybrid)
+
+PARTICIPANTS:
+- Sarah Chen, Partner (Litigation Lead)
+- Michael Torres, Senior Associate
+- Dr. Luis Ortega, Client (Plaintiff)
+- Jennifer Park, Paralegal
+- David Kim, Associate (recently added to team)
+
+========================================================================
+
+[2:00 PM — Meeting opens]
+
+SARAH CHEN: Good afternoon, everyone. Thank you for joining, Luis. I know your schedule has been packed. Let's jump in. The purpose of today is to review the status of the Pinnacle Industries case, discuss the deposition schedule, and make some strategic decisions about expert witnesses before the March 15 deadline.
+
+Michael, can you start with a quick status update?
+
+MICHAEL TORRES: Sure. So as of today, discovery is about 70% complete. We've received Pinnacle's second production — roughly 42,000 documents. Our review team has coded about 28,000 of those. We've identified 312 documents that are highly relevant, and there are about 6,400 that need second-level review for privilege issues.
+
+The key finding from the latest production: we found a series of internal emails between Pinnacle's VP of Engineering, Robert Walsh, and their outside safety consultant from October 2023. These emails strongly suggest that Pinnacle was aware of the valve defect at least four months before the incident that injured Dr. Ortega. The consultant specifically recommended a recall, and Walsh's response was — and I'm quoting here — "The recall cost would exceed Q4 projections. Let's revisit after the holiday season."
+
+SARAH CHEN: That's significant. Luis, this is an important development. It shows they had knowledge and chose to delay action for financial reasons.
+
+DR. LUIS ORTEGA: I'm glad to hear that, but honestly, I'm still dealing with the physical therapy three times a week. My right hand — I still can't grip properly. The surgeons say there may be permanent nerve damage. I want to make sure they understand what they did to me.
+
+SARAH CHEN: Absolutely. And evidence like those emails will help us demonstrate that. David, you've been looking at the damages model. Where are we?
+
+DAVID KIM: Right. So I've been working with Dr. Ortega's medical team and our economics expert, Dr. Patricia Navarro. Current medical expenses to date are $847,000. Dr. Morrison, the orthopedic specialist, estimates future medical costs between $1.2 and $1.8 million, depending on whether additional reconstructive surgery is needed — we should know more after the April evaluation.
+
+Lost earnings are significant. Dr. Ortega was earning approximately $425,000 annually as a cardiothoracic surgeon. He hasn't been able to operate since the incident in February 2024. Dr. Navarro's preliminary calculations put the lost future earnings between $6.2 million and $8.5 million through expected retirement age of 67.
+
+Pain and suffering, loss of consortium — we're looking at a total damages model in the range of $12 to $18 million.
+
+DR. LUIS ORTEGA: I don't care about the money as much as making sure this doesn't happen to anyone else. Is there a way to make them actually fix the problem?
+
+SARAH CHEN: That's a good point. We can seek injunctive relief requiring a recall and corrective action. We'll include that in our amended complaint. Jennifer, make a note — we need to file the amended complaint by March 1.
+
+JENNIFER PARK: Got it. March 1 deadline for amended complaint with injunctive relief claim.
+
+SARAH CHEN: Now, the big strategic question — expert witnesses. We need to designate by March 15. Michael, walk us through the options.
+
+MICHAEL TORRES: We need three experts. First, a metallurgy expert to testify about the valve defect. I've narrowed it to two candidates: Dr. Amanda Foster from MIT — she's testified in about 30 product liability cases, very strong credentials, but her rate is $850 per hour. The other option is Professor James Whitmore from Georgia Tech — equally qualified technically, less trial experience, but his rate is $500 per hour.
+
+Second, we need a medical expert on Dr. Ortega's injuries and prognosis. Dr. Morrison, his treating surgeon, is willing to testify. We may also want an independent life care planner. I'd recommend Dr. Catherine Ellis — she's based in Boston, well-regarded, $600 per hour.
+
+Third, the economics expert. Dr. Navarro is already engaged and has started her analysis.
+
+SARAH CHEN: My recommendation is to go with Dr. Foster for metallurgy. Yes, she's more expensive, but Pinnacle is going to come at us hard with their own expert, and Foster's trial experience is invaluable. She's been cross-examined by the best defense firms and holds up extremely well.
+
+For the medical side, let's use both Dr. Morrison as the treating physician and Dr. Ellis as the life care planner. The combination gives us both firsthand knowledge and an independent damages assessment.
+
+Luis, are you comfortable with that approach?
+
+DR. LUIS ORTEGA: I trust your judgment, Sarah. Whatever gives us the strongest case.
+
+SARAH CHEN: Good. Michael, please reach out to Dr. Foster and Dr. Ellis this week. We need engagement letters signed by March 5 to give them time to prepare their reports before the March 15 designation deadline.
+
+MICHAEL TORRES: Will do. I'll send the engagement letters tomorrow.
+
+SARAH CHEN: Now, depositions. Pinnacle's counsel has proposed a deposition schedule. They want to depose Dr. Ortega on March 20. They also listed Dr. Morrison and our economics expert. On our side, I want to depose Robert Walsh — that's the VP who wrote the emails — and their CEO, Margaret Blackwell.
+
+The challenge is that Pinnacle's counsel, Peterson & Howell, has filed a motion to limit Walsh's deposition to two hours, claiming executive privilege and burden. I think that's ridiculous given what we've found in the emails. Michael, I want you to draft an opposition brief. We need at least a full day with Walsh.
+
+MICHAEL TORRES: Agreed. I'll have a draft to you by Thursday.
+
+SARAH CHEN: Luis, for your deposition on March 20 — we should schedule a prep session. I'd like to do two sessions: one on March 16 and one on March 18. We'll go through the likely questions, review the key documents, and practice. The most important thing is to be truthful, clear, and concise. Don't volunteer information beyond what's asked.
+
+DR. LUIS ORTEGA: Okay. I'll block those days. Should my wife be present? They may ask about the impact on our family life.
+
+SARAH CHEN: That's a good point. If they've listed her as someone they may depose, then no — she shouldn't be in your prep sessions. Jennifer, can you check the deposition notice?
+
+JENNIFER PARK: I'll check right after this meeting and email everyone.
+
+SARAH CHEN: Thank you. One more item — settlement. Pinnacle's insurance carrier, Atlantic Mutual, has made an informal inquiry through their counsel about our willingness to discuss settlement. They haven't put a number on the table yet. My sense is they're testing the waters, probably hoping to settle before the expert reports come in and the case gets more expensive for them.
+
+My recommendation: we don't engage in serious settlement discussions until after we've designated our experts and taken Walsh's deposition. Those two events will significantly strengthen our leverage. Luis, does that align with your thinking?
+
+DR. LUIS ORTEGA: Yes. I don't want to settle too quickly. If there's a chance to get a recall ordered, I want to pursue that.
+
+SARAH CHEN: Understood. We'll keep the door open to discussions but not initiate anything until we're in a stronger position. I'd estimate we'll be ready for meaningful settlement discussions by late April or early May.
+
+David, what's Pinnacle's financial picture? Can they withstand a large verdict?
+
+DAVID KIM: Pinnacle reported $2.3 billion in revenue last year with $180 million in net income. Their D&O insurance is $50 million per occurrence. Atlantic Mutual's policy has a $25 million per-claim limit. So realistically, any settlement over $25 million would require corporate contribution beyond insurance.
+
+SARAH CHEN: Good to know. Alright, let me summarize the action items.
+
+[3:10 PM — Summary]
+
+SARAH CHEN: Here's what we need:
+
+One — Jennifer files the amended complaint with injunctive relief by March 1.
+
+Two — Michael reaches out to Dr. Foster and Dr. Ellis with engagement letters by end of week, signed by March 5.
+
+Three — Michael drafts opposition to Pinnacle's motion to limit Walsh deposition, due to me by Thursday, February 27.
+
+Four — Expert designations filed by March 15.
+
+Five — Deposition prep for Dr. Ortega: March 16 and March 18.
+
+Six — Dr. Ortega's deposition: March 20.
+
+Seven — Jennifer checks whether Dr. Ortega's wife is on the deposition notice and reports back today.
+
+Eight — No settlement discussions until after Walsh deposition and expert designations, estimated late April.
+
+Nine — David updates the damages model with the latest medical cost projections by March 10.
+
+Anything I'm missing?
+
+MICHAEL TORRES: Should we also send a preservation letter about the Walsh emails? I want to make sure Pinnacle doesn't claim they were lost.
+
+SARAH CHEN: Excellent point. We already have a general preservation order, but let's send a specific letter identifying the Walsh-consultant email chain and requesting confirmation that all responsive documents from that custodian have been produced. Michael, add that to your list.
+
+MICHAEL TORRES: Done.
+
+SARAH CHEN: Luis, any questions before we wrap up?
+
+DR. LUIS ORTEGA: Just one — how long do you think this will take overall? I know it's hard to predict, but I need to plan my life around this.
+
+SARAH CHEN: If the case doesn't settle, trial would likely be in late 2026 or early 2027. The court's calendar is backed up. But if the depositions and expert reports go as I expect, I think there's a good chance Pinnacle will come to the table with a serious offer by summer. I'll keep you posted every step of the way.
+
+DR. LUIS ORTEGA: Thank you, Sarah. I appreciate everything the team is doing.
+
+SARAH CHEN: Of course. That's what we're here for. We'll talk soon.
+
+[3:15 PM — Meeting adjourned]
+
+========================================================================
+END OF TRANSCRIPT

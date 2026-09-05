@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Matter Budgeting &amp; Pricing — Generate AI-powered budget estimates and pricing for legal matters based on type, complexity, and scope." />
+  <title>Matter Budgeting &amp; Pricing — Legal AI Portal</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Roboto:wght@400;500;600&family=Roboto+Slab:wght@400&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <a href="#main" class="skip-link">Skip to main content</a>
+
+  <header class="page-header" role="banner">
+    <div class="header-inner">
+      <div class="header-left">
+        <a class="back-link" href="../../index.html" aria-label="Return to portal">&larr; Portal</a>
+        <a class="logo" href="../../index.html" aria-label="Legal AI Portal home">
+          <span class="logo-mark">Legal AI</span>
+        </a>
+      </div>
+      <h1 class="page-title">Matter Budgeting &amp; Pricing</h1>
+    </div>
+  </header>
+
+  <main id="main" class="content-wrapper">
+    <div id="error-banner" class="error-banner hidden" role="alert" aria-live="assertive"></div>
+
+    <!-- ============================================================= -->
+    <!-- Landing: diagram + description (left) | form (right)          -->
+    <!-- ============================================================= -->
+    <section id="landing-section" class="landing-layout">
+
+      <!-- LEFT: Overview, user journey, data flow, then architecture -->
+      <div class="landing-main">
+
+        <div class="use-case-overview">
+          <h2 class="section-heading">What This Does</h2>
+          <p>Matter Budgeting &amp; Pricing uses AI to generate detailed budget estimates and pricing for legal matters based on matter type, complexity, and scope. Enter the matter details in the form — including type (Litigation, Corporate, IP, Real Estate, or Employment), complexity level, scope description, jurisdiction, estimated duration, and any special considerations. The AI produces a structured budget with phases, tasks, hours, rates, and amounts, plus assumptions and risk factors to support confident client pitches and matter planning.</p>
+        </div>
+
+        <div class="user-journey">
+          <h2 class="section-heading">Example User Journey</h2>
+          <div class="journey-steps">
+            <div class="journey-step">
+              <span class="journey-step-number">1</span>
+              <div class="journey-step-content">
+                <strong>Enter Matter Details</strong>
+                <p>Select matter type and complexity, describe the scope, specify jurisdiction and estimated duration, and add any special considerations.</p>
+              </div>
+            </div>
+            <div class="journey-step">
+              <span class="journey-step-number">2</span>
+              <div class="journey-step-content">
+                <strong>AI Generates Budget</strong>
+                <p>The system sends your inputs to the Nutanix AI inference endpoint and receives a structured budget with phases, tasks, hours, rates, and amounts.</p>
+              </div>
+            </div>
+            <div class="journey-step">
+              <span class="journey-step-number">3</span>
+              <div class="journey-step-content">
+                <strong>Review Phases and Tasks</strong>
+                <p>Review the total budget, summary, phase-by-phase breakdown with tasks and pricing, plus assumptions and risk factors.</p>
+              </div>
+            </div>
+            <div class="journey-step">
+              <span class="journey-step-number">4</span>
+              <div class="journey-step-content">
+                <strong>Finalize Pricing</strong>
+                <p>Use the budget to pitch confidently to clients, adjust as needed, and save for future reference. Recent budgets appear in history for quick access.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="data-flow-summary">
+          <h2 class="section-heading">Data Flow Summary</h2>
+          <ol>
+            <li>User enters matter details (type, complexity, scope, jurisdiction, duration, special considerations) via the form.</li>
+            <li>The browser sends the form data to the API Proxy.</li>
+            <li>The API Proxy forwards the request (with authentication) to the NAI chat completions endpoint.</li>
+            <li>NAI generates a structured JSON response with totalBudget, summary, phases (tasks, hours, rates, amounts), assumptions, and risks.</li>
+            <li>The Portal UI renders the results: total budget display, summary, phases table, assumptions list, and risks.</li>
+            <li>Budget metadata is saved to PostgreSQL for audit and history tracking.</li>
+          </ol>
+        </div>
+
+        <h2 class="section-heading">Architecture Overview</h2>
+
+        <div class="diagram-wrapper">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 780 720" class="arch-diagram" role="img" aria-label="Matter Budgeting architecture diagram">
+            <defs>
+              <marker id="arrowBlue" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6" fill="#0184F7"/></marker>
+              <marker id="arrowGreen" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6" fill="#23A455"/></marker>
+              <marker id="arrowPurple" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6" fill="#7B1FA2"/></marker>
+              <marker id="arrowIndigo" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6" fill="#3949AB"/></marker>
+              <marker id="arrowOrange" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6" fill="#D84315"/></marker>
+              <marker id="arrowDkGreen" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6" fill="#2E7D32"/></marker>
+            </defs>
+
+            <rect x="10" y="10" width="760" height="700" rx="12" fill="#f0f4f8" stroke="#b0bec5" stroke-width="1.5" stroke-dasharray="6 3"/>
+            <text x="30" y="38" font-family="Roboto, sans-serif" font-size="13" font-weight="600" fill="#546e7a">Nutanix AHV Hypervisor</text>
+
+            <rect x="30" y="55" width="720" height="400" rx="10" fill="#e3f2fd" stroke="#1565c0" stroke-width="1.5"/>
+            <text x="50" y="80" font-family="Roboto, sans-serif" font-size="13" font-weight="700" fill="#1565c0">NKP — Nutanix Kubernetes Platform (ntnx-use-cases namespace)</text>
+
+            <rect x="55" y="100" width="200" height="80" rx="8" fill="#ffffff" stroke="#0184F7" stroke-width="2"/>
+            <text x="155" y="130" text-anchor="middle" font-family="Roboto, sans-serif" font-size="12" font-weight="600" fill="#015795">Portal UI</text>
+            <text x="155" y="148" text-anchor="middle" font-family="Montserrat, sans-serif" font-size="10" fill="#7a7a7a">Static HTML / CSS / JS</text>
+            <text x="155" y="165" text-anchor="middle" font-family="Montserrat, sans-serif" font-size="10" fill="#7a7a7a">Matter Budgeting &amp; Pricing</text>
+
+            <rect x="290" y="100" width="200" height="80" rx="8" fill="#ffffff" stroke="#0184F7" stroke-width="2"/>
+            <text x="390" y="130" text-anchor="middle" font-family="Roboto, sans-serif" font-size="12" font-weight="600" fill="#015795">API Proxy</text>
+            <text x="390" y="148" text-anchor="middle" font-family="Montserrat, sans-serif" font-size="10" fill="#7a7a7a">CORS Proxy (server.py)</text>
+            <text x="390" y="165" text-anchor="middle" font-family="Montserrat, sans-serif" font-size="10" fill="#7a7a7a">Routes /api/ai/* → NAI</text>
+
+            <rect x="525" y="100" width="200" height="80" rx="8" fill="#ffffff" stroke="#0184F7" stroke-width="2"/>
+            <text x="625" y="130" text-anchor="middle" font-family="Roboto, sans-serif" font-size="12" font-weight="600" fill="#015795">Ingress / Service</text>
+            <text x="625" y="148" text-anchor="middle" font-family="Montserrat, sans-serif" font-size="10" fill="#7a7a7a">LoadBalancer / ClusterIP</text>
+            <text x="625" y="165" text-anchor="middle" font-family="Montserrat, sans-serif" font-size="10" fill="#7a7a7a">External Traffic Routing</text>
+
+            <rect x="55" y="220" width="200" height="100" rx="8" fill="#ffffff" stroke="#23A455" stroke-width="2"/>
+            <rect x="68" y="235" width="24" height="24" rx="4" fill="#23A455"/>
+            <text x="80" y="252" text-anchor="middle" font-family="Roboto, sans-serif" font-size="11" font-weight="700" fill="#fff">PG</text>
+            <text x="155" y="250" text-anchor="middle" font-family="Roboto, sans-serif" font-size="12" font-weight="600" fill="#015795">PostgreSQL 16 (pg-db)</text>
+            <text x="155" y="270" text-anchor="middle" font-family="Montserrat, sans-serif" font-size="10" fill="#7a7a7a">Budget metadata, audit logs</text>
+            <text x="155" y="287" text-anchor="middle" font-family="Montserrat, sans-serif" font-size="10" fill="#7a7a7a">DB: legal_ai</text>
+            <rect x="75" y="298" width="160" height="16" rx="3" fill="#e8f5e9" stroke="#23A455" stroke-width="1"/>
+            <text x="155" y="310" text-anchor="middle" font-family="Montserrat, sans-serif" font-size="9" font-weight="600" fill="#23A455">PVC: Nutanix Volumes (20Gi)</text>
+
+            <rect x="290" y="220" width="200" height="100" rx="8" fill="#ffffff" stroke="#7B1FA2" stroke-width="2"/>
+            <rect x="303" y="235" width="24" height="24" rx="4" fill="#7B1FA2"/>
+            <text x="315" y="252" text-anchor="middle" font-family="Roboto, sans-serif" font-size="10" font-weight="700" fill="#fff">VDB</text>
+            <text x="390" y="250" text-anchor="middle" font-family="Roboto, sans-serif" font-size="12" font-weight="600" fill="#015795">ChromaDB (ch-db)</text>
+            <text x="390" y="270" text-anchor="middle" font-family="Montserrat, sans-serif" font-size="10" fill="#7a7a7a">Matter embeddings</text>
+            <text x="390" y="287" text-anchor="middle" font-family="Montserrat, sans-serif" font-size="10" fill="#7a7a7a">(optional RAG)</text>
+            <rect x="310" y="298" width="160" height="16" rx="3" fill="#f3e5f5" stroke="#7B1FA2" stroke-width="1"/>
+            <text x="390" y="310" text-anchor="middle" font-family="Montserrat, sans-serif" font-size="9" font-weight="600" fill="#7B1FA2">PVC: Nutanix Volumes (20Gi)</text>
+
+            <rect x="525" y="220" width="200" height="100" rx="8" fill="#ffffff" stroke="#FF8F00" stroke-width="2"/>
+            <text x="625" y="250" text-anchor="middle" font-family="Roboto, sans-serif" font-size="12" font-weight="600" fill="#015795">Kubernetes Services</text>
+            <text x="625" y="270" text-anchor="middle" font-family="Montserrat, sans-serif" font-size="10" fill="#7a7a7a">pg-db:5432 (ClusterIP)</text>
+            <text x="625" y="287" text-anchor="middle" font-family="Montserrat, sans-serif" font-size="10" fill="#7a7a7a">ch-db:8000 (ClusterIP)</text>
+            <text x="625" y="304" text-anchor="middle" font-family="Montserrat, sans-serif" font-size="10" fill="#7a7a7a">portal:8080 (LoadBalancer)</text>
+
+            <line x1="255" y1="140" x2="290" y2="140" stroke="#0184F7" stroke-width="1.5" marker-end="url(#arrowBlue)"/>
+            <line x1="490" y1="140" x2="525" y2="140" stroke="#0184F7" stroke-width="1.5" marker-end="url(#arrowBlue)"/>
+            <line x1="155" y1="180" x2="155" y2="220" stroke="#23A455" stroke-width="1.5" marker-end="url(#arrowGreen)"/>
+            <line x1="390" y1="180" x2="390" y2="220" stroke="#7B1FA2" stroke-width="1.5" marker-end="url(#arrowPurple)"/>
+
+            <rect x="55" y="350" width="435" height="42" rx="6" fill="#fff3e0" stroke="#FF8F00" stroke-width="1"/>
+            <text x="272" y="368" text-anchor="middle" font-family="Roboto, sans-serif" font-size="10" font-weight="600" fill="#E65100">Budget Pipeline: Form → LLM (NAI) → Structured JSON</text>
+            <text x="272" y="383" text-anchor="middle" font-family="Roboto, sans-serif" font-size="10" font-weight="600" fill="#E65100">Phases, Tasks, Hours, Rates, Assumptions, Risks</text>
+
+            <rect x="525" y="355" width="200" height="36" rx="6" fill="#e8eaf6" stroke="#3949AB" stroke-width="1"/>
+            <text x="625" y="378" text-anchor="middle" font-family="Roboto, sans-serif" font-size="11" font-weight="600" fill="#1A237E">User / Browser (HTTPS)</text>
+
+            <line x1="625" y1="355" x2="625" y2="180" stroke="#3949AB" stroke-width="1.5" marker-end="url(#arrowIndigo)"/>
+            <line x1="390" y1="455" x2="390" y2="485" stroke="#D84315" stroke-width="2" marker-end="url(#arrowOrange)"/>
+            <text x="395" y="476" font-family="Montserrat, sans-serif" font-size="9" fill="#D84315">HTTPS API</text>
+
+            <rect x="30" y="490" width="470" height="200" rx="10" fill="#fbe9e7" stroke="#D84315" stroke-width="1.5"/>
+            <text x="50" y="515" font-family="Roboto, sans-serif" font-size="13" font-weight="700" fill="#BF360C">NAI — Nutanix AI Inference Service</text>
+
+            <rect x="55" y="530" width="200" height="65" rx="8" fill="#ffffff" stroke="#D84315" stroke-width="1.5"/>
+            <text x="155" y="555" text-anchor="middle" font-family="Roboto, sans-serif" font-size="12" font-weight="600" fill="#BF360C">Chat Completions</text>
+            <text x="155" y="573" text-anchor="middle" font-family="Montserrat, sans-serif" font-size="10" fill="#7a7a7a">Model: llama3-1-8b</text>
+            <text x="155" y="588" text-anchor="middle" font-family="Montserrat, sans-serif" font-size="9" fill="#7a7a7a">Matter budget generation</text>
+
+            <rect x="280" y="530" width="200" height="65" rx="8" fill="#ffffff" stroke="#D84315" stroke-width="1.5"/>
+            <text x="380" y="555" text-anchor="middle" font-family="Roboto, sans-serif" font-size="12" font-weight="600" fill="#BF360C">Embeddings</text>
+            <text x="380" y="573" text-anchor="middle" font-family="Montserrat, sans-serif" font-size="10" fill="#7a7a7a">Model: llama-3-2-embed</text>
+            <text x="380" y="588" text-anchor="middle" font-family="Montserrat, sans-serif" font-size="9" fill="#7a7a7a">(optional for RAG)</text>
+
+            <rect x="55" y="610" width="425" height="24" rx="4" fill="#ffccbc" stroke="#D84315" stroke-width="1"/>
+            <text x="268" y="626" text-anchor="middle" font-family="monospace" font-size="10" fill="#BF360C">https://nai.hpoc.nutanix.com:443/api/v1</text>
+
+            <line x1="255" y1="562" x2="280" y2="562" stroke="#D84315" stroke-width="1" stroke-dasharray="4 2"/>
+
+            <rect x="530" y="490" width="220" height="200" rx="10" fill="#e8f5e9" stroke="#2E7D32" stroke-width="1.5"/>
+            <text x="640" y="515" text-anchor="middle" font-family="Roboto, sans-serif" font-size="13" font-weight="700" fill="#1B5E20">Nutanix Unified Storage</text>
+
+            <rect x="555" y="530" width="170" height="55" rx="8" fill="#ffffff" stroke="#2E7D32" stroke-width="1.5"/>
+            <text x="640" y="555" text-anchor="middle" font-family="Roboto, sans-serif" font-size="12" font-weight="600" fill="#1B5E20">LLM Model Repository</text>
+            <text x="640" y="572" text-anchor="middle" font-family="Montserrat, sans-serif" font-size="10" fill="#7a7a7a">Model weights &amp; configs</text>
+
+            <rect x="555" y="600" width="170" height="55" rx="8" fill="#ffffff" stroke="#2E7D32" stroke-width="1.5"/>
+            <text x="640" y="622" text-anchor="middle" font-family="Roboto, sans-serif" font-size="12" font-weight="600" fill="#1B5E20">Nutanix Volumes</text>
+            <text x="640" y="640" text-anchor="middle" font-family="Montserrat, sans-serif" font-size="10" fill="#7a7a7a">Persistent block storage</text>
+
+            <line x1="530" y1="557" x2="480" y2="557" stroke="#2E7D32" stroke-width="1.5" marker-end="url(#arrowDkGreen)"/>
+            <text x="505" y="550" font-family="Montserrat, sans-serif" font-size="8" fill="#2E7D32">serves</text>
+            <line x1="640" y1="490" x2="640" y2="420" stroke="#2E7D32" stroke-width="1.5" stroke-dasharray="5 3" marker-end="url(#arrowDkGreen)"/>
+            <text x="660" y="460" font-family="Montserrat, sans-serif" font-size="8" fill="#2E7D32">PVCs</text>
+          </svg>
+        </div>
+
+        <div class="arch-description">
+          <h2 class="section-heading">How It Works</h2>
+
+          <h3>Platform Infrastructure</h3>
+          <p>The entire solution runs on <strong>Nutanix AHV</strong>, a secure enterprise-grade hypervisor. On top of AHV, <strong>NKP (Nutanix Kubernetes Platform)</strong> provisions and manages the Kubernetes environment for all application workloads.</p>
+
+          <h3>Kubernetes Workloads (ntnx-use-cases namespace)</h3>
+          <p>All use-case components are deployed as pods within the <code>ntnx-use-cases</code> namespace:</p>
+          <ul>
+            <li><strong>Portal UI</strong> — Static front-end (HTML, CSS, JavaScript) providing the matter budgeting form, architecture visualization, and budget results display.</li>
+            <li><strong>API Proxy (server.py)</strong> — CORS proxy that routes browser requests to the Nutanix AI endpoints with bearer token injection.</li>
+            <li><strong>PostgreSQL 16 (pg-db)</strong> — Stores budget metadata, audit logs, and user activity. Data persisted on Nutanix Volumes PVC.</li>
+            <li><strong>ChromaDB (ch-db)</strong> — Optional vector store for matter embeddings and similar-matter RAG.</li>
+          </ul>
+
+          <h3>AI &amp; Inference (Nutanix AI — NAI)</h3>
+          <p><strong>Chat Completions (llama3-1-8b)</strong> — The LLM receives matter details (type, complexity, scope, jurisdiction, duration, special considerations) and returns a structured JSON budget with totalBudget, summary, phases (tasks, hours, rates, amounts), assumptions, and risks.</p>
+        </div>
+      </div>
+
+      <!-- RIGHT: Form panel -->
+      <aside class="landing-sidebar" id="input-panel">
+        <h2 class="section-heading">Generate a Budget</h2>
+
+        <form id="budget-form" class="budget-form">
+          <div class="input-card">
+            <label for="matter-type" class="form-label">Matter Type</label>
+            <select id="matter-type" class="form-select" required aria-required="true">
+              <option value="">Select type</option>
+              <option value="Litigation">Litigation</option>
+              <option value="Corporate">Corporate</option>
+              <option value="IP">IP</option>
+              <option value="Real Estate">Real Estate</option>
+              <option value="Employment">Employment</option>
+            </select>
+          </div>
+
+          <div class="input-card">
+            <label for="complexity" class="form-label">Complexity</label>
+            <select id="complexity" class="form-select" required aria-required="true">
+              <option value="">Select complexity</option>
+              <option value="Low">Low</option>
+              <option value="Medium">Medium</option>
+              <option value="High">High</option>
+            </select>
+          </div>
+
+          <div class="input-card">
+            <label for="scope" class="form-label">Scope Description</label>
+            <textarea id="scope" class="form-textarea" rows="5" placeholder="Describe the matter scope, key deliverables, and any notable factors..." required aria-required="true"></textarea>
+          </div>
+
+          <div class="input-card">
+            <label for="jurisdiction" class="form-label">Jurisdiction</label>
+            <input type="text" id="jurisdiction" class="form-input" placeholder="e.g. Delaware, Federal, California" />
+          </div>
+
+          <div class="input-card">
+            <label for="duration" class="form-label">Estimated Duration</label>
+            <input type="text" id="duration" class="form-input" placeholder="e.g. 6 months, 12-18 months" />
+          </div>
+
+          <div class="input-card">
+            <label for="special-considerations" class="form-label">Special Considerations</label>
+            <textarea id="special-considerations" class="form-textarea" rows="3" placeholder="Regulatory requirements, multi-jurisdiction, opposing counsel, etc."></textarea>
+          </div>
+
+          <button type="submit" id="btn-generate" class="btn-analyze">Generate Budget</button>
+        </form>
+
+        <div class="input-card history-card">
+          <div class="history-header">
+            <h3 class="input-card-title">Recent Budgets</h3>
+            <button type="button" id="btn-clear-history" class="btn-clear-history hidden" aria-label="Clear all recent budgets">Clear All</button>
+          </div>
+          <div id="history-list" class="history-list" role="list" aria-labelledby="history-heading"></div>
+        </div>
+      </aside>
+    </section>
+
+    <!-- ============================================================= -->
+    <!-- Loading state                                                  -->
+    <!-- ============================================================= -->
+    <section id="loading-section" class="loading-overlay hidden" aria-live="polite" aria-label="Budget generation in progress">
+      <div class="loading-card">
+        <div class="loading-spinner"></div>
+        <p class="loading-status" id="loading-status">Analyzing scope&hellip;</p>
+        <div class="loading-stages">
+          <div class="loading-stage" id="stage-analyze"><span class="stage-icon">&#9679;</span> Analyzing scope</div>
+          <div class="loading-stage" id="stage-phases"><span class="stage-icon">&#9679;</span> Estimating phases</div>
+          <div class="loading-stage" id="stage-pricing"><span class="stage-icon">&#9679;</span> Calculating pricing</div>
+          <div class="loading-stage" id="stage-render"><span class="stage-icon">&#9679;</span> Rendering</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================= -->
+    <!-- Results (full width, replaces landing)                         -->
+    <!-- ============================================================= -->
+    <section id="results-section" class="hidden" aria-labelledby="results-heading">
+      <div class="results-top-bar">
+        <h2 id="results-heading">Budget Results</h2>
+        <button type="button" id="btn-new-budget" class="btn-new-analysis">&larr; New Budget</button>
+      </div>
+      <div class="results-layout">
+        <div class="results-main">
+          <div class="budget-total-display" aria-live="polite">
+            <span class="budget-total-label">Total Budget</span>
+            <span class="budget-total-number" id="budget-total">--</span>
+          </div>
+          <div class="summary-card" id="summary-text" aria-label="Budget summary"></div>
+          <h3 id="phases-heading">Budget Phases</h3>
+          <div class="table-responsive">
+            <table class="budget-phase-table" role="table" aria-labelledby="phases-heading">
+              <thead>
+                <tr>
+                  <th scope="col">Phase</th>
+                  <th scope="col">Tasks</th>
+                  <th scope="col">Hours</th>
+                  <th scope="col">Rate</th>
+                  <th scope="col">Amount</th>
+                </tr>
+              </thead>
+              <tbody id="phases-tbody"></tbody>
+            </table>
+          </div>
+          <h3 id="assumptions-heading">Assumptions</h3>
+          <div id="assumptions-list" class="assumptions-list" role="list" aria-labelledby="assumptions-heading"></div>
+          <h3 id="risks-heading">Risks &amp; Mitigations</h3>
+          <div id="risks-list" class="risks-list" role="list" aria-labelledby="risks-heading"></div>
+        </div>
+        <aside class="results-sidebar">
+          <div class="input-card">
+            <div class="history-header">
+              <h3 class="input-card-title">Recent Budgets</h3>
+              <button type="button" id="btn-clear-results-history" class="btn-clear-history hidden" aria-label="Clear all recent budgets">Clear All</button>
+            </div>
+            <div id="results-history-list" class="history-list" role="list"></div>
+          </div>
+        </aside>
+      </div>
+    </section>
+  </main>
+
+  <script src="app.js" defer></script>
+</body>
+</html>
