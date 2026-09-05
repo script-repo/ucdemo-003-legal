@@ -3,7 +3,7 @@
  * In production, calls a backend API that queries pg-db.
  * Falls back to in-memory mock data when no backend is available.
  *
- * PostgreSQL cluster DNS: pg-db.ntnx-use-cases.svc.cluster.local:5432
+ * PostgreSQL cluster DNS: pg-db.db-project-003.svc.cluster.local:5432
  * Database: legal_ai | User: legal_admin
  *
  * NOTE: Browsers cannot connect to PostgreSQL directly.

@@ -80,7 +80,7 @@ apiVersion: v1
 kind: Service
 metadata:
   # Name matches PG_HOST in configmap.yaml — db-api resolves this via
-  # cluster DNS as pg-db.ntnx-use-cases.svc.cluster.local.
+  # cluster DNS as pg-db.db-project-003.svc.cluster.local.
   name: pg-db
   labels:
     app.kubernetes.io/name: legal-ai-pg

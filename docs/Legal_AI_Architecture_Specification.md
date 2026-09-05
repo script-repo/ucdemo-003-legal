@@ -50,7 +50,7 @@ This document defines the shared architecture for the Legal AI Portal and every 
 | **Hosting** | Kubernetes (Nutanix Kubernetes Platform / NKP). Portal and each use case may be one or more services. |
 | **Source code** | GitHub ([`script-repo/ucdemo-003-legal`](https://github.com/script-repo/ucdemo-003-legal)). One repo; use-case code lives in subfolders. |
 | **Data residency** | On-prem / in-region only. No client or confidential data in public cloud. |
-| **CI/CD** | GitOps: GitHub Actions builds container images to GHCR; Flux reconciles the `deploy/gitops/ntnx-use-cases/` overlay into the cluster. See [`deploy/gitops/README.md`](../deploy/gitops/README.md). |
+| **CI/CD** | GitOps: GitHub Actions builds container images to GHCR; Flux reconciles the `deploy/gitops/db-project-003/` overlay into the cluster. See [`deploy/gitops/README.md`](../deploy/gitops/README.md). |
 
 ---
 
@@ -96,20 +96,20 @@ same-origin server-side proxy — the browser never holds the API key.
   - The key is never hardcoded in source, never baked into the container
     image, and never committed to Git.
 
-### 6.2 Shared Databases (Kubernetes — `ntnx-use-cases` namespace)
+### 6.2 Shared Databases (Kubernetes — `db-project-003` namespace)
 
 | Service | Type | Cluster DNS | Port | Purpose |
 |---------|------|-------------|------|---------|
-| **pg-db** | PostgreSQL 16 | `pg-db.ntnx-use-cases.svc.cluster.local` | 5432 | Relational data: contracts, matters, metadata, audit |
-| **ch-db** | ChromaDB | `ch-db.ntnx-use-cases.svc.cluster.local` | 8000 | Vector DB: clause embeddings, semantic search |
+| **pg-db** | PostgreSQL 16 | `pg-db.db-project-003.svc.cluster.local` | 5432 | Relational data: contracts, matters, metadata, audit |
+| **ch-db** | ChromaDB | `ch-db.db-project-003.svc.cluster.local` | 8000 | Vector DB: clause embeddings, semantic search |
 
 - PostgreSQL database: `legal_ai`, user: `legal_admin`, password from the
   `legal-ai-secrets` Kubernetes Secret (never in Git).
 - ChromaDB: persistent storage on PVC, telemetry disabled. Reserved for
   future RAG use cases; no live use case calls it yet.
 - Both are ClusterIP services, deployed via
-  [`deploy/gitops/ntnx-use-cases/postgres.yaml`](../deploy/gitops/ntnx-use-cases/postgres.yaml)
-  and [`chromadb.yaml`](../deploy/gitops/ntnx-use-cases/chromadb.yaml); use
+  [`deploy/gitops/db-project-003/postgres.yaml`](../deploy/gitops/db-project-003/postgres.yaml)
+  and [`chromadb.yaml`](../deploy/gitops/db-project-003/chromadb.yaml); use
   cases connect via cluster DNS.
 
 ### 6.3 General Data Rules

@@ -3,12 +3,12 @@
  * Calls the embeddings endpoint for vectorization; ChromaDB for similarity search.
  * Falls back to mock data if endpoints are unreachable.
  *
- * ChromaDB cluster DNS: ch-db.ntnx-use-cases.svc.cluster.local:8000
+ * ChromaDB cluster DNS: ch-db.db-project-003.svc.cluster.local:8000
  * When running in-browser (no direct cluster access), falls back to mock.
  */
 import { embed } from '../../shared/ai-client.js';
 
-const CHROMA_BASE = 'http://ch-db.ntnx-use-cases.svc.cluster.local:8000';
+const CHROMA_BASE = 'http://ch-db.db-project-003.svc.cluster.local:8000';
 
 const MOCK_CLAUSES = [
   { id: 'c1', clauseText: 'The Indemnifying Party shall defend, indemnify, and hold harmless the Indemnified Party from any and all claims, damages, losses, and expenses, including consequential damages.', section: 'Section 8 — Indemnification', relevanceScore: 0.94, source: 'Uploaded Contract' },

@@ -3,7 +3,7 @@
 #
 # No secrets are baked into this image. The Nutanix AI API key is injected
 # at container start via nginx's built-in envsubst templating — see
-# nginx/default.conf.template and deploy/gitops/ntnx-use-cases/deployment.yaml.
+# nginx/default.conf.template and deploy/gitops/db-project-003/deployment.yaml.
 FROM nginx:alpine
 
 COPY nginx/nginx.conf /etc/nginx/nginx.conf

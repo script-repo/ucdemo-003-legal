@@ -4,7 +4,7 @@ apiVersion: source.toolkit.fluxcd.io/v1
 kind: GitRepository
 metadata:
   name: ucdemo-003-legal
-  namespace: ntnx-use-cases
+  namespace: db-project-003
 spec:
   interval: 1m
   url: https://github.com/script-repo/ucdemo-003-legal.git
@@ -15,7 +15,7 @@ apiVersion: kustomize.toolkit.fluxcd.io/v1
 kind: Kustomization
 metadata:
   name: ucdemo-003-legal
-  namespace: ntnx-use-cases
+  namespace: db-project-003
 spec:
   interval: 1m
   retryInterval: 30s
@@ -23,7 +23,7 @@ spec:
   sourceRef:
     kind: GitRepository
     name: ucdemo-003-legal
-  path: ./deploy/gitops/ntnx-use-cases
+  path: ./deploy/gitops/db-project-003
   prune: true
   wait: true
-  targetNamespace: ntnx-use-cases
+  targetNamespace: db-project-003

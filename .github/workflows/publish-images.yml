@@ -100,7 +100,7 @@ jobs:
           import os
           from pathlib import Path
 
-          path = Path("deploy/gitops/ntnx-use-cases/kustomization.yaml")
+          path = Path("deploy/gitops/db-project-003/kustomization.yaml")
           text = path.read_text()
           lines = text.splitlines()
           tag = os.environ["IMAGE_TAG"]
@@ -125,6 +125,6 @@ jobs:
 
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add deploy/gitops/ntnx-use-cases/kustomization.yaml
+          git add deploy/gitops/db-project-003/kustomization.yaml
           git commit -m "Deploy portal+db-api ${IMAGE_TAG}"
           git push

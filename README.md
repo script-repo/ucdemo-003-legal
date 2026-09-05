@@ -25,7 +25,7 @@ flowchart TB
     UI["Portal UI · 30 use-case pages"]
   end
 
-  subgraph pod["Pod: legal-ai-portal (ntnx-use-cases namespace)"]
+  subgraph pod["Pod: legal-ai-portal (db-project-003 namespace)"]
     Nginx["nginx container<br/>static UI + /api/ai/* proxy"]
     DbApi["db-api container<br/>/api/db/* sidecar"]
     Nginx -->|"localhost:8081"| DbApi
@@ -45,7 +45,7 @@ flowchart TB
     GHA["GitHub Actions"]
     GHCR["GHCR: portal + db-api images"]
     Flux["Flux"]
-    NKP["NKP · ntnx-use-cases"]
+    NKP["NKP · db-project-003"]
   end
 
   UI -->|"fetch /api/ai/*, /api/db/*"| Nginx
@@ -72,9 +72,9 @@ follows:
 1. Push code (`portal/**`, `nginx/**`, `db-api/**`, `Dockerfile`) to `main`.
 2. GitHub Actions builds `linux/amd64` images for `portal` and `db-api`,
    pushes immutable `sha-<commit>` tags to GHCR, and writes those tags into
-   [`deploy/gitops/ntnx-use-cases/kustomization.yaml`](deploy/gitops/ntnx-use-cases/kustomization.yaml).
+   [`deploy/gitops/db-project-003/kustomization.yaml`](deploy/gitops/db-project-003/kustomization.yaml).
 3. Flux (already running on the NKP cluster) polls this repo every minute
-   and reconciles the overlay into the `ntnx-use-cases` namespace.
+   and reconciles the overlay into the `db-project-003` namespace.
 
 Full details, secret handling, and bootstrap steps:
 [`deploy/gitops/README.md`](deploy/gitops/README.md).
@@ -133,10 +133,10 @@ python -u server.py
 │   └── publish-images.yml          # build + push both images, update GitOps tag
 ├── deploy/
 │   ├── flux/
-│   │   └── ntnx-use-cases-sync.yaml    # apply ONCE: GitRepository + Kustomization
+│   │   └── db-project-003-sync.yaml    # apply ONCE: GitRepository + Kustomization
 │   └── gitops/
 │       ├── README.md                   # deployment flow, secrets, bootstrap
-│       └── ntnx-use-cases/              # live desired state (Flux reconciles this)
+│       └── db-project-003/              # live desired state (Flux reconciles this)
 │           ├── kustomization.yaml
 │           ├── namespace.yaml
 │           ├── configmap.yaml

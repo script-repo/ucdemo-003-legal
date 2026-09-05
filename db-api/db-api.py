@@ -2,14 +2,14 @@
 Lightweight REST API sidecar for PostgreSQL summary storage.
 
 Runs alongside nginx in the legal-ai-portal pod (see
-deploy/gitops/ntnx-use-cases/deployment.yaml).
+deploy/gitops/db-project-003/deployment.yaml).
 
 Endpoints:
   GET  /api/db/summaries?use_case=uc03&limit=10  — fetch recent summaries
   POST /api/db/summaries                          — save a new summary
   DELETE /api/db/summaries[?id=...]               — delete one or all
 
-Env vars (see deploy/gitops/ntnx-use-cases/configmap.yaml for non-secret
+Env vars (see deploy/gitops/db-project-003/configmap.yaml for non-secret
 defaults; PG_PASSWORD must come from a Kubernetes Secret — never hardcode
 it here or in Git):
   PG_HOST     (default: pg-db)
@@ -212,7 +212,7 @@ if __name__ == '__main__':
         print('WARNING: psycopg2 not installed. DB endpoints will return empty results.')
     if not PG_PASSWORD:
         print('WARNING: PG_PASSWORD is not set. DB connections will fail. '
-              'Set it via a Kubernetes Secret (see deploy/gitops/ntnx-use-cases/deployment.yaml).')
+              'Set it via a Kubernetes Secret (see deploy/gitops/db-project-003/deployment.yaml).')
     server = http.server.HTTPServer(('0.0.0.0', API_PORT), Handler)
     print(f'DB API sidecar listening on :{API_PORT}')
     print(f'  PostgreSQL: {PG_USER}@{PG_HOST}:{PG_PORT}/{PG_DB}')

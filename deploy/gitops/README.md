@@ -27,7 +27,7 @@ co-located.
    `kustomization.yaml` to the immutable SHA tag and commits that desired
    state to `main`.
 4. Flux polls the public repository and reconciles
-   `deploy/gitops/ntnx-use-cases/` into the `ntnx-use-cases` namespace.
+   `deploy/gitops/db-project-003/` into the `db-project-003` namespace.
 
 The `main` tag is a convenience tag. Flux deploys the immutable SHA tag
 written to `kustomization.yaml`.
@@ -37,7 +37,7 @@ written to `kustomization.yaml`.
 Flux must already be installed on the NKP cluster. Bootstrap this repo once:
 
 ```bash
-kubectl apply -f deploy/flux/ntnx-use-cases-sync.yaml
+kubectl apply -f deploy/flux/db-project-003-sync.yaml
 ```
 
 After bootstrap, do not apply this overlay manually. Change Git, let GitHub
@@ -50,7 +50,7 @@ this overlay's Deployments reference:
 
 ```bash
 kubectl create secret generic legal-ai-secrets \
-  --namespace ntnx-use-cases \
+  --namespace db-project-003 \
   --from-literal=NAI_API_KEY='<your Nutanix AI API key>' \
   --from-literal=PG_PASSWORD='<a strong password>'
 ```
@@ -66,7 +66,7 @@ Git needs to change.
 
 ## Frontend
 
-- 3 replicas, NodePort `30088`
+- 3 replicas, NodePort `30009`
 - No PVC on the portal itself: static files and nginx config are baked into
   the image; writable scratch (`/var/cache/nginx`, `/tmp`, rendered
   `/etc/nginx/conf.d`) uses `emptyDir`

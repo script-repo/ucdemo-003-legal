@@ -103,7 +103,7 @@
             <text x="30" y="38" font-family="Roboto, sans-serif" font-size="13" font-weight="600" fill="#546e7a">Nutanix AHV Hypervisor</text>
 
             <rect x="30" y="55" width="720" height="400" rx="10" fill="#e3f2fd" stroke="#1565c0" stroke-width="1.5"/>
-            <text x="50" y="80" font-family="Roboto, sans-serif" font-size="13" font-weight="700" fill="#1565c0">NKP — Nutanix Kubernetes Platform (ntnx-use-cases namespace)</text>
+            <text x="50" y="80" font-family="Roboto, sans-serif" font-size="13" font-weight="700" fill="#1565c0">NKP — Nutanix Kubernetes Platform (db-project-003 namespace)</text>
 
             <rect x="55" y="100" width="200" height="80" rx="8" fill="#ffffff" stroke="#0184F7" stroke-width="2"/>
             <text x="155" y="130" text-anchor="middle" font-family="Roboto, sans-serif" font-size="12" font-weight="600" fill="#015795">Portal UI</text>
@@ -176,7 +176,7 @@
           <h2 class="section-heading">How It Works</h2>
 
           <h3>Platform Infrastructure</h3>
-          <p>The solution runs on <strong>Nutanix AHV</strong> and <strong>NKP (Nutanix Kubernetes Platform)</strong>. The Portal UI, API Proxy, and PostgreSQL are deployed as pods in the <code>ntnx-use-cases</code> namespace.</p>
+          <p>The solution runs on <strong>Nutanix AHV</strong> and <strong>NKP (Nutanix Kubernetes Platform)</strong>. The Portal UI, API Proxy, and PostgreSQL are deployed as pods in the <code>db-project-003</code> namespace.</p>
 
           <h3>Regulatory Scan Flow</h3>
           <p>When you submit the form, the Portal sends your practice area, jurisdiction, time period, and keywords to the API Proxy. The proxy forwards the request to the Nutanix AI Chat Completions endpoint. The LLM analyzes the criteria and returns a structured JSON object with alert count, summary, regulatory changes (each with title, agency, jurisdiction, effective date, impact level, description, affected areas, action required, deadline), and recommendations. The UI renders change cards with impact badges and a recommendations list. Scan metadata is persisted to PostgreSQL for audit.</p>
