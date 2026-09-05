@@ -19,6 +19,6 @@ resources:
 
 images:
   - name: ghcr.io/script-repo/ucdemo-003-legal/portal
-    newTag: sha-2d10c3925f3f1c5723a1b3308d6d0be0431d67d6 # rewritten to sha-<commit> by GitHub Actions after each build; do not hand-edit
+    newTag: sha-7c3909c6118b2a882ac6bbd5f7598e02a1ec85e2 # rewritten to sha-<commit> by GitHub Actions after each build; do not hand-edit
   - name: ghcr.io/script-repo/ucdemo-003-legal/db-api
-    newTag: sha-2d10c3925f3f1c5723a1b3308d6d0be0431d67d6 # rewritten to sha-<commit> by GitHub Actions after each build; do not hand-edit
+    newTag: sha-7c3909c6118b2a882ac6bbd5f7598e02a1ec85e2 # rewritten to sha-<commit> by GitHub Actions after each build; do not hand-edit
