@@ -48,6 +48,48 @@ def get_conn():
     )
 
 
+def init_schema(retries=10, delay=3):
+    """Create the summaries table if it doesn't exist yet.
+
+    Runs at startup so a fresh Postgres (e.g. a new PVC on first deploy)
+    self-heals instead of every request 500ing on a missing relation.
+    Retries briefly in case the postgres container isn't accepting
+    connections yet when this sidecar starts.
+    """
+    import time
+
+    if not HAS_PG:
+        return
+    for attempt in range(1, retries + 1):
+        try:
+            conn = get_conn()
+            cur = conn.cursor()
+            cur.execute('''
+                CREATE TABLE IF NOT EXISTS summaries (
+                    id SERIAL PRIMARY KEY,
+                    use_case TEXT NOT NULL,
+                    title TEXT NOT NULL,
+                    created_at TIMESTAMPTZ NOT NULL DEFAULT now(),
+                    data JSONB NOT NULL
+                )
+            ''')
+            cur.execute('''
+                CREATE INDEX IF NOT EXISTS idx_summaries_use_case_created_at
+                ON summaries (use_case, created_at DESC)
+            ''')
+            conn.commit()
+            cur.close()
+            conn.close()
+            print('DB schema ready (summaries table).')
+            return
+        except Exception as e:
+            print(f'Schema init attempt {attempt}/{retries} failed: {e}')
+            if attempt < retries:
+                time.sleep(delay)
+    print('WARNING: could not initialize DB schema after retries. '
+          'DB endpoints will likely 500 until this is resolved.')
+
+
 class Handler(http.server.BaseHTTPRequestHandler):
 
     def do_OPTIONS(self):
@@ -213,6 +255,7 @@ if __name__ == '__main__':
     if not PG_PASSWORD:
         print('WARNING: PG_PASSWORD is not set. DB connections will fail. '
               'Set it via a Kubernetes Secret (see deploy/gitops/db-project-003/deployment.yaml).')
+    init_schema()
     server = http.server.HTTPServer(('0.0.0.0', API_PORT), Handler)
     print(f'DB API sidecar listening on :{API_PORT}')
     print(f'  PostgreSQL: {PG_USER}@{PG_HOST}:{PG_PORT}/{PG_DB}')

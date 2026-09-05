@@ -21,12 +21,15 @@ server {
         try_files $uri $uri/ $uri/index.html /index.html;
     }
 
-    # Reverse proxy to the Nutanix AI endpoint. ${NAI_API_KEY} is substituted
-    # by nginx's built-in envsubst templating at container start (see
-    # nginx.conf) — set it from a Kubernetes Secret, never hardcode it here.
-    # Only variables that exist as real environment variables get substituted;
-    # nginx's own $uri/$http_referer/etc. runtime variables above are left
-    # untouched because there is no env var with those exact names.
+    # Reverse proxy to the Nutanix AI endpoint. The API key placeholder below
+    # is substituted by nginx's built-in envsubst templating at container
+    # start (see nginx.conf) — set it from a Kubernetes Secret, never
+    # hardcode it here. Only variables that exist as real environment
+    # variables get substituted; nginx's own $uri/$http_referer/etc. runtime
+    # variables above are left untouched because there is no env var with
+    # those exact names. (Do not write the placeholder itself in this
+    # comment block — envsubst has no notion of nginx comments and will
+    # substitute it here too.)
     location /api/ai/ {
         proxy_pass https://nai.hpoc.nutanix.com:443/api/v1/;
         proxy_http_version 1.1;
