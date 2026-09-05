@@ -37,7 +37,7 @@ flowchart TB
   end
 
   subgraph inference["Nutanix Enterprise AI"]
-    NAI["nai.hpoc.nutanix.com<br/>llama3-1-8b · llama-3-2-embed"]
+    NAI["NAI inference endpoint<br/>llama3-1-8b · llama-3-2-embed"]
   end
 
   subgraph gitops["Delivery"]
